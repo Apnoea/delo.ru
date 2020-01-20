@@ -5041,11 +5041,31 @@ ul.list {
     .acquiring-detail-page {
       .inner {
         .top-banner {
-          &-content {
-            &-text {
-              &-open {
-                margin-top: 50px;
-              }
+          &:before {
+            content: none;
+          }
+          &:after {
+            right: 27%;
+            top: 30px;
+            width: 57px;
+            height: 57px;
+          }
+          &-wave {
+            position: absolute;
+            right: 30%;
+            top: 50px;
+            width: 108px;
+            height: 13px;
+            overflow: hidden;
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 200%;
+              height: 100%;
+              background: url(../img/icon_wave.svg) no-repeat;
+              animation: wave 5s linear infinite;
             }
           }
           &-image {
@@ -5067,7 +5087,7 @@ ul.list {
             margin-top: 35px;
             &-table {
               width: 50%;
-              padding: 30px 35px 25px;
+              padding: 30px 50px 25px 35px;
               background: #fff;
               border-radius: 20px;
               &-title {
@@ -5080,6 +5100,7 @@ ul.list {
                 padding: 15px 0;
                 border-bottom: 1px solid #e6e8e0;
                 &:last-child {
+                  padding-bottom: 0;
                   border-bottom: none;
                 }
                 &-desc {

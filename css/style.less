@@ -466,7 +466,7 @@ ul.list {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        min-height: 225px;
+        min-height: 320px;
         padding-left: 70px;
         background: #f4f4f4;
         border-radius: 20px;
@@ -719,7 +719,7 @@ ul.list {
             width: ~'calc((100% - 50px)/3)';
             height: 150px;
             margin-top: 25px;
-            padding: 0 25px;
+            padding: 0 20px 0 30px;
             border: 1px solid #e6e8e0;
             border-radius: 20px;
             &:nth-child(-n + 3) {
@@ -2643,6 +2643,7 @@ ul.list {
     .actions-page {
       .inner {
         .top-banner {
+          min-height: 225px;
           &:before {
             content: '';
             position: absolute;
@@ -2784,6 +2785,7 @@ ul.list {
     .bonuses-page {
       .inner {
         .top-banner {
+          min-height: 225px;
           &:before {
             content: 'Бонусы';
             right: 33%;
@@ -3002,6 +3004,7 @@ ul.list {
     .bonuses-page-detail {
       .inner {
         .top-banner {
+          min-height: 225px;
           &:before {
             content: 'Бонусы';
             right: 33%;
@@ -3296,6 +3299,7 @@ ul.list {
     .journal-page {
       .inner {
         .top-banner {
+          min-height: 225px;
           &:before {
             content: '';
             position: absolute;
@@ -3490,6 +3494,7 @@ ul.list {
     .about-page {
       .inner {
         .top-banner {
+          min-height: 225px;
           &:before {
             right: 31%;
             top: 65px;
@@ -3995,6 +4000,7 @@ ul.list {
     .departments-page {
       .inner {
         .top-banner {
+          min-height: 225px;
           &:before {
             right: 37%;
             top: unset;
@@ -4014,6 +4020,7 @@ ul.list {
     .policy-page {
       .inner {
         .top-banner {
+          min-height: 225px;
           &:before {
             right: 37%;
             top: unset;
@@ -4050,6 +4057,7 @@ ul.list {
     .safety-page {
       .inner {
         .top-banner {
+          min-height: 225px;
           &:before {
             right: 37%;
             top: unset;
@@ -4110,6 +4118,9 @@ ul.list {
     }
     .help-page {
       .inner {
+        .top-banner {
+          min-height: 225px;
+        }
         .info {
           display: flex;
           justify-content: space-between;
@@ -5039,37 +5050,80 @@ ul.list {
       }
     }
     .acquiring-detail-page {
+      &.trade-acquiring {
+        .inner {
+          .top-banner {
+            &:after {
+              right: 27%;
+              top: 30px;
+              width: 57px;
+              height: 57px;
+            }
+            &-wave {
+              position: absolute;
+              right: 30%;
+              top: 50px;
+              width: 108px;
+              height: 13px;
+              overflow: hidden;
+              &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 200%;
+                height: 100%;
+                background: url(../img/icon_wave.svg) no-repeat;
+                animation: wave 5s linear infinite;
+              }
+            }
+            &-image {
+              width: 200px;
+            }
+          }
+        }
+      }
+      &.internet-acquiring {
+        .inner {
+          .top-banner {
+            &:after {
+              right: 35%;
+              top: unset;
+              bottom: 40px;
+              width: 57px;
+              height: 57px;
+            }
+            &-wave {
+              position: absolute;
+              right: 38%;
+              top: unset;
+              bottom: 55px;
+              width: 108px;
+              height: 26px;
+              overflow: hidden;
+              &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 200%;
+                height: 100%;
+                background: url(../img/icon_wave.svg);
+                animation: wave 5s linear infinite;
+              }
+            }
+            &-image {
+              width: 330px;
+            }
+          }
+        }
+      }
       .inner {
         .top-banner {
           &:before {
             content: none;
           }
-          &:after {
-            right: 27%;
-            top: 30px;
-            width: 57px;
-            height: 57px;
-          }
-          &-wave {
-            position: absolute;
-            right: 30%;
-            top: 50px;
-            width: 108px;
-            height: 13px;
-            overflow: hidden;
-            &:before {
-              content: '';
-              position: absolute;
-              left: 0;
-              top: 0;
-              width: 200%;
-              height: 100%;
-              background: url(../img/icon_wave.svg) no-repeat;
-              animation: wave 5s linear infinite;
-            }
-          }
           &-image {
-            width: 200px;
             align-self: center;
           }
         }
@@ -5177,6 +5231,7 @@ ul.list {
     .requisite-page {
       .inner {
         .top-banner {
+          min-height: 225px;
           &:before {
             top: unset;
             bottom: -15px;
@@ -5527,6 +5582,7 @@ ul.list {
     .remote-service-page {
       .inner {
         .top-banner {
+          min-height: 225px;
           &:before {
             content: none;
           }
@@ -5648,6 +5704,7 @@ ul.list {
     .tariffs-page {
       .inner {
         .top-banner {
+          min-height: 225px;
           &:before,
           &:after {
             content: none;
@@ -5690,7 +5747,6 @@ ul.list {
     .start-business-page {
       .inner {
         .top-banner {
-          min-height: 320px;
           &:before {
             content: none;
           }
@@ -5954,7 +6010,6 @@ ul.list {
     .internet-business-page {
       .inner {
         .top-banner {
-          min-height: 320px;
           &-image {
             width: 325px;
             margin-top: -30px;
@@ -5971,7 +6026,6 @@ ul.list {
     .small-business-page {
       .inner {
         .top-banner {
-          min-height: 320px;
           &:before {
             content: none;
           }
@@ -6030,7 +6084,6 @@ ul.list {
     .freelancer-page {
       .inner {
         .top-banner {
-          min-height: 320px;
           &:before {
             content: none;
           }
@@ -6087,7 +6140,6 @@ ul.list {
     .all-tools-page {
       .inner {
         .top-banner {
-          min-height: 320px;
           &:before {
             content: none;
           }

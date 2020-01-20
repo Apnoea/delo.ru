@@ -527,7 +527,10 @@ ul.list {
         //   }
         // }
         &-content {
+          display: flex;
+          flex-direction: column;
           padding-top: 15px;
+          padding-bottom: 45px;
           &-breadcrumbs {
             display: flex;
             margin-bottom: 0;
@@ -569,6 +572,9 @@ ul.list {
             }
           }
           &-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             max-width: 600px;
             margin-top: 25px;
             &-hidden {
@@ -581,11 +587,11 @@ ul.list {
             }
             &-desc {
               margin-top: 15px;
+              margin-bottom: 30px;
               font: 300 18px/1.5 @font;
             }
             &-open {
-              margin-top: 30px;
-              margin-bottom: 45px;
+              margin-top: auto;
               a {
                 position: relative;
                 display: block;
@@ -840,114 +846,6 @@ ul.list {
                   content: '-';
                 }
               }
-            }
-          }
-        }
-      }
-      .legal-assistance {
-        position: relative;
-        margin-top: 80px;
-        padding: 70px 60px 60px;
-        background: #fbfbf7;
-        border-radius: 20px;
-        &:before {
-          content: '';
-          position: absolute;
-          right: 60px;
-          top: 85px;
-          width: 330px;
-          height: 265px;
-          background: url(../img/small_business/legal_assistance_img1.png) no-repeat;
-          background-size: contain;
-        }
-        &-title {
-          font: 700 36px/1.3 @font;
-        }
-        &-desc {
-          margin-top: 20px;
-          font: 300 18px/1.5 @font;
-        }
-        &-block {
-          display: flex;
-          justify-content: space-between;
-          width: 60%;
-          margin-top: 35px;
-          &-item {
-            &-title {
-              font: 30px/1.3 @font;
-              color: @pink;
-            }
-            &-desc {
-              margin-top: 20px;
-              font: 300 18px/1.5 @font;
-            }
-          }
-        }
-        &-connect {
-          margin-top: 110px;
-          &-title {
-            font: 500 30px/1.3 @font;
-          }
-          &-block {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-            &-item {
-              display: flex;
-              flex-wrap: wrap;
-              width: 35%;
-              &:last-child {
-                width: 25%;
-              }
-              &-circle {
-                width: 58px;
-                height: 58px;
-                text-align: center;
-                font: 24px/58px @font;
-                color: #fff;
-                background: @pink;
-                border-radius: 50%;
-              }
-              &-progress {
-                flex: 1;
-                height: 1px;
-                margin-top: 29px;
-                margin-left: 20px;
-                background: @pink;
-              }
-              &-desc {
-                width: 100%;
-                height: 100%;
-                margin-top: 20px;
-                font: 300 18px/1.5 @font;
-                a {
-                  color: @pink;
-                }
-              }
-            }
-          }
-        }
-        &-rules {
-          display: inline-block;
-          margin-top: 55px;
-          padding: 20px 30px;
-          background: #fff;
-          border-radius: 20px;
-          a {
-            position: relative;
-            display: block;
-            padding-left: 50px;
-            font: 300 16px/1.5 @font;
-            &:before {
-              content: '';
-              position: absolute;
-              left: 0;
-              top: 50%;
-              width: 28px;
-              height: 32px;
-              transform: translateY(-50%);
-              background: url(../img/icon_list.svg) no-repeat;
-              background-size: contain;
             }
           }
         }
@@ -1450,7 +1348,7 @@ ul.list {
           }
         }
       }
-      .usefull-services {
+      .services {
         margin-top: 80px;
         &-title {
           font: 700 36px/1.3 @font;
@@ -4950,7 +4848,6 @@ ul.list {
               animation: wave 5s linear infinite;
             }
             &:after {
-              // content: '';
               position: absolute;
               right: 0;
               top: 50%;
@@ -5767,6 +5664,7 @@ ul.list {
     .start-business-page {
       .inner {
         .top-banner {
+          min-height: 320px;
           &:before {
             content: none;
           }
@@ -5817,6 +5715,20 @@ ul.list {
           padding: 55px 70px 60px;
           background: @gray;
           border-radius: 20px;
+        }
+        .services {
+          &-block {
+            &-item {
+              &:last-child {
+                width: 100%;
+                min-height: 200px;
+                padding: 40px 50px 30px 70px;
+                .services-block-item-image {
+                  width: 468px;
+                }
+              }
+            }
+          }
         }
         .docs {
           margin-top: 80px;
@@ -6012,27 +5924,20 @@ ul.list {
           }
         }
       }
-      .usefull-services {
-        &-block {
-          &-item {
-            &:last-child {
-              width: 100%;
-              min-height: 200px;
-              padding: 40px 50px 30px 70px;
-              .usefull-services-block-item-image {
-                width: 468px;
-              }
-            }
-          }
-        }
-      }
     }
     .internet-business-page {
       .inner {
         .top-banner {
+          min-height: 320px;
           &-image {
             width: 325px;
             margin-top: -30px;
+          }
+        }
+        .advantage,
+        .steps {
+          &-title {
+            font: 500 30px/1.3 @font;
           }
         }
       }
@@ -6040,6 +5945,7 @@ ul.list {
     .small-business-page {
       .inner {
         .top-banner {
+          min-height: 320px;
           &:before {
             top: unset;
             bottom: -15px;
@@ -6063,20 +5969,56 @@ ul.list {
     .freelancer-page {
       .inner {
         .top-banner {
+          min-height: 320px;
           &:before {
-            right: 51%;
+            content: none;
           }
           &:after {
-            width: 144px;
-            top: 62px;
-            background: url(../img/freelancer/icon_bubble.svg) no-repeat;
-            background-size: contain;
-            border-radius: 0;
+            right: 35%;
+            top: 70px;
+            width: 55px;
+            height: 55px;
+          }
+          &-wave {
+            position: absolute;
+            right: 35%;
+            top: 60px;
+            width: 108px;
+            height: 57px;
+            margin-right: 45px;
+            overflow: hidden;
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 50%;
+              width: 200%;
+              height: 25px;
+              transform: translateY(-50%);
+              background: url(../img/icon_wave.svg);
+              animation: wave 5s linear infinite;
+            }
+            &:after {
+              position: absolute;
+              right: 0;
+              top: 50%;
+              width: 57px;
+              height: 57px;
+              transform: translateY(-50%);
+              background: linear-gradient(285.35deg, #fd9b5c 6.22%, #eb5760 69.31%);
+              border-radius: 50%;
+            }
           }
           &-image {
-            margin-top: -20px;
-            width: 310px;
+            align-self: flex-end;
+            width: 370px;
             border-radius: 0 0 20px 0;
+          }
+        }
+        .advantage,
+        .steps {
+          &-title {
+            font: 500 30px/1.3 @font;
           }
         }
       }
@@ -6084,6 +6026,7 @@ ul.list {
     .all-tools-page {
       .inner {
         .top-banner {
+          min-height: 320px;
           &:before {
             content: none;
           }
@@ -6359,7 +6302,7 @@ ul.list {
         .advantage,
         .steps {
           &-title {
-            font-weight: 500;
+            font: 500 30px/1.3 @font;
           }
         }
       }

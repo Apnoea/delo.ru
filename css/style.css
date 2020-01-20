@@ -528,7 +528,15 @@ ul.list li:before {
   border-radius: 50%;
 }
 .wrapper main .inner .top-banner-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding-top: 15px;
+  padding-bottom: 45px;
 }
 .wrapper main .inner .top-banner-content-breadcrumbs {
   display: -webkit-box;
@@ -569,6 +577,16 @@ ul.list li:before {
   text-decoration: underline;
 }
 .wrapper main .inner .top-banner-content-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   max-width: 600px;
   margin-top: 25px;
 }
@@ -582,11 +600,11 @@ ul.list li:before {
 }
 .wrapper main .inner .top-banner-content-text-desc {
   margin-top: 15px;
+  margin-bottom: 30px;
   font: 300 18px/1.5 'Gilroy', sans-serif;
 }
 .wrapper main .inner .top-banner-content-text-open {
-  margin-top: 30px;
-  margin-bottom: 45px;
+  margin-top: auto;
 }
 .wrapper main .inner .top-banner-content-text-open a {
   position: relative;
@@ -868,126 +886,6 @@ ul.list li:before {
 }
 .wrapper main .inner .important-block-item.active .important-block-item-title:before {
   content: '-';
-}
-.wrapper main .inner .legal-assistance {
-  position: relative;
-  margin-top: 80px;
-  padding: 70px 60px 60px;
-  background: #fbfbf7;
-  border-radius: 20px;
-}
-.wrapper main .inner .legal-assistance:before {
-  content: '';
-  position: absolute;
-  right: 60px;
-  top: 85px;
-  width: 330px;
-  height: 265px;
-  background: url(../img/small_business/legal_assistance_img1.png) no-repeat;
-  background-size: contain;
-}
-.wrapper main .inner .legal-assistance-title {
-  font: 700 36px/1.3 'Gilroy', sans-serif;
-}
-.wrapper main .inner .legal-assistance-desc {
-  margin-top: 20px;
-  font: 300 18px/1.5 'Gilroy', sans-serif;
-}
-.wrapper main .inner .legal-assistance-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 60%;
-  margin-top: 35px;
-}
-.wrapper main .inner .legal-assistance-block-item-title {
-  font: 30px/1.3 'Gilroy', sans-serif;
-  color: #f65e64;
-}
-.wrapper main .inner .legal-assistance-block-item-desc {
-  margin-top: 20px;
-  font: 300 18px/1.5 'Gilroy', sans-serif;
-}
-.wrapper main .inner .legal-assistance-connect {
-  margin-top: 110px;
-}
-.wrapper main .inner .legal-assistance-connect-title {
-  font: 500 30px/1.3 'Gilroy', sans-serif;
-}
-.wrapper main .inner .legal-assistance-connect-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-top: 30px;
-}
-.wrapper main .inner .legal-assistance-connect-block-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 35%;
-}
-.wrapper main .inner .legal-assistance-connect-block-item:last-child {
-  width: 25%;
-}
-.wrapper main .inner .legal-assistance-connect-block-item-circle {
-  width: 58px;
-  height: 58px;
-  text-align: center;
-  font: 24px/58px 'Gilroy', sans-serif;
-  color: #fff;
-  background: #f65e64;
-  border-radius: 50%;
-}
-.wrapper main .inner .legal-assistance-connect-block-item-progress {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  height: 1px;
-  margin-top: 29px;
-  margin-left: 20px;
-  background: #f65e64;
-}
-.wrapper main .inner .legal-assistance-connect-block-item-desc {
-  width: 100%;
-  height: 100%;
-  margin-top: 20px;
-  font: 300 18px/1.5 'Gilroy', sans-serif;
-}
-.wrapper main .inner .legal-assistance-connect-block-item-desc a {
-  color: #f65e64;
-}
-.wrapper main .inner .legal-assistance-rules {
-  display: inline-block;
-  margin-top: 55px;
-  padding: 20px 30px;
-  background: #fff;
-  border-radius: 20px;
-}
-.wrapper main .inner .legal-assistance-rules a {
-  position: relative;
-  display: block;
-  padding-left: 50px;
-  font: 300 16px/1.5 'Gilroy', sans-serif;
-}
-.wrapper main .inner .legal-assistance-rules a:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 28px;
-  height: 32px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  background: url(../img/icon_list.svg) no-repeat;
-  background-size: contain;
 }
 .wrapper main .inner .payment-system {
   display: -webkit-box;
@@ -1521,13 +1419,13 @@ ul.list li:before {
   background: url(../img/icon_list.svg) no-repeat;
   background-size: contain;
 }
-.wrapper main .inner .usefull-services {
+.wrapper main .inner .services {
   margin-top: 80px;
 }
-.wrapper main .inner .usefull-services-title {
+.wrapper main .inner .services-title {
   font: 700 36px/1.3 'Gilroy', sans-serif;
 }
-.wrapper main .inner .usefull-services-block {
+.wrapper main .inner .services-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1538,7 +1436,7 @@ ul.list li:before {
       flex-wrap: wrap;
   margin-top: 30px;
 }
-.wrapper main .inner .usefull-services-block-item {
+.wrapper main .inner .services-block-item {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1557,10 +1455,10 @@ ul.list li:before {
   border-radius: 20px;
   overflow: hidden;
 }
-.wrapper main .inner .usefull-services-block-item:nth-child(-n +3) {
+.wrapper main .inner .services-block-item:nth-child(-n +3) {
   margin-top: 0;
 }
-.wrapper main .inner .usefull-services-block-item-badge {
+.wrapper main .inner .services-block-item-badge {
   position: absolute;
   right: 8%;
   top: 30px;
@@ -1569,7 +1467,7 @@ ul.list li:before {
   background: #acce23;
   border-radius: 35px;
 }
-.wrapper main .inner .usefull-services-block-item-content {
+.wrapper main .inner .services-block-item-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1579,19 +1477,19 @@ ul.list li:before {
           flex-direction: column;
   height: 100%;
 }
-.wrapper main .inner .usefull-services-block-item-content-title {
+.wrapper main .inner .services-block-item-content-title {
   margin-right: -20px;
   font: 700 24px/1 'Gilroy', sans-serif;
 }
-.wrapper main .inner .usefull-services-block-item-content-desc {
+.wrapper main .inner .services-block-item-content-desc {
   margin-top: 15px;
   margin-bottom: 20px;
   font: 300 16px/1.5 'Gilroy', sans-serif;
 }
-.wrapper main .inner .usefull-services-block-item-content-detail {
+.wrapper main .inner .services-block-item-content-detail {
   margin-top: auto;
 }
-.wrapper main .inner .usefull-services-block-item-content-detail a {
+.wrapper main .inner .services-block-item-content-detail a {
   position: relative;
   display: block;
   width: 150px;
@@ -1604,7 +1502,7 @@ ul.list li:before {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-.wrapper main .inner .usefull-services-block-item-content-detail a:before {
+.wrapper main .inner .services-block-item-content-detail a:before {
   content: '';
   position: absolute;
   left: 0;
@@ -1618,22 +1516,22 @@ ul.list li:before {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.wrapper main .inner .usefull-services-block-item-content-detail a:hover {
+.wrapper main .inner .services-block-item-content-detail a:hover {
   line-height: 40px;
   color: #fff;
   border: none;
 }
-.wrapper main .inner .usefull-services-block-item-content-detail a:hover:before {
+.wrapper main .inner .services-block-item-content-detail a:hover:before {
   opacity: 1;
 }
-.wrapper main .inner .usefull-services-block-item-content-detail a:hover span:before {
+.wrapper main .inner .services-block-item-content-detail a:hover span:before {
   border-color: #fff;
 }
-.wrapper main .inner .usefull-services-block-item-content-detail a span {
+.wrapper main .inner .services-block-item-content-detail a span {
   position: relative;
   padding-right: 12px;
 }
-.wrapper main .inner .usefull-services-block-item-content-detail a span:before {
+.wrapper main .inner .services-block-item-content-detail a span:before {
   content: '';
   position: absolute;
   right: 0;
@@ -1647,12 +1545,12 @@ ul.list li:before {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.wrapper main .inner .usefull-services-block-item-image {
+.wrapper main .inner .services-block-item-image {
   width: 35%;
   height: 190px;
   text-align: center;
 }
-.wrapper main .inner .usefull-services-block-item-image img {
+.wrapper main .inner .services-block-item-image img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -6153,6 +6051,9 @@ ul.list li:before {
 .wrapper main .tariffs-page .inner .steps-block-item-desc {
   margin-top: 5px;
 }
+.wrapper main .start-business-page .inner .top-banner {
+  min-height: 320px;
+}
 .wrapper main .start-business-page .inner .top-banner:before {
   content: none;
 }
@@ -6201,6 +6102,14 @@ ul.list li:before {
   padding: 55px 70px 60px;
   background: #fbfbfb;
   border-radius: 20px;
+}
+.wrapper main .start-business-page .inner .services-block-item:last-child {
+  width: 100%;
+  min-height: 200px;
+  padding: 40px 50px 30px 70px;
+}
+.wrapper main .start-business-page .inner .services-block-item:last-child .services-block-item-image {
+  width: 468px;
 }
 .wrapper main .start-business-page .inner .docs {
   margin-top: 80px;
@@ -6415,17 +6324,19 @@ ul.list li:before {
 .wrapper main .start-business-page .inner .docs-download-button a:hover:before {
   opacity: 1;
 }
-.wrapper main .start-business-page .usefull-services-block-item:last-child {
-  width: 100%;
-  min-height: 200px;
-  padding: 40px 50px 30px 70px;
-}
-.wrapper main .start-business-page .usefull-services-block-item:last-child .usefull-services-block-item-image {
-  width: 468px;
+.wrapper main .internet-business-page .inner .top-banner {
+  min-height: 320px;
 }
 .wrapper main .internet-business-page .inner .top-banner-image {
   width: 325px;
   margin-top: -30px;
+}
+.wrapper main .internet-business-page .inner .advantage-title,
+.wrapper main .internet-business-page .inner .steps-title {
+  font: 500 30px/1.3 'Gilroy', sans-serif;
+}
+.wrapper main .small-business-page .inner .top-banner {
+  min-height: 320px;
 }
 .wrapper main .small-business-page .inner .top-banner:before {
   top: unset;
@@ -6445,20 +6356,63 @@ ul.list li:before {
   width: 99px;
   margin-top: -20px;
 }
+.wrapper main .freelancer-page .inner .top-banner {
+  min-height: 320px;
+}
 .wrapper main .freelancer-page .inner .top-banner:before {
-  right: 51%;
+  content: none;
 }
 .wrapper main .freelancer-page .inner .top-banner:after {
-  width: 144px;
-  top: 62px;
-  background: url(../img/freelancer/icon_bubble.svg) no-repeat;
-  background-size: contain;
-  border-radius: 0;
+  right: 35%;
+  top: 70px;
+  width: 55px;
+  height: 55px;
+}
+.wrapper main .freelancer-page .inner .top-banner-wave {
+  position: absolute;
+  right: 35%;
+  top: 60px;
+  width: 108px;
+  height: 57px;
+  margin-right: 45px;
+  overflow: hidden;
+}
+.wrapper main .freelancer-page .inner .top-banner-wave:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 200%;
+  height: 25px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: url(../img/icon_wave.svg);
+  -webkit-animation: wave 5s linear infinite;
+          animation: wave 5s linear infinite;
+}
+.wrapper main .freelancer-page .inner .top-banner-wave:after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 57px;
+  height: 57px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: linear-gradient(285.35deg, #fd9b5c 6.22%, #eb5760 69.31%);
+  border-radius: 50%;
 }
 .wrapper main .freelancer-page .inner .top-banner-image {
-  margin-top: -20px;
-  width: 310px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 370px;
   border-radius: 0 0 20px 0;
+}
+.wrapper main .freelancer-page .inner .advantage-title,
+.wrapper main .freelancer-page .inner .steps-title {
+  font: 500 30px/1.3 'Gilroy', sans-serif;
+}
+.wrapper main .all-tools-page .inner .top-banner {
+  min-height: 320px;
 }
 .wrapper main .all-tools-page .inner .top-banner:before {
   content: none;
@@ -6777,7 +6731,7 @@ ul.list li:before {
 }
 .wrapper main .all-tools-page .inner .advantage-title,
 .wrapper main .all-tools-page .inner .steps-title {
-  font-weight: 500;
+  font: 500 30px/1.3 'Gilroy', sans-serif;
 }
 .wrapper footer .inner {
   display: -webkit-box;

@@ -4545,24 +4545,23 @@ ul.list li:before {
 }
 .wrapper main .delokassa-page .inner .top-banner:before {
   right: 33%;
-  top: unset;
-  bottom: 40px;
+  top: 150px;
   width: 30px;
   height: 30px;
 }
 .wrapper main .delokassa-page .inner .top-banner:after {
   right: 34%;
   top: 30px;
-  width: 155px;
+  width: 55px;
   height: 55px;
-  background: url(../img/cashdesk/icon_bubble.svg) no-repeat;
-  background-size: contain;
-  border-radius: 0;
+}
+.wrapper main .delokassa-page .inner .top-banner-content-text-desc {
+  max-width: 450px;
 }
 .wrapper main .delokassa-page .inner .top-banner-image {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  width: 280px;
+  width: 320px;
 }
 .wrapper main .delokassa-page .inner .worries {
   margin-top: 80px;
@@ -6152,6 +6151,13 @@ ul.list li:before {
 }
 .wrapper main .tariffs-page .inner .steps-block-item-desc {
   margin-top: 5px;
+}
+.wrapper main .partner-program-page .inner .top-banner:before,
+.wrapper main .partner-program-page .inner .top-banner:after {
+  content: none;
+}
+.wrapper main .partner-program-page .inner .top-banner-image {
+  width: 388px;
 }
 .wrapper main .start-business-page .inner .top-banner:before {
   content: none;

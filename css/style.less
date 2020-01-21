@@ -4203,23 +4203,26 @@ ul.list {
         .top-banner {
           &:before {
             right: 33%;
-            top: unset;
-            bottom: 40px;
+            top: 150px;
             width: 30px;
             height: 30px;
           }
           &:after {
             right: 34%;
             top: 30px;
-            width: 155px;
+            width: 55px;
             height: 55px;
-            background: url(../img/cashdesk/icon_bubble.svg) no-repeat;
-            background-size: contain;
-            border-radius: 0;
+          }
+          &-content {
+            &-text {
+              &-desc {
+                max-width: 450px;
+              }
+            }
           }
           &-image {
             align-self: flex-end;
-            width: 280px;
+            width: 320px;
           }
         }
         .worries {
@@ -5735,6 +5738,19 @@ ul.list {
                 margin-top: 5px;
               }
             }
+          }
+        }
+      }
+    }
+    .partner-program-page {
+      .inner {
+        .top-banner {
+          &:before,
+          &:after {
+            content: none;
+          }
+          &-image {
+            width: 388px;
           }
         }
       }

@@ -4761,20 +4761,16 @@ ul.list {
           &:after {
             content: none;
           }
-          &-image {
-            width: 435px;
-            margin-top: -15px;
-          }
-        }
-        .advantage {
-          &-block {
-            &-item {
-              &:first-child {
-                .advantage-block-item-image {
-                  align-items: flex-end;
-                }
+          &-content {
+            &-text {
+              &-desc {
+                max-width: 350px;
               }
             }
+          }
+          &-image {
+            width: 435px;
+            align-self: center;
           }
         }
         .steps {
@@ -4786,9 +4782,10 @@ ul.list {
         }
         .control {
           display: flex;
+          justify-content: space-between;
           margin-top: 80px;
-          padding: 70px 60px 60px;
-          background: #fff7f7;
+          padding: 70px 100px 60px 60px;
+          background: @gray;
           border-radius: 20px;
           &-content {
             &-title {

@@ -5141,14 +5141,13 @@ ul.list li:before {
 .wrapper main .salary-page .inner .top-banner:after {
   content: none;
 }
+.wrapper main .salary-page .inner .top-banner-content-text-desc {
+  max-width: 350px;
+}
 .wrapper main .salary-page .inner .top-banner-image {
   width: 435px;
-  margin-top: -15px;
-}
-.wrapper main .salary-page .inner .advantage-block-item:first-child .advantage-block-item-image {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 .wrapper main .salary-page .inner .steps-block-item {
   width: 32%;
@@ -5157,9 +5156,12 @@ ul.list li:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 80px;
-  padding: 70px 60px 60px;
-  background: #fff7f7;
+  padding: 70px 100px 60px 60px;
+  background: #fbfbfb;
   border-radius: 20px;
 }
 .wrapper main .salary-page .inner .control-content-title {

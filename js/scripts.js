@@ -217,66 +217,175 @@ function style() {
   }
 
   if ($('.journal-page').length > 0) { // journal_page scripts
-	function setLocation(curLoc){
-		try {
-		  history.pushState(null, null, curLoc);
-		  return;
-		} catch(e) {}
-		location.hash = '#' + curLoc;
-	}
+    function setLocation(curLoc) {
+      try {
+        history.pushState(null, null, curLoc);
+        return;
+      } catch (e) { }
+      location.hash = '#' + curLoc;
+    }
     function journal_filter() {
       $('.articles-filter-item').on('click', function () {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
-		var cat_name = $( this ).attr('category');
-//setLocation(cat_name);
-			$.ajax({
-				type: "POST",
-				url:"/local/templates/main/include/pages/journal/ajax/journal_list/index.php",
-				data:({
-					"FILTER" : cat_name
-				}),
-				success: function(result){
-					$(".cat_block").html(result);
-				}
-			});
+        var cat_name = $(this).attr('category');
+        //setLocation(cat_name);
+        $.ajax({
+          type: "POST",
+          url: "/local/templates/main/include/pages/journal/ajax/journal_list/index.php",
+          data: ({
+            "FILTER": cat_name
+          }),
+          success: function (result) {
+            $(".cat_block").html(result);
+          }
+        });
 
       })
     }
     journal_filter();
   }
 
-  /*bonuses-page*/
   if ($('.bonuses-page').length > 0) { // bonuses_page scripts
-  function setLocation_bonuses(curLoc){
-    try {
-      history.pushState(null, null, curLoc);
-      return;
-    } catch(e) {}
-    location.hash = '#' + curLoc;
-  }
+    function setLocation_bonuses(curLoc) {
+      try {
+        history.pushState(null, null, curLoc);
+        return;
+      } catch (e) { }
+      location.hash = '#' + curLoc;
+    }
     function bonuses_filter() {
       $('.bonuses-filter-item').on('click', function () {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
-    var cat_name = $( this ).attr('category');
-//setLocation_bonuses(cat_name);
-      $.ajax({
-        type: "POST",
-        url:"/local/templates/main/include/pages/bonuses/ajax/bonuses_list/index.php",
-        data:({
-          "FILTER" : cat_name
-        }),
-        success: function(result){
-          $(".cat_block").html(result);
-        }
-      });
+        var cat_name = $(this).attr('category');
+        //setLocation_bonuses(cat_name);
+        $.ajax({
+          type: "POST",
+          url: "/local/templates/main/include/pages/bonuses/ajax/bonuses_list/index.php",
+          data: ({
+            "FILTER": cat_name
+          }),
+          success: function (result) {
+            $(".cat_block").html(result);
+          }
+        });
 
       })
     }
     bonuses_filter();
   }
-  /**/
+
+  if ($('.partner-program-page').length > 0) { // partner_program_page scripts
+    // вид карта/список
+    $('.atms-address-btns-item').on('click', function () {
+      $('.atms-address-btns-item').removeClass('active');
+      $(this).addClass('active');
+      $('.atms-address-content-box').removeClass('active').eq($(this).index()).addClass('active');
+      $('.atms-address-map-baloon').removeClass('active');
+    });
+
+    //карта
+    ymaps.ready(init);
+    function init() {
+      var myMap = new ymaps.Map('atms_map', {
+        center: [55.76, 37.64],
+        zoom: 10,
+        controls: ['zoomControl', 'fullscreenControl']
+      }),
+        objectManager = new ymaps.ObjectManager({
+          clusterize: true,
+          gridSize: 100,
+          clusterDisableClickZoom: false
+        }),
+        myClaster = new ymaps.Clusterer({
+          clusterIconLayout: ymaps.templateLayoutFactory.createClass('<div class="map_clust_d"></div>')
+        });
+
+      myMap.behaviors.disable('scrollZoom');
+      objectManager.objects.options.set('preset', 'islands#redCircleIcon');
+      myClaster.options.set('preset', 'islands#redClusterIcons');
+      myMap.geoObjects.add(objectManager);
+
+      $.ajax({
+        url: "data.json"
+      }).done(function (data) {
+        objectManager.add(data);
+        objectManager.setFilter('properties.type == "Банкомат"');
+      });
+
+      if ($(window).width() < 767) {
+        var mapSlider = new Swiper('.atms-address-map-baloon', {
+          direction: 'vertical',
+          allowSlideNext: false,
+          grabCursor: true,
+          initialSlide: 1,
+          on: {
+            slideChange: function () {
+              $('.atms-address-map-baloon').removeClass('active');
+            }
+          }
+        });
+
+        objectManager.objects.events.add('click', function () {
+          mapSlider.allowSlideNext = true;
+          mapSlider.slideTo(1);
+          mapSlider.allowSlideNext = false;
+        });
+      }
+
+      objectManager.objects.events.add('click', function (e) {
+        $('.atms-address-map-baloon').addClass('active');
+        var objectId = e.get('objectId');
+        var objectType = objectManager.objects.getById(e.get("objectId")).properties.type;
+        var objectName = objectManager.objects.getById(e.get("objectId")).properties.name;
+        var objectAddress = objectManager.objects.getById(e.get("objectId")).properties.address;
+        var objectTime = objectManager.objects.getById(e.get("objectId")).properties.time;
+        $('#atms_baloon_type').html(objectType);
+        $('#atms_baloon_name').html(objectName);
+        $('#atms_baloon_addr').html(objectAddress);
+        $('#atms_baloon_time').html(objectTime);
+      });
+
+      $('.atms-address-map-baloon-btn').on('click', function () {
+        $('.atms-address-map-baloon').removeClass('active');
+      });
+    }
+
+    // поиск адреса
+    var availableTags = [
+      'Адрес1',
+      'Адрес2',
+      'Адрес3',
+      'Адрес4',
+      'Адрес5',
+      'Адрес6',
+    ];
+
+    $('input[name="atms_city"]').each(function () {
+      var curr = $(this),
+        addressContainer = $(this).closest('.atms-option-sity');
+
+      curr.autocomplete({
+        source: availableTags,
+        appendTo: addressContainer
+      })
+    });
+
+    $('input[name="atms_city"]').on('keyup', function () {
+      $('.atms-option-sity-clear').addClass('active');
+
+      if ($(this).prop("value").length == 0) {
+        $('.atms-option-sity-clear').removeClass('active');
+      }
+    });
+
+    $(document).on('click', '.atms-option-sity-clear', function () {
+      $(this).siblings('#atms_city').val('');
+      $(this).removeClass('active');
+    });
+
+  }
 
   if ($('.start-business-page').length > 0) { // start_business_page scripts
     $('.docs-block-title-item').on('click', function () {
@@ -305,11 +414,11 @@ function style() {
       $(this).parents().siblings('.info-titles-item').find('.info-titles-item-name.active').removeClass('active');
       $(this).addClass('active');
       $(this).parents().siblings('.info-content').find('.info-content-item.active').removeClass('active');
-      $("#"+list_index).addClass('active');
+      $("#" + list_index).addClass('active');
     })
   }
 
-  if ($('.deposit-page').length > 0) { // help_page scripts
+  if ($('.deposit-page').length > 0) { // deposit_page scripts
     $(function () {
       $("#deposit_sum").slider({
         range: "min",
@@ -338,68 +447,48 @@ function style() {
   }
 }
 
-/*$(document).on("click",".docs-download .docs-download-button a",function(e) {
-      e.preventDefault();
+$(document).ready(function () {
+  $(document).on('click', '.articles-more', function () {
+    var targetContainer2 = $('.cat_block');
+    var cat_name = $('.articles-filter-item.active').attr('category');
+    var targetContainer = $('.articles-block'), //  Контейнер, в котором хранятся элементы
+      url = '?' + $('.articles-more').attr('data-url') + "&cat_name=" + cat_name; //  URL, из которого будем брать элементы
+    if (url !== undefined) {
       $.ajax({
-        url: "/local/templates/main/ajax/Download_File_Account.php",
-        type: "POST",
-        success: function(data){*/
-/*$(".docs-download .docs-download-button a").html(data);*/
-/*window.location.href=data;*/
-/* }
-});
-});*/
-
-$(document).ready(function(){
-    $(document).on('click', '.articles-more', function(){
-    	var targetContainer2 = $('.cat_block');
-		var cat_name = $( '.articles-filter-item.active' ).attr('category');
-        var targetContainer = $('.articles-block'),          //  Контейнер, в котором хранятся элементы
-
-            url =  '?'+$('.articles-more').attr('data-url')+"&cat_name="+cat_name;    //  URL, из которого будем брать элементы
-
-        if (url !== undefined) {
-            $.ajax({
-                type: 'GET',
-                url: url,
-                dataType: 'html',
-                success: function(data){
-                    //  Удаляем старую навигацию
-                    $('.articles-more').remove();
-                    var elements = $(data).find('.articles-block-item'),  //  Ищем элементы
-                        pagination = $(data).find('.articles-more');//  Ищем навигацию
-
-                    targetContainer.append(elements);   //  Добавляем посты в конец контейнера
-                    targetContainer2.append(pagination); //  добавляем навигацию следом
-                }
-            })
+        type: 'GET',
+        url: url,
+        dataType: 'html',
+        success: function (data) {  //  Удаляем старую навигацию
+          $('.articles-more').remove();
+          var elements = $(data).find('.articles-block-item'),  //  Ищем элементы
+            pagination = $(data).find('.articles-more');  //  Ищем навигацию
+          targetContainer.append(elements); //  Добавляем посты в конец контейнера
+          targetContainer2.append(pagination);  //  добавляем навигацию следом
         }
-    });
+      })
+    }
+  });
 });
 
-$(document).ready(function(){
-    $(document).on('click', '.bonuses-more', function(){
-        var targetContainer2 = $('.cat_block');
-        var cat_name = $( '.bonuses-filter-item.active' ).attr('category');
-        var targetContainer = $('.bonuses-block'),          //  Контейнер, в котором хранятся элементы
-
-            url =  '?'+$('.bonuses-more').attr('data-url')+"&cat_name="+cat_name;    //  URL, из которого будем брать элементы
-
-        if (url !== undefined) {
-            $.ajax({
-                type: 'GET',
-                url: url,
-                dataType: 'html',
-                success: function(data){
-                    //  Удаляем старую навигацию
-                    $('.bonuses-more').remove();
-                    var elements = $(data).find('.bonuses-block-item'),  //  Ищем элементы
-                        pagination = $(data).find('.bonuses-more');//  Ищем навигацию
-
-                    targetContainer.append(elements);   //  Добавляем посты в конец контейнера
-                    targetContainer2.append(pagination); //  добавляем навигацию следом
-                }
-            })
+$(document).ready(function () {
+  $(document).on('click', '.bonuses-more', function () {
+    var targetContainer2 = $('.cat_block');
+    var cat_name = $('.bonuses-filter-item.active').attr('category');
+    var targetContainer = $('.bonuses-block'),  //  Контейнер, в котором хранятся элементы
+      url = '?' + $('.bonuses-more').attr('data-url') + "&cat_name=" + cat_name;  //  URL, из которого будем брать элементы
+    if (url !== undefined) {
+      $.ajax({
+        type: 'GET',
+        url: url,
+        dataType: 'html',
+        success: function (data) {  //  Удаляем старую навигацию
+          $('.bonuses-more').remove();
+          var elements = $(data).find('.bonuses-block-item'), //  Ищем элементы
+            pagination = $(data).find('.bonuses-more'); //  Ищем навигацию
+          targetContainer.append(elements); //  Добавляем посты в конец контейнера
+          targetContainer2.append(pagination);  //  добавляем навигацию следом
         }
-    });
+      })
+    }
+  });
 });

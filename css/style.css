@@ -4348,37 +4348,6 @@ ul.list li:before {
   width: 55px;
   height: 55px;
 }
-.wrapper main .policy-page .inner .top-banner {
-  min-height: 225px;
-}
-.wrapper main .policy-page .inner .top-banner:before {
-  right: 37%;
-  top: unset;
-  bottom: -15px;
-  width: 30px;
-  height: 30px;
-}
-.wrapper main .policy-page .inner .top-banner:after {
-  right: 9%;
-  top: -25px;
-  width: 55px;
-  height: 55px;
-}
-.wrapper main .policy-page .inner .top-banner-content-text {
-  max-width: 750px;
-}
-.wrapper main .policy-page .inner .text {
-  max-width: 900px;
-  margin-top: 75px;
-}
-.wrapper main .policy-page .inner .text span {
-  display: block;
-  margin-top: 35px;
-  font: 300 22px/1.5 'Gilroy', sans-serif;
-}
-.wrapper main .policy-page .inner .text span:first-child {
-  margin-top: 0;
-}
 .wrapper main .safety-page .inner .top-banner {
   min-height: 225px;
 }
@@ -4437,6 +4406,12 @@ ul.list li:before {
 }
 .wrapper main .safety-page .inner .recommendation-block-list-item span {
   color: #ccc;
+}
+.wrapper main .safety-page .inner .request-desc {
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+  font: 300 18px/1.5 'Gilroy', sans-serif;
 }
 .wrapper main .help-page .inner .top-banner {
   min-height: 225px;

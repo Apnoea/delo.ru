@@ -6404,6 +6404,113 @@ ul.list {
         }
       }
     }
+    .corporate-card-page {
+      .inner {
+        .top-banner {
+          &:before {
+            top: -12px;
+            width: 37px;
+            height: 37px;
+          }
+          &:after {
+            content: none;
+          }
+          &-content {
+            &-text {
+              &-desc {
+                max-width: 300px;
+              }
+            }
+          }
+          &-image {
+            align-self: center;
+            width: 400px;
+          }
+        }
+        .profit-spend {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 80px;
+          padding: 45px 60px 0 50px;
+          background: @gray;
+          border-radius: 20px;
+          &-badge {
+            position: absolute;
+            right: 20px;
+            top: 30px;
+            padding: 0 17px;
+            font: 300 16px/1.5 @font;
+            background: #acce23;
+            border-radius: 35px;
+          }
+          &-content {
+            max-width: 560px;
+            margin-top: 10px;
+            &-title {
+              font: 700 36px/1.3 @font;
+            }
+            &-list {
+              margin-top: 30px;
+              margin-bottom: 0;
+              counter-reset: list;
+              li {
+                position: relative;
+                margin-top: 30px;
+                padding-left: 20px;
+                font: 300 18px/1.5 @font;
+                &:before {
+                  content: counter(list) '. ';
+                  counter-increment: list;
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  color: @pink;
+                }
+                &:first-child {
+                  margin-top: 0;
+                }
+              }
+            }
+            &-desc {
+              position: relative;
+              margin-top: 50px;
+              padding-left: 75px;
+              font: 300 14px/1.3 @font;
+              color: #808080;
+              &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 60px;
+                height: 38px;
+              }
+              a {
+                color: @pink;
+                text-decoration: underline;
+                &:hover {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          &-image {
+            max-width: 400px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .steps {
+          &-block {
+            &-item {
+              width: 32%;
+            }
+          }
+        }
+      }
+    }
 
     // Marketplace
     .start-business-page {

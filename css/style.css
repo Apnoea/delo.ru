@@ -202,6 +202,9 @@ ul.list li:before {
 .wrapper header .inner .header-nav-item a {
   font: 300 18px/22px 'Gilroy', sans-serif;
 }
+.wrapper header .inner .header-nav-item a.selected {
+  color: #f65e64;
+}
 .wrapper header .inner .header-lk {
   margin-left: auto;
 }
@@ -509,7 +512,6 @@ ul.list li:before {
   border-radius: 20px;
 }
 .wrapper main .inner .top-banner:before {
-  content: '';
   position: absolute;
   right: 40%;
   top: -14px;
@@ -519,7 +521,6 @@ ul.list li:before {
   border-radius: 50%;
 }
 .wrapper main .inner .top-banner:after {
-  content: '';
   position: absolute;
   width: 60px;
   height: 60px;
@@ -2928,9 +2929,6 @@ ul.list li:before {
   width: 74px;
   height: 74px;
 }
-.wrapper main .actions-page .inner .top-banner:after {
-  content: none;
-}
 .wrapper main .actions-page .inner .top-banner-wave {
   display: block;
 }
@@ -3078,6 +3076,7 @@ ul.list li:before {
   border-radius: 35px;
 }
 .wrapper main .bonuses-page .inner .top-banner:after {
+  content: '';
   width: 88px;
   height: 88px;
   right: 2%;
@@ -3323,6 +3322,7 @@ ul.list li:before {
   border-radius: 35px;
 }
 .wrapper main .bonuses-page-detail .inner .top-banner:after {
+  content: '';
   width: 88px;
   height: 88px;
   right: 5%;
@@ -3651,6 +3651,7 @@ ul.list li:before {
   border-radius: 0;
 }
 .wrapper main .journal-page .inner .top-banner:after {
+  content: '';
   top: auto;
   bottom: 60px;
   width: 36px;
@@ -3856,13 +3857,11 @@ ul.list li:before {
   height: 225px;
 }
 .wrapper main .about-page .inner .top-banner:before {
+  content: '';
   right: 31%;
   top: 65px;
   width: 39px;
   height: 39px;
-}
-.wrapper main .about-page .inner .top-banner:after {
-  content: none;
 }
 .wrapper main .about-page .inner .top-banner-wave {
   display: block;
@@ -4334,6 +4333,7 @@ ul.list li:before {
   height: 225px;
 }
 .wrapper main .departments-page .inner .top-banner:before {
+  content: '';
   right: 37%;
   top: auto;
   bottom: -15px;
@@ -4341,6 +4341,7 @@ ul.list li:before {
   height: 30px;
 }
 .wrapper main .departments-page .inner .top-banner:after {
+  content: '';
   right: 9%;
   top: -22px;
   width: 55px;
@@ -4350,6 +4351,7 @@ ul.list li:before {
   height: 225px;
 }
 .wrapper main .safety-page .inner .top-banner:before {
+  content: '';
   right: 37%;
   top: auto;
   bottom: -15px;
@@ -4357,6 +4359,7 @@ ul.list li:before {
   height: 30px;
 }
 .wrapper main .safety-page .inner .top-banner:after {
+  content: '';
   right: 9%;
   top: -25px;
   width: 55px;
@@ -4501,12 +4504,14 @@ ul.list li:before {
   text-decoration: none;
 }
 .wrapper main .delokassa-page .inner .top-banner:before {
+  content: '';
   right: 34%;
   top: 150px;
   width: 30px;
   height: 30px;
 }
 .wrapper main .delokassa-page .inner .top-banner:after {
+  content: '';
   right: 42%;
   top: 30px;
   width: 55px;
@@ -4969,18 +4974,17 @@ ul.list li:before {
   background: #fbfbfb;
   border-radius: 20px;
 }
-.wrapper main .deposit-page .inner .top-banner:before {
-  content: none;
-}
 .wrapper main .deposit-page .inner .top-banner:after {
+  content: '';
   right: 38%;
   top: 65px;
   width: 51px;
   height: 51px;
 }
 .wrapper main .deposit-page .inner .top-banner-wave {
-  right: 43%;
-  top: 50px;
+  display: block;
+  right: 40%;
+  top: 83px;
   width: 108px;
   height: 13px;
 }
@@ -5133,28 +5137,31 @@ ul.list li:before {
   width: 32%;
 }
 .wrapper main .overdraft-page .inner .top-banner:before {
-  right: 40%;
-  top: 20px;
-  width: 55px;
-  height: 55px;
-}
-.wrapper main .overdraft-page .inner .top-banner:after {
-  right: 33%;
+  content: '';
+  right: 45%;
   top: auto;
-  bottom: -5px;
+  bottom: 85px;
   width: 30px;
   height: 30px;
 }
+.wrapper main .overdraft-page .inner .top-banner:after {
+  content: '';
+  right: 35%;
+  top: 40px;
+  width: 55px;
+  height: 55px;
+}
 .wrapper main .overdraft-page .inner .top-banner-wave {
   display: block;
-  right: 43%;
-  top: 50px;
+  right: 38%;
+  top: 57px;
   width: 108px;
-  height: 13px;
+  height: 26px;
 }
 .wrapper main .overdraft-page .inner .top-banner-image {
-  width: 246px;
-  margin: 20px 0;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 305px;
 }
 .wrapper main .overdraft-page .inner .name {
   margin-top: 80px;
@@ -5226,10 +5233,6 @@ ul.list li:before {
   background: url(../img/icon_list.svg) no-repeat;
   background-size: contain;
 }
-.wrapper main .salary-page .inner .top-banner:before,
-.wrapper main .salary-page .inner .top-banner:after {
-  content: none;
-}
 .wrapper main .salary-page .inner .top-banner-content-text-desc {
   max-width: 350px;
 }
@@ -5291,11 +5294,13 @@ ul.list li:before {
   margin-bottom: -60px;
 }
 .wrapper main .acquiring-page .inner .top-banner:before {
+  content: '';
   right: 43%;
   width: 38px;
   height: 38px;
 }
 .wrapper main .acquiring-page .inner .top-banner:after {
+  content: '';
   right: 35%;
   top: 108px;
   width: 56px;
@@ -5515,6 +5520,7 @@ ul.list li:before {
   transition: 0.3s;
 }
 .wrapper main .acquiring-detail-page.trade-acquiring .inner .top-banner:after {
+  content: '';
   right: 27%;
   top: 30px;
   width: 57px;
@@ -5531,6 +5537,7 @@ ul.list li:before {
   width: 200px;
 }
 .wrapper main .acquiring-detail-page.internet-acquiring .inner .top-banner:after {
+  content: '';
   right: 35%;
   top: auto;
   bottom: 40px;
@@ -5547,9 +5554,6 @@ ul.list li:before {
 }
 .wrapper main .acquiring-detail-page.internet-acquiring .inner .top-banner-image {
   width: 330px;
-}
-.wrapper main .acquiring-detail-page .inner .top-banner:before {
-  content: none;
 }
 .wrapper main .acquiring-detail-page .inner .top-banner-image {
   -ms-flex-item-align: center;
@@ -5675,10 +5679,12 @@ ul.list li:before {
   height: 225px;
 }
 .wrapper main .requisite-page .inner .top-banner:before {
+  content: '';
   top: auto;
   bottom: -15px;
 }
 .wrapper main .requisite-page .inner .top-banner:after {
+  content: '';
   right: 7%;
   top: -25px;
   bottom: auto;
@@ -6042,10 +6048,8 @@ ul.list li:before {
 .wrapper main .remote-service-page .inner .top-banner {
   height: 225px;
 }
-.wrapper main .remote-service-page .inner .top-banner:before {
-  content: none;
-}
 .wrapper main .remote-service-page .inner .top-banner:after {
+  content: '';
   right: 35%;
   top: 55px;
   width: 56px;
@@ -6067,7 +6071,7 @@ ul.list li:before {
 .wrapper main .remote-service-page .inner .top-banner-image {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  width: 380px;
+  width: 325px;
 }
 .wrapper main .remote-service-page .inner .features-title {
   margin-top: 60px;
@@ -6161,12 +6165,14 @@ ul.list li:before {
   background: #f65e64;
   border-radius: 50%;
 }
+.wrapper main .remote-service-page .inner .content-block-image {
+  max-width: 600px;
+}
+.wrapper main .remote-service-page .inner .content-block-image img {
+  width: 100%;
+}
 .wrapper main .tariffs-page .inner .top-banner {
   height: 225px;
-}
-.wrapper main .tariffs-page .inner .top-banner:before,
-.wrapper main .tariffs-page .inner .top-banner:after {
-  content: none;
 }
 .wrapper main .tariffs-page .inner .top-banner-content-text {
   max-width: 300px;
@@ -6188,10 +6194,6 @@ ul.list li:before {
 }
 .wrapper main .tariffs-page .inner .steps-block-item-desc {
   margin-top: 5px;
-}
-.wrapper main .partner-program-page .inner .top-banner:before,
-.wrapper main .partner-program-page .inner .top-banner:after {
-  content: none;
 }
 .wrapper main .partner-program-page .inner .top-banner-content-text-buttons {
   display: -webkit-box;
@@ -6811,9 +6813,8 @@ ul.list li:before {
 .wrapper main .partner-program-page .inner .atms-address-list-table .tr-descr .td:nth-child(2) {
   width: 230px;
 }
-.wrapper main .debit-card-page .inner .top-banner:before,
-.wrapper main .debit-card-page .inner .top-banner:after {
-  content: none;
+.wrapper main .debit-card-page .inner .top-banner-content-text-desc {
+  max-width: 450px;
 }
 .wrapper main .debit-card-page .inner .top-banner-image {
   width: 450px;
@@ -6846,12 +6847,10 @@ ul.list li:before {
   margin-right: 0;
 }
 .wrapper main .corporate-card-page .inner .top-banner:before {
+  content: '';
   top: -12px;
   width: 37px;
   height: 37px;
-}
-.wrapper main .corporate-card-page .inner .top-banner:after {
-  content: none;
 }
 .wrapper main .corporate-card-page .inner .top-banner-content-text-desc {
   max-width: 300px;
@@ -6944,12 +6943,14 @@ ul.list li:before {
   width: 32%;
 }
 .wrapper main .legal-assistance-page .inner .top-banner:before {
+  content: '';
   right: 36%;
   top: 35px;
   width: 32px;
   height: 32px;
 }
 .wrapper main .legal-assistance-page .inner .top-banner:after {
+  content: '';
   top: auto;
   bottom: 53px;
   width: 51px;
@@ -6976,12 +6977,14 @@ ul.list li:before {
   width: 32%;
 }
 .wrapper main .payment-page .inner .top-banner:before {
+  content: '';
   right: 36%;
   top: 35px;
   width: 32px;
   height: 32px;
 }
 .wrapper main .payment-page .inner .top-banner:after {
+  content: '';
   top: auto;
   bottom: 53px;
   width: 51px;
@@ -7046,10 +7049,8 @@ ul.list li:before {
 .wrapper main .payment-page .inner .steps.connect .steps-block-item {
   width: 32%;
 }
-.wrapper main .ruble-deposit-page .inner .top-banner:before {
-  content: none;
-}
 .wrapper main .ruble-deposit-page .inner .top-banner:after {
+  content: '';
   top: 42px;
   width: 52px;
   height: 52px;
@@ -7070,6 +7071,206 @@ ul.list li:before {
 }
 .wrapper main .ruble-deposit-page .inner .features-block {
   margin-top: 35px;
+}
+.wrapper main .cloud-accounting-page .inner .top-banner-content-text-desc {
+  max-width: 550px;
+}
+.wrapper main .cloud-accounting-page .inner .top-banner-image {
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 380px;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info {
+  margin-top: 80px;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-title {
+  font: 700 36px/1.3 'Gilroy', sans-serif;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-desc {
+  max-width: 750px;
+  margin-top: 20px;
+  font: 300 18px/1.5 'Gilroy', sans-serif;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+  padding: 40px 45px 50px;
+  background: #fbfbfb;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item {
+  width: calc((100% - 40px)/3);
+  padding: 30px 35px 50px;
+  background: #fff;
+  border: 1px solid #e6e8e0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-title {
+  font: 500 24px/1.3 'Gilroy', sans-serif;
+  color: #f65e64;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-value {
+  position: relative;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  font: 700 22px/1 'Gilroy', sans-serif;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-value:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 150%;
+  height: 1px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #e6e8e0;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-point {
+  margin-top: 30px;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-point:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-point:last-child .tariffs-info-block-item-point-name {
+  max-width: 150px;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-point:last-child .tariffs-info-block-item-point-badge {
+  position: relative;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-point:last-child .tariffs-info-block-item-point-badge:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-point:last-child .tariffs-info-block-item-point-badge.ok {
+  padding-left: 38px;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-point:last-child .tariffs-info-block-item-point-badge.ok:before {
+  background: url(../img/icon_okay.svg) no-repeat;
+  background-size: contain;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-point:last-child .tariffs-info-block-item-point-badge.deny {
+  padding-left: 38px;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-point:last-child .tariffs-info-block-item-point-badge.deny:before {
+  background: url(../img/icon_deny.svg) no-repeat;
+  background-size: contain;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-point-name {
+  font: 300 16px/1.3 'Gilroy', sans-serif;
+}
+.wrapper main .cloud-accounting-page .inner .tariffs-info-block-item-point-desc {
+  margin-top: 3px;
+  font: 700 18px/1.3 'Gilroy', sans-serif;
+}
+.wrapper main .cloud-accounting-page .inner .receive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 80px;
+}
+.wrapper main .cloud-accounting-page .inner .receive-content {
+  max-width: 600px;
+}
+.wrapper main .cloud-accounting-page .inner .receive-content-title {
+  margin-right: -30%;
+  font: 700 36px/1.3 'Gilroy', sans-serif;
+}
+.wrapper main .cloud-accounting-page .inner .receive-content-list {
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+.wrapper main .cloud-accounting-page .inner .receive-content-list li {
+  position: relative;
+  margin-top: 10px;
+  padding-left: 20px;
+  font: 300 18px/1.5 'Gilroy', sans-serif;
+}
+.wrapper main .cloud-accounting-page .inner .receive-content-list li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: #f65e64;
+  border-radius: 50%;
+}
+.wrapper main .cloud-accounting-page .inner .receive-content-list li:first-child {
+  margin-top: 0;
+}
+.wrapper main .cloud-accounting-page .inner .receive-content-docs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 45px;
+}
+.wrapper main .cloud-accounting-page .inner .receive-content-docs-item {
+  margin-left: 60px;
+  padding: 23px 35px;
+  background: #fbfbfb;
+  border-radius: 20px;
+}
+.wrapper main .cloud-accounting-page .inner .receive-content-docs-item:first-child {
+  margin-left: 0;
+}
+.wrapper main .cloud-accounting-page .inner .receive-content-docs-item a {
+  position: relative;
+  display: block;
+  padding-left: 50px;
+  font: 300 16px/1.5 'Gilroy', sans-serif;
+}
+.wrapper main .cloud-accounting-page .inner .receive-content-docs-item a:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 28px;
+  height: 32px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: url(../img/icon_list.svg) no-repeat;
+  background-size: contain;
+}
+.wrapper main .cloud-accounting-page .inner .receive-image {
+  width: 500px;
+  margin-top: 80px;
+}
+.wrapper main .cloud-accounting-page .inner .receive-image img {
+  width: 100%;
+}
+.wrapper main .cloud-accounting-page .inner .features-block-item {
+  width: 33%;
+  margin-top: 50px;
+}
+.wrapper main .cloud-accounting-page .inner .features-block-item:nth-child(-n + 3) {
+  margin-top: 0;
+}
+.wrapper main .cloud-accounting-page .inner .steps {
+  padding: 60px 70px 50px;
+  background: #fbfbfb;
+  border-radius: 20px;
+}
+.wrapper main .cloud-accounting-page .inner .steps-block-item {
+  width: 32%;
 }
 .wrapper main .start-business-page .inner .top-banner:before {
   content: none;

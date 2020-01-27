@@ -503,7 +503,7 @@ ul.list li:before {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  min-height: 320px;
+  height: 320px;
   padding-left: 70px;
   background: #f4f4f4;
   border-radius: 20px;
@@ -557,6 +557,7 @@ ul.list li:before {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-right: auto;
   padding-top: 15px;
   padding-bottom: 45px;
 }
@@ -662,7 +663,6 @@ ul.list li:before {
 }
 .wrapper main .inner .top-banner-image {
   overflow: hidden;
-  margin-left: auto;
 }
 .wrapper main .inner .top-banner-image img {
   width: 100%;
@@ -802,10 +802,12 @@ ul.list li:before {
   font: 300 16px/1.5 'Gilroy', sans-serif;
 }
 .wrapper main .inner .advantage-block-item-image {
-  height: 75%;
+  width: 35%;
+  margin-left: auto;
 }
 .wrapper main .inner .advantage-block-item-image img {
-  height: 100%;
+  max-width: 100%;
+  max-height: 130px;
 }
 .wrapper main .inner .advantage-features {
   margin-top: 70px;
@@ -993,7 +995,7 @@ ul.list li:before {
   padding: 15px 20px 0;
   font: 300 24px/1.5 'Gilroy', sans-serif;
   background: #f4f4f4;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 10px;
   outline: none;
 }
@@ -1003,6 +1005,21 @@ ul.list li:before {
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
   font-size: 14px;
+}
+.wrapper main .inner .request-block-phone input.filled ~ label {
+  top: 8px;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  font-size: 14px;
+}
+.wrapper main .inner .request-block-phone input.parsley-error {
+  border-color: #f65e64;
+}
+.wrapper main .inner .request-block-phone input.parsley-error ~ label {
+  color: #f65e64;
+}
+.wrapper main .inner .request-block-phone .parsley-errors-list {
+  display: none;
 }
 .wrapper main .inner .request-block-phone label {
   position: absolute;
@@ -1052,6 +1069,7 @@ ul.list li:before {
   transition: 0.3s;
   z-index: 1;
   outline: none;
+  cursor: pointer;
 }
 .wrapper main .inner .request-block-buttons-submit input:before {
   content: '';
@@ -1593,14 +1611,11 @@ ul.list li:before {
 }
 .wrapper main .inner .services-block-item-image {
   width: 35%;
-  height: 190px;
   text-align: center;
 }
 .wrapper main .inner .services-block-item-image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  max-width: 100%;
+  max-height: 190px;
 }
 .wrapper main .main-page .inner .category {
   display: -webkit-box;
@@ -2105,14 +2120,11 @@ ul.list li:before {
 }
 .wrapper main .main-page .inner .best-tariffs-slider .swiper-slide-active .swiper-slide-item-button {
   position: relative;
-  padding: 17.5px 0;
-  font: 300 20px/1 'Gilroy', sans-serif;
+  font-weight: 300;
   color: #fff;
   background: -webkit-gradient(linear, left top, right top, from(#eb5760), to(#fd9b5c));
   background: linear-gradient(to right, #eb5760, #fd9b5c);
   border: none;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   z-index: 1;
 }
 .wrapper main .main-page .inner .best-tariffs-slider .swiper-slide-active .swiper-slide-item-button:before {
@@ -2255,11 +2267,13 @@ ul.list li:before {
   width: 100%;
   margin-top: 45px;
   text-align: center;
-  font: 20px/56px 'Gilroy', sans-serif;
+  font: 20px/53px 'Gilroy', sans-serif;
   color: rgba(0, 0, 0, 0.3);
   background: #fff;
   border-radius: 35px;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   cursor: pointer;
 }
 .wrapper main .main-page .inner .best-tariffs-slider .swiper-pagination {
@@ -2815,6 +2829,7 @@ ul.list li:before {
   margin-top: 80px;
   background: #fff1f2;
   border-radius: 20px;
+  overflow: hidden;
 }
 .wrapper main .main-page .inner .special-badge {
   position: absolute;
@@ -2903,7 +2918,7 @@ ul.list li:before {
   margin-top: 0;
 }
 .wrapper main .actions-page .inner .top-banner {
-  min-height: 225px;
+  height: 225px;
 }
 .wrapper main .actions-page .inner .top-banner:before {
   content: '';
@@ -3049,7 +3064,7 @@ ul.list li:before {
   transition: 0.3s;
 }
 .wrapper main .bonuses-page .inner .top-banner {
-  min-height: 225px;
+  height: 225px;
 }
 .wrapper main .bonuses-page .inner .top-banner:before {
   content: 'Бонусы';
@@ -3294,7 +3309,7 @@ ul.list li:before {
   border-color: #fff;
 }
 .wrapper main .bonuses-page-detail .inner .top-banner {
-  min-height: 225px;
+  height: 225px;
 }
 .wrapper main .bonuses-page-detail .inner .top-banner:before {
   content: 'Бонусы';
@@ -3622,7 +3637,7 @@ ul.list li:before {
   border-color: #fff;
 }
 .wrapper main .journal-page .inner .top-banner {
-  min-height: 225px;
+  height: 225px;
 }
 .wrapper main .journal-page .inner .top-banner:before {
   content: '';
@@ -3838,7 +3853,7 @@ ul.list li:before {
   height: 100%;
 }
 .wrapper main .about-page .inner .top-banner {
-  min-height: 225px;
+  height: 225px;
 }
 .wrapper main .about-page .inner .top-banner:before {
   right: 31%;
@@ -4316,7 +4331,7 @@ ul.list li:before {
   border: none;
 }
 .wrapper main .departments-page .inner .top-banner {
-  min-height: 225px;
+  height: 225px;
 }
 .wrapper main .departments-page .inner .top-banner:before {
   right: 37%;
@@ -4332,7 +4347,7 @@ ul.list li:before {
   height: 55px;
 }
 .wrapper main .safety-page .inner .top-banner {
-  min-height: 225px;
+  height: 225px;
 }
 .wrapper main .safety-page .inner .top-banner:before {
   right: 37%;
@@ -4380,7 +4395,7 @@ ul.list li:before {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 28px;
+  width: 29px;
   height: 32px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -4397,7 +4412,7 @@ ul.list li:before {
   font: 300 18px/1.5 'Gilroy', sans-serif;
 }
 .wrapper main .help-page .inner .top-banner {
-  min-height: 225px;
+  height: 225px;
 }
 .wrapper main .help-page .inner .info {
   display: -webkit-box;
@@ -4661,6 +4676,7 @@ ul.list li:before {
 }
 .wrapper main .delokassa-page .inner .solution-block-image {
   position: relative;
+  width: 530px;
 }
 .wrapper main .delokassa-page .inner .solution-block-image-badge {
   position: absolute;
@@ -4670,6 +4686,9 @@ ul.list li:before {
   font: 300 18px/1.3 'Gilroy', sans-serif;
   background: #acce23;
   border-radius: 35px;
+}
+.wrapper main .delokassa-page .inner .solution-block-image img {
+  width: 100%;
 }
 .wrapper main .delokassa-page .inner .solution-features {
   margin-top: 45px;
@@ -4977,10 +4996,138 @@ ul.list li:before {
   margin-top: 80px;
 }
 .wrapper main .deposit-page .inner .calculate-title {
-  font: 500 30px/1.3 'Gilroy', sans-serif;
+  font: 700 30px/1.3 'Gilroy', sans-serif;
 }
 .wrapper main .deposit-page .inner .calculate-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-top: 30px;
+}
+.wrapper main .deposit-page .inner .calculate-block-value {
+  width: 42%;
+  margin-right: 8%;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item {
+  margin-bottom: 35px;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item:last-child {
+  margin-bottom: 0;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item-name {
+  font: 300 18px/1 'Gilroy', sans-serif;
+  color: #8e8f8e;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item-descr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item-descr-txt input[type='text'] {
+  border: 0;
+  outline: none;
+  font: 700 22px/1.3 'Gilroy', sans-serif;
+  cursor: default;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item-descr-select .ui-selectmenu-button {
+  padding: 0 17px;
+  border: 1px solid #e6e8e0;
+  font: 300 18px/28px 'Gilroy', sans-serif;
+  border-radius: 14px;
+  background: none;
+  color: #8e8f8e;
+  outline: none;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item-descr-select .ui-selectmenu-button.ui-button {
+  width: auto;
+  text-align: center;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item-descr-select .ui-selectmenu-button .ui-icon {
+  width: 8px;
+  height: 8px;
+  margin-top: 8px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  border: 1px solid #8e8f8e;
+  border-width: 0 0 1px 1px;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item-slider {
+  margin-bottom: 10px;
+  padding: 11px 0 11px 12px;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item-slider .ui-slider {
+  height: 3px;
+  border: 0;
+  border-radius: 0;
+  background: #f4f4f4;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item-slider .ui-slider-range {
+  background: #f65e64;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item-slider .ui-slider-handle {
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: #f65e64;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+.wrapper main .deposit-page .inner .calculate-block-value-item-slider_pips {
+  padding-left: 12px;
+  font: 300 14px/1 'Gilroy', sans-serif;
+  color: #babbba;
+}
+.wrapper main .deposit-page .inner .calculate-block-result {
+  width: 50%;
+  padding: 60px 55px 25px;
+  background: #f6f6f6;
+  border-radius: 20px;
+}
+.wrapper main .deposit-page .inner .calculate-block-result-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 65px;
+}
+.wrapper main .deposit-page .inner .calculate-block-result-main-item {
+  margin-right: 75px;
+}
+.wrapper main .deposit-page .inner .calculate-block-result-main-item:last-child {
+  margin-right: 0;
+}
+.wrapper main .deposit-page .inner .calculate-block-result-main-item-num {
+  margin-bottom: 20px;
+  font: 700 48px/1 'Gilroy', sans-serif;
+}
+.wrapper main .deposit-page .inner .calculate-block-result-main-item-txt {
+  font: 300 18px/1 'Gilroy', sans-serif;
+}
+.wrapper main .deposit-page .inner .calculate-block-result-foot {
+  position: relative;
+  padding-left: 30px;
+  font: 300 16px/1.37 'Gilroy', sans-serif;
+}
+.wrapper main .deposit-page .inner .calculate-block-result-foot:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  background: url(../img/icon_i.svg) no-repeat;
+  background-size: contain;
 }
 .wrapper main .deposit-page .inner .steps-block-item {
   width: 32%;
@@ -5525,7 +5672,7 @@ ul.list li:before {
   background-size: contain;
 }
 .wrapper main .requisite-page .inner .top-banner {
-  min-height: 225px;
+  height: 225px;
 }
 .wrapper main .requisite-page .inner .top-banner:before {
   top: auto;
@@ -5893,7 +6040,7 @@ ul.list li:before {
   font: 300 18px/1.5 'Gilroy', sans-serif;
 }
 .wrapper main .remote-service-page .inner .top-banner {
-  min-height: 225px;
+  height: 225px;
 }
 .wrapper main .remote-service-page .inner .top-banner:before {
   content: none;
@@ -6015,7 +6162,7 @@ ul.list li:before {
   border-radius: 50%;
 }
 .wrapper main .tariffs-page .inner .top-banner {
-  min-height: 225px;
+  height: 225px;
 }
 .wrapper main .tariffs-page .inner .top-banner:before,
 .wrapper main .tariffs-page .inner .top-banner:after {
@@ -6539,7 +6686,7 @@ ul.list li:before {
 }
 .wrapper main .partner-program-page .inner .atms-address-map-baloon .swiper-slide {
   padding: 70px 60px 30px;
-  border: 1px solid #E6E8E0;
+  border: 1px solid #e6e8e0;
   background: #fff;
 }
 .wrapper main .partner-program-page .inner .atms-address-map-baloon .swiper-slide.empty_slide {
@@ -6564,7 +6711,7 @@ ul.list li:before {
   width: 30px;
   height: 61px !important;
   padding: 0;
-  background: #E6E8E0;
+  background: #e6e8e0;
   -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -6630,21 +6777,21 @@ ul.list li:before {
   color: #f65e64;
 }
 .wrapper main .partner-program-page .inner .atms-address-list-table {
-  border: 1px solid #E6E8E0;
+  border: 1px solid #e6e8e0;
   font: 300 16px/1.5 'Gilroy', sans-serif;
 }
 .wrapper main .partner-program-page .inner .atms-address-list-table .tr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 1px solid #E6E8E0;
+  border-bottom: 1px solid #e6e8e0;
 }
 .wrapper main .partner-program-page .inner .atms-address-list-table .tr:nth-last-child(1) {
   border: 0;
 }
 .wrapper main .partner-program-page .inner .atms-address-list-table .tr .td {
   padding: 10px 30px;
-  border-right: 1px solid #E6E8E0;
+  border-right: 1px solid #e6e8e0;
 }
 .wrapper main .partner-program-page .inner .atms-address-list-table .tr .td:nth-last-child(1) {
   border: 0;
@@ -6899,6 +7046,31 @@ ul.list li:before {
 .wrapper main .payment-page .inner .steps.connect .steps-block-item {
   width: 32%;
 }
+.wrapper main .ruble-deposit-page .inner .top-banner:before {
+  content: none;
+}
+.wrapper main .ruble-deposit-page .inner .top-banner:after {
+  top: 42px;
+  width: 52px;
+  height: 52px;
+}
+.wrapper main .ruble-deposit-page .inner .top-banner-wave {
+  display: block;
+  right: 33%;
+  top: 58px;
+  width: 108px;
+  height: 25px;
+}
+.wrapper main .ruble-deposit-page .inner .top-banner-content-text-title {
+  max-width: 250px;
+}
+.wrapper main .ruble-deposit-page .inner .top-banner-image {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+.wrapper main .ruble-deposit-page .inner .features-block {
+  margin-top: 35px;
+}
 .wrapper main .start-business-page .inner .top-banner:before {
   content: none;
 }
@@ -6939,6 +7111,9 @@ ul.list li:before {
   width: 100%;
   min-height: 200px;
   padding: 40px 50px 30px 70px;
+}
+.wrapper main .start-business-page .inner .services-block-item:last-child .services-block-item-content {
+  margin-right: auto;
 }
 .wrapper main .start-business-page .inner .services-block-item:last-child .services-block-item-image {
   width: 468px;
@@ -7099,7 +7274,7 @@ ul.list li:before {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 28px;
+  width: 29px;
   height: 32px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -7408,14 +7583,11 @@ ul.list li:before {
 }
 .wrapper main .all-tools-page .inner .switcher-block-content-box-item-image {
   width: 35%;
-  height: 190px;
   text-align: center;
 }
 .wrapper main .all-tools-page .inner .switcher-block-content-box-item-image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  max-width: 100%;
+  max-height: 190px;
 }
 .wrapper main .all-tools-page .inner .integration {
   margin-top: 80px;
@@ -7531,14 +7703,11 @@ ul.list li:before {
 }
 .wrapper main .all-tools-page .inner .integration-block-item-image {
   width: 35%;
-  height: 190px;
   text-align: center;
 }
 .wrapper main .all-tools-page .inner .integration-block-item-image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  max-width: 100%;
+  max-height: 190px;
 }
 .wrapper main .all-tools-page .inner .advantage-title,
 .wrapper main .all-tools-page .inner .steps-title {

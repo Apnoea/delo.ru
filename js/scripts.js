@@ -3,6 +3,14 @@ $(document).ready(function () {
   style();
 })
 
+function num2str(n, text_forms) {
+  n = Math.abs(n) % 100; var n1 = n % 10;
+  if (n > 10 && n < 20) { return text_forms[2]; }
+  if (n1 > 1 && n1 < 5) { return text_forms[1]; }
+  if (n1 == 1) { return text_forms[0]; }
+  return text_forms[2];
+}
+
 function init() {
   function swiper_init() {
     var actions_slider = new Swiper('.actions_slider', {
@@ -417,35 +425,8 @@ function style() {
       $("#" + list_index).addClass('active');
     })
   }
-
-  if ($('.deposit-page').length > 0) { // deposit_page scripts
-    $(function () {
-      $("#deposit_sum").slider({
-        range: "min",
-        value: 50000,
-        min: 10000,
-        max: 1000000,
-        slide: function (event, ui) {
-          $("#amount_sum").val(ui.value.toLocaleString() + " ₽");
-        }
-      });
-      $("#amount_sum").val($("#deposit_sum").slider("value").toLocaleString() + " ₽");
-
-      $("#deposit_date").slider({
-        range: "min",
-        value: 4,
-        min: 2,
-        max: 12,
-        slide: function (event, ui) {
-          $("#amount_date").val(ui.value);
-        }
-      });
-      $("#amount_date").val($("#deposit_date").slider("value"));
-
-      $("#select_date").selectmenu();
-    });
-  }
 }
+
 
 $(document).ready(function () {
   $(document).on('click', '.articles-more', function () {
@@ -468,10 +449,8 @@ $(document).ready(function () {
       })
     }
   });
-});
 
-$(document).ready(function () {
-  $(document).on('click', '.bonuses-more', function () {
+$(document).on('click', '.cat_block .bonuses-more', function () {
     var targetContainer2 = $('.cat_block');
     var cat_name = $('.bonuses-filter-item.active').attr('category');
     var targetContainer = $('.bonuses-block'),  //  Контейнер, в котором хранятся элементы
@@ -490,5 +469,36 @@ $(document).ready(function () {
         }
       })
     }
+  });
+
+  $(document).on('click', '.cat_block_detail .bonuses-more', function () {
+    var targetContainer2 = $('.cat_block_detail');
+    var targetContainer = $('.bonuses-block'),  //  Контейнер, в котором хранятся элементы
+      url = '?' + $('.bonuses-more').attr('data-url');  //  URL, из которого будем брать элементы
+    if (url !== undefined) {
+      $.ajax({
+        type: 'GET',
+        url: url,
+        dataType: 'html',
+        success: function (data) {  //  Удаляем старую навигацию
+          $('.bonuses-more').remove();
+          var elements = $(data).find('.bonuses-block-item'), //  Ищем элементы
+            pagination = $(data).find('.bonuses-more'); //  Ищем навигацию
+          targetContainer.append(elements); //  Добавляем посты в конец контейнера
+          targetContainer2.append(pagination);  //  добавляем навигацию следом
+        }
+      })
+    }
+  });
+
+  $(document).on('click', '.tariffs-top .tariffs-top-item', function () {
+    $('.tariffs-top .tariffs-top-item').removeClass('active');
+    $(this).addClass('active');
+    var id = $(this).attr('data-id');
+    $('.price_block').hide();
+    $('.price_block.price_' + id).show();
+  });
+  $("[data-fancybox]").fancybox({
+    animationeffect: false
   });
 });

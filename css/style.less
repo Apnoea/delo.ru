@@ -474,23 +474,11 @@ ul.list {
         padding-left: 70px;
         background: #f4f4f4;
         border-radius: 20px;
-        &:before {
-          position: absolute;
-          right: 40%;
-          top: -14px;
-          width: 28px;
-          height: 28px;
-          background: linear-gradient(285.35deg, #fd9b5c 6.22%, #eb5760 69.31%);
-          border-radius: 50%;
-        }
+        &:before,
         &:after {
           position: absolute;
-          width: 60px;
-          height: 60px;
-          right: 30%;
-          top: 77px;
-          background: linear-gradient(285.35deg, #fd9b5c 6.22%, #eb5760 69.31%);
-          border-radius: 50%;
+          background: url(../img/icon_bubble.svg);
+          background-size: contain;
         }
         &-wave {
           position: absolute;
@@ -552,6 +540,7 @@ ul.list {
                 }
               }
               a {
+                display: inline-block;
                 &:hover {
                   text-decoration: underline;
                 }
@@ -2681,7 +2670,6 @@ ul.list {
           height: 225px;
           &:before {
             content: '';
-            position: absolute;
             right: 44%;
             top: 70px;
             width: 74px;
@@ -3320,25 +3308,21 @@ ul.list {
           height: 225px;
           &:before {
             content: '';
-            position: absolute;
             left: 48%;
             top: -10px;
             width: 60px;
             height: 60px;
-            background: url(../img/journal/top_banner_icon1.svg) no-repeat;
-            background-size: contain;
-            border-radius: 0;
           }
           &:after {
             content: '';
-            top: auto;
+            right: 30%;
             bottom: 60px;
             width: 36px;
             height: 36px;
           }
           &-image {
-            margin-top: -5px;
             width: 270px;
+            margin-top: -5px;
           }
         }
         .articles {
@@ -3954,7 +3938,6 @@ ul.list {
           &:before {
             content: '';
             right: 37%;
-            top: auto;
             bottom: -15px;
             width: 30px;
             height: 30px;
@@ -3976,7 +3959,6 @@ ul.list {
           &:before {
             content: '';
             right: 37%;
-            top: auto;
             bottom: -15px;
             width: 30px;
             height: 30px;
@@ -4730,7 +4712,6 @@ ul.list {
           &:before {
             content: '';
             right: 45%;
-            top: auto;
             bottom: 85px;
             width: 30px;
             height: 30px;
@@ -4896,6 +4877,7 @@ ul.list {
           &:before {
             content: '';
             right: 43%;
+            top: -14px;
             width: 38px;
             height: 38px;
           }
@@ -5123,7 +5105,6 @@ ul.list {
             &:after {
               content: '';
               right: 35%;
-              top: auto;
               bottom: 40px;
               width: 57px;
               height: 57px;
@@ -5255,14 +5236,15 @@ ul.list {
           height: 225px;
           &:before {
             content: '';
-            top: auto;
+            right: 40%;
             bottom: -15px;
+            width: 28px;
+            height: 28px;
           }
           &:after {
             content: '';
             right: 7%;
             top: -25px;
-            bottom: auto;
             width: 55px;
             height: 55px;
           }
@@ -6412,6 +6394,7 @@ ul.list {
         .top-banner {
           &:before {
             content: '';
+            right: 40%;
             top: -12px;
             width: 37px;
             height: 37px;
@@ -6524,7 +6507,7 @@ ul.list {
           }
           &:after {
             content: '';
-            top: auto;
+            right: 30%;
             bottom: 53px;
             width: 51px;
             height: 51px;
@@ -6567,7 +6550,7 @@ ul.list {
           }
           &:after {
             content: '';
-            top: auto;
+            right: 30%;
             bottom: 53px;
             width: 51px;
             height: 51px;
@@ -6641,6 +6624,7 @@ ul.list {
         .top-banner {
           &:after {
             content: '';
+            right: 30%;
             top: 42px;
             width: 52px;
             height: 52px;
@@ -6871,19 +6855,48 @@ ul.list {
         }
       }
     }
+    .transfer-page {
+      .inner {
+        .top-banner {
+          &:before {
+            content: '';
+            right: 36%;
+            top: 36px;
+            width: 32px;
+            height: 32px;
+          }
+          &:after {
+            content: '';
+            right: 28%;
+            bottom: 59px;
+            width: 51px;
+            height: 51px;
+          }
+          &-wave {
+            display: block;
+            right: 30%;
+            top: auto;
+            bottom: 70px;
+            width: 105px;
+            height: 24px;
+          }
+          &-image {
+            align-self: center;
+          }
+        }
+      }
+    }
 
     // Marketplace
     .start-business-page {
       .inner {
         .top-banner {
-          &:before {
-            content: none;
-          }
           &:after {
+            content: '';
+            right: 37%;
+            top: 130px;
             width: 81px;
             height: 81px;
-            top: 130px;
-            right: 37%;
             background: url(../img/icon_time.svg) no-repeat;
             background-size: contain;
             border-radius: 0;
@@ -7130,10 +7143,6 @@ ul.list {
     .internet-business-page {
       .inner {
         .top-banner {
-          &:before,
-          &:after {
-            content: none;
-          }
           &-image {
             align-self: flex-end;
             width: 350px;
@@ -7151,12 +7160,9 @@ ul.list {
     .small-business-page {
       .inner {
         .top-banner {
-          &:before {
-            content: none;
-          }
           &:after {
+            content: '';
             right: 26%;
-            top: auto;
             bottom: 50px;
             width: 55px;
             height: 55px;
@@ -7191,10 +7197,8 @@ ul.list {
     .freelancer-page {
       .inner {
         .top-banner {
-          &:before {
-            content: none;
-          }
           &:after {
+            content: '';
             right: 35%;
             top: 70px;
             width: 55px;
@@ -7229,12 +7233,9 @@ ul.list {
     .all-tools-page {
       .inner {
         .top-banner {
-          &:before {
-            content: none;
-          }
           &:after {
+            content: '';
             right: 25%;
-            top: auto;
             bottom: 40px;
             width: 55px;
             height: 55px;

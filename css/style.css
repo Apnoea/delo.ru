@@ -511,23 +511,11 @@ ul.list li:before {
   background: #f4f4f4;
   border-radius: 20px;
 }
-.wrapper main .inner .top-banner:before {
-  position: absolute;
-  right: 40%;
-  top: -14px;
-  width: 28px;
-  height: 28px;
-  background: linear-gradient(285.35deg, #fd9b5c 6.22%, #eb5760 69.31%);
-  border-radius: 50%;
-}
+.wrapper main .inner .top-banner:before,
 .wrapper main .inner .top-banner:after {
   position: absolute;
-  width: 60px;
-  height: 60px;
-  right: 30%;
-  top: 77px;
-  background: linear-gradient(285.35deg, #fd9b5c 6.22%, #eb5760 69.31%);
-  border-radius: 50%;
+  background: url(../img/icon_bubble.svg);
+  background-size: contain;
 }
 .wrapper main .inner .top-banner-wave {
   position: absolute;
@@ -596,6 +584,9 @@ ul.list li:before {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background: #808080;
+}
+.wrapper main .inner .top-banner-content-breadcrumbs li a {
+  display: inline-block;
 }
 .wrapper main .inner .top-banner-content-breadcrumbs li a:hover {
   text-decoration: underline;
@@ -2923,7 +2914,6 @@ ul.list li:before {
 }
 .wrapper main .actions-page .inner .top-banner:before {
   content: '';
-  position: absolute;
   right: 44%;
   top: 70px;
   width: 74px;
@@ -3641,25 +3631,21 @@ ul.list li:before {
 }
 .wrapper main .journal-page .inner .top-banner:before {
   content: '';
-  position: absolute;
   left: 48%;
   top: -10px;
   width: 60px;
   height: 60px;
-  background: url(../img/journal/top_banner_icon1.svg) no-repeat;
-  background-size: contain;
-  border-radius: 0;
 }
 .wrapper main .journal-page .inner .top-banner:after {
   content: '';
-  top: auto;
+  right: 30%;
   bottom: 60px;
   width: 36px;
   height: 36px;
 }
 .wrapper main .journal-page .inner .top-banner-image {
-  margin-top: -5px;
   width: 270px;
+  margin-top: -5px;
 }
 .wrapper main .journal-page .inner .articles {
   margin-top: 75px;
@@ -4335,7 +4321,6 @@ ul.list li:before {
 .wrapper main .departments-page .inner .top-banner:before {
   content: '';
   right: 37%;
-  top: auto;
   bottom: -15px;
   width: 30px;
   height: 30px;
@@ -4353,7 +4338,6 @@ ul.list li:before {
 .wrapper main .safety-page .inner .top-banner:before {
   content: '';
   right: 37%;
-  top: auto;
   bottom: -15px;
   width: 30px;
   height: 30px;
@@ -5139,7 +5123,6 @@ ul.list li:before {
 .wrapper main .overdraft-page .inner .top-banner:before {
   content: '';
   right: 45%;
-  top: auto;
   bottom: 85px;
   width: 30px;
   height: 30px;
@@ -5296,6 +5279,7 @@ ul.list li:before {
 .wrapper main .acquiring-page .inner .top-banner:before {
   content: '';
   right: 43%;
+  top: -14px;
   width: 38px;
   height: 38px;
 }
@@ -5539,7 +5523,6 @@ ul.list li:before {
 .wrapper main .acquiring-detail-page.internet-acquiring .inner .top-banner:after {
   content: '';
   right: 35%;
-  top: auto;
   bottom: 40px;
   width: 57px;
   height: 57px;
@@ -5680,14 +5663,15 @@ ul.list li:before {
 }
 .wrapper main .requisite-page .inner .top-banner:before {
   content: '';
-  top: auto;
+  right: 40%;
   bottom: -15px;
+  width: 28px;
+  height: 28px;
 }
 .wrapper main .requisite-page .inner .top-banner:after {
   content: '';
   right: 7%;
   top: -25px;
-  bottom: auto;
   width: 55px;
   height: 55px;
 }
@@ -6848,6 +6832,7 @@ ul.list li:before {
 }
 .wrapper main .corporate-card-page .inner .top-banner:before {
   content: '';
+  right: 40%;
   top: -12px;
   width: 37px;
   height: 37px;
@@ -6951,7 +6936,7 @@ ul.list li:before {
 }
 .wrapper main .legal-assistance-page .inner .top-banner:after {
   content: '';
-  top: auto;
+  right: 30%;
   bottom: 53px;
   width: 51px;
   height: 51px;
@@ -6985,7 +6970,7 @@ ul.list li:before {
 }
 .wrapper main .payment-page .inner .top-banner:after {
   content: '';
-  top: auto;
+  right: 30%;
   bottom: 53px;
   width: 51px;
   height: 51px;
@@ -7051,6 +7036,7 @@ ul.list li:before {
 }
 .wrapper main .ruble-deposit-page .inner .top-banner:after {
   content: '';
+  right: 30%;
   top: 42px;
   width: 52px;
   height: 52px;
@@ -7272,14 +7258,38 @@ ul.list li:before {
 .wrapper main .cloud-accounting-page .inner .steps-block-item {
   width: 32%;
 }
-.wrapper main .start-business-page .inner .top-banner:before {
-  content: none;
+.wrapper main .transfer-page .inner .top-banner:before {
+  content: '';
+  right: 36%;
+  top: 36px;
+  width: 32px;
+  height: 32px;
+}
+.wrapper main .transfer-page .inner .top-banner:after {
+  content: '';
+  right: 28%;
+  bottom: 59px;
+  width: 51px;
+  height: 51px;
+}
+.wrapper main .transfer-page .inner .top-banner-wave {
+  display: block;
+  right: 30%;
+  top: auto;
+  bottom: 70px;
+  width: 105px;
+  height: 24px;
+}
+.wrapper main .transfer-page .inner .top-banner-image {
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 .wrapper main .start-business-page .inner .top-banner:after {
+  content: '';
+  right: 37%;
+  top: 130px;
   width: 81px;
   height: 81px;
-  top: 130px;
-  right: 37%;
   background: url(../img/icon_time.svg) no-repeat;
   background-size: contain;
   border-radius: 0;
@@ -7532,10 +7542,6 @@ ul.list li:before {
 .wrapper main .start-business-page .inner .docs-download-button a:hover:before {
   opacity: 1;
 }
-.wrapper main .internet-business-page .inner .top-banner:before,
-.wrapper main .internet-business-page .inner .top-banner:after {
-  content: none;
-}
 .wrapper main .internet-business-page .inner .top-banner-image {
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -7546,12 +7552,9 @@ ul.list li:before {
 .wrapper main .internet-business-page .inner .steps-title {
   font: 500 30px/1.3 'Gilroy', sans-serif;
 }
-.wrapper main .small-business-page .inner .top-banner:before {
-  content: none;
-}
 .wrapper main .small-business-page .inner .top-banner:after {
+  content: '';
   right: 26%;
-  top: auto;
   bottom: 50px;
   width: 55px;
   height: 55px;
@@ -7580,10 +7583,8 @@ ul.list li:before {
 .wrapper main .small-business-page .inner .steps-title {
   font: 500 30px/1.3 'Gilroy', sans-serif;
 }
-.wrapper main .freelancer-page .inner .top-banner:before {
-  content: none;
-}
 .wrapper main .freelancer-page .inner .top-banner:after {
+  content: '';
   right: 35%;
   top: 70px;
   width: 55px;
@@ -7612,12 +7613,9 @@ ul.list li:before {
 .wrapper main .freelancer-page .inner .steps-title {
   font: 500 30px/1.3 'Gilroy', sans-serif;
 }
-.wrapper main .all-tools-page .inner .top-banner:before {
-  content: none;
-}
 .wrapper main .all-tools-page .inner .top-banner:after {
+  content: '';
   right: 25%;
-  top: auto;
   bottom: 40px;
   width: 55px;
   height: 55px;

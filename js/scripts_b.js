@@ -68,110 +68,116 @@ $(document).on("click", ".open-account", function () {
 
 $(document).on("click", ".open-mail-to-bank", function () {
   $('.popup_wrapper.feedback').addClass('active');
+  $('#mail_to_bank').parsley();
+  $('#phone_mail').blur(function () {
+    if ($(this).val().length !== 0) {
+      $(this).addClass('filled');
+    } else {
+      $(this).removeClass('filled');
+    }
+  });
+  $('#phone_mail').inputmask({
+    mask: '+7 (999) 999-99-99',
+    showMaskOnHover: false
+  });
+  $("#topic").selectmenu();
+  $('#file').bind('change', function () {
+    var filename = $("#file").val();
+    if (/^\s*$/.test(filename)) {
+      $("#noFile").text("Прикрепить файл к сообщению");
+    }
+    else {
+      $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+    }
+  });
 
-        //$('#open_account_step2').parsley();
-        $('.popup-block-form-input.email input').blur(function () {
-          if ($(this).val().length !== 0) {
-            $(this).addClass('filled');
-          } else {
-            $(this).removeClass('filled');
-          }
-        });
+  // Замените на свой API-ключ
+  var token = "f7cd59d270fa2905f74cf38f74981c3abbe346c8";
 
-        $('#phone_mail').inputmask({
-          mask: '+7 (999) 999-99-99',
-          showMaskOnHover: false
-        });
+  function join(arr /*, separator */) {
+    var separator = arguments.length > 1 ? arguments[1] : ", ";
+    return arr.filter(function (n) { return n }).join(separator);
+  }
 
-        $("#tupic").selectmenu();
+  function showSuggestion(suggestion) {
+    $("label[for=company_name]").text("Название компании");
+    $(".popup-block-form-input.company").show();
 
-        // Замените на свой API-ключ
-        var token = "f7cd59d270fa2905f74cf38f74981c3abbe346c8";
+    var data = suggestion.data;
+    if (!data)
+      return;
 
-        function join(arr /*, separator */) {
-          var separator = arguments.length > 1 ? arguments[1] : ", ";
-          return arr.filter(function (n) { return n }).join(separator);
+    $("#company_name_mail").val(join([data.name.full_with_opf]));
+    $("#company_inn_mail").val(join([data.inn]));
+    $("#company_ogrn_mail").val(join([data.ogrn]));
+    if ($("#company_name_mail").val !== 0) {
+      $("#company_name_mail").removeClass('parsley-error');
+    }
+    if ($("#company_inn_mail").val !== 0) {
+      $("#company_inn_mail").removeClass('parsley-error');
+    }
+    if ($("#company_ogrn_mail").val !== 0) {
+      $("#company_ogrn_mail").removeClass('parsley-error');
+    }
+  }
+
+  $("#company_name_mail").suggestions({
+    token: token,
+    type: "PARTY",
+    count: 5,
+    /* Вызывается, когда пользователь выбирает одну из подсказок */
+    onSelect: showSuggestion
+  });
+
+  $("#company_inn_mail").suggestions({
+    token: token,
+    type: "PARTY",
+    count: 5,
+    /* Вызывается, когда пользователь выбирает одну из подсказок */
+    onSelect: showSuggestion
+  });
+
+  $("#company_ogrn_mail").suggestions({
+    token: token,
+    type: "PARTY",
+    count: 5,
+    /* Вызывается, когда пользователь выбирает одну из подсказок */
+    onSelect: showSuggestion
+  });
+  $("#name_mail").suggestions({
+    token: token,
+    type: "NAME",
+    /* Вызывается, когда пользователь выбирает одну из подсказок */
+    onSelect: function (suggestion) {
+      console.log(suggestion);
+      var $_count = parseInt($.trim($(this).val()).split(' ').length); // Подсчет слов
+      if ($_count > 2) {
+        $(this).removeClass('parsley-error');
+      } else {
+        $(this).addClass('parsley-error');
+      }
+      $('#name_mail').on('change keyup keydown', function () {
+        var $_count = parseInt($.trim($(this).val()).split(' ').length); // Подсчет слов
+        if ($_count > 2) {
+          $(this).removeClass('parsley-error');
+        } else {
+          $(this).addClass('parsley-error');
         }
-
-        function showSuggestion(suggestion) {
-          $("label[for=company_name]").text("Название компании");
-          $(".popup-block-form-input.company").show();
-
-          var data = suggestion.data;
-          if (!data)
-            return;
-
-          $("#company_name_mail").val(join([data.name.full_with_opf]));
-          $("#company_inn_mail").val(join([data.inn]));
-          $("#company_ogrn_mail").val(join([data.ogrn]));
-          if ($("#company_name_mail").val !== 0) {
-            $("#company_name_mail").removeClass('parsley-error');
-          }
-          if ($("#company_inn_mail").val !== 0) {
-            $("#company_inn_mail").removeClass('parsley-error');
-          }
-          if ($("#company_ogrn_mail").val !== 0) {
-            $("#company_ogrn_mail").removeClass('parsley-error');
-          }
-        }
-
-        $("#company_name_mail").suggestions({
-          token: token,
-          type: "PARTY",
-          count: 5,
-          /* Вызывается, когда пользователь выбирает одну из подсказок */
-          onSelect: showSuggestion
-        });
-
-        $("#company_inn_mail").suggestions({
-          token: token,
-          type: "PARTY",
-          count: 5,
-          /* Вызывается, когда пользователь выбирает одну из подсказок */
-          onSelect: showSuggestion
-        });
-
-        $("#company_ogrn_mail").suggestions({
-          token: token,
-          type: "PARTY",
-          count: 5,
-          /* Вызывается, когда пользователь выбирает одну из подсказок */
-          onSelect: showSuggestion
-        });
-        $("#name_mail").suggestions({
-          token: token,
-          type: "NAME",
-          /* Вызывается, когда пользователь выбирает одну из подсказок */
-          onSelect: function (suggestion) {
-            console.log(suggestion);
-            var $_count = parseInt($.trim($(this).val()).split(' ').length); // Подсчет слов
-            if ($_count > 2) {
-              $(this).removeClass('parsley-error');
-            } else {
-              $(this).addClass('parsley-error');
-            }
-            $('#name_mail').on('change keyup keydown', function () {
-              var $_count = parseInt($.trim($(this).val()).split(' ').length); // Подсчет слов
-              if ($_count > 2) {
-                $(this).removeClass('parsley-error');
-              } else {
-                $(this).addClass('parsley-error');
-              }
-            });
-          }
-        });
-        $("#email_mail").suggestions({
-          token: token,
-          type: "EMAIL",
-          /* Вызывается, когда пользователь выбирает одну из подсказок */
-          onSelect: function (suggestion) {
-            if ($("#email_mail").val !== 0) {
-              $(this).removeClass('parsley-error');
-            } else {
-              $(this).addClass('parsley-error');
-            }
-          }
-        });
+      });
+    }
+  });
+  $("#email_mail").suggestions({
+    token: token,
+    type: "EMAIL",
+    /* Вызывается, когда пользователь выбирает одну из подсказок */
+    onSelect: function (suggestion) {
+      if ($("#email_mail").val !== 0) {
+        $(this).removeClass('parsley-error');
+      } else {
+        $(this).addClass('parsley-error');
+      }
+    }
+  });
 
 
   return false;
@@ -181,39 +187,42 @@ $(document).on("click", ".popup_wrapper.feedback .popup-tabs .popup-tabs-item", 
   $(".popup_wrapper.feedback .popup-tabs .popup-tabs-item").removeClass('active');
   $(this).addClass('active');
   var type = $(this).attr('data-type');
-  if(type==11){
+  if (type == 11) {
     $('#mail_to_bank .company_info').show();
-  }else{
+    $('#mail_to_bank .company_info input').attr('required', true);
+  } else {
     $('#mail_to_bank .company_info').hide();
+    $('#mail_to_bank .company_info input').attr('required', false);
   }
   return false;
 });
 
 $(document).on("submit", "#mail_to_bank", function () {
   var mist = 0;
-  var mist = 0;
   var phone = $('#mail_to_bank input[name=phone]').val();
   var sessid = $('input[name=sessid]').val();
 
   var fio = $('#mail_to_bank input[name=fio]').val();
   var email = $('#mail_to_bank input[name=email]').val();
-  var organization_name = $('#mail_to_bank input[name=organization_name]').val();
+  var organization_name = $('#mail_to_bank .company_info input[name=organization_name]').val();
 
-  var type = $(this).attr('data-type');
+  var type = $('.popup_wrapper.feedback .popup-tabs .popup-tabs-item.active').attr('data-type');
 
-  var tariff = $('#mail_to_bank select[name=tupic]').val();
+  $('#mail_to_bank input[name=type]').val(type);
 
-  var organization_registration_number = $('#mail_to_bank input[name=organization_registration_number]').val();
-  var organization_taxpayer_number = $('#mail_to_bank input[name=organization_taxpayer_number]').val();
+  var topic = $('#mail_to_bank select[name=topic]').val();
+
+  var organization_registration_number = $('#mail_to_bank .company_info input[name=organization_registration_number]').val();
+  var organization_taxpayer_number = $('#mail_to_bank .company_info input[name=organization_taxpayer_number]').val();
   var text = $('#mail_to_bank textarea[name=text]').val();
-        var agree='';
-        agree=$('#mail_to_bank input[name=checkbox]:checked').val();
-        if (agree!='y') {
-            mist=mist+1;
-            $('#mail_to_bank input[name=checkbox]').parent().addClass("error");
-        } else {
-            $('#mail_to_bank input[name=checkbox]').parent().removeClass("error");
-        }
+  var agree = '';
+  agree = $('#mail_to_bank input[name=checkbox]:checked').val();
+  if (agree != 'y') {
+    mist = mist + 1;
+    $('#mail_to_bank input[name=checkbox]').parent().addClass("error");
+  } else {
+    $('#mail_to_bank input[name=checkbox]').parent().removeClass("error");
+  }
   if (text != '') {
     $('#mail_to_bank textarea[name=text]').parent().removeClass("error");
   } else {
@@ -239,49 +248,50 @@ $(document).on("submit", "#mail_to_bank", function () {
     $('#mail_to_bank input[name=email]').parent().addClass("error");
     mist = mist + 1;
   }
-  if (organization_name != '') {
-    $('#mail_to_bank input[name=organization_name]').parent().removeClass("error");
-  } else {
-    $('#mail_to_bank input[name=organization_name]').parent().addClass("error");
-    mist = mist + 1;
-  }
-  if (city_code != '') {
-    $('#mail_to_bank input[name=city_code]').parent().removeClass("error");
-  } else {
-    $('#mail_to_bank input[name=city_code]').parent().addClass("error");
-    mist = mist + 1;
-  }
-  if (organization_registration_number != '') {
-    $('#mail_to_bank input[name=organization_registration_number]').parent().removeClass("error");
-  } else {
-    $('#mail_to_bank input[name=organization_registration_number]').parent().addClass("error");
-    mist = mist + 1;
-  }
-  if (organization_taxpayer_number != '') {
-    $('#mail_to_bank input[name=organization_taxpayer_number]').parent().removeClass("error");
-  } else {
-    $('#mail_to_bank input[name=organization_taxpayer_number]').parent().addClass("error");
-    mist = mist + 1;
+  if (type == 11) {
+    if (organization_name != '') {
+      $('#mail_to_bank input[name=organization_name]').parent().removeClass("error");
+    } else {
+      $('#mail_to_bank input[name=organization_name]').parent().addClass("error");
+      mist = mist + 1;
+    }
+
+    if (organization_registration_number != '') {
+      $('#mail_to_bank input[name=organization_registration_number]').parent().removeClass("error");
+    } else {
+      $('#mail_to_bank input[name=organization_registration_number]').parent().addClass("error");
+      mist = mist + 1;
+    }
+    if (organization_taxpayer_number != '') {
+      $('#mail_to_bank input[name=organization_taxpayer_number]').parent().removeClass("error");
+    } else {
+      $('#mail_to_bank input[name=organization_taxpayer_number]').parent().addClass("error");
+      mist = mist + 1;
+    }
   }
   if (mist == 0) {
+    var formData = new FormData(this);
     $.ajax({
       type: "POST",
-      url: "/local/templates/main/include/pages/open_account/ajax/thank.php",
-      data: ({
-        "type": type,
-        "phone": phone,
-        "hash": hash,
-        "fio": fio,
-        "email": email,
-        "organization_name": organization_name,
-        "text": text,
-        "tupic": tupic,
-        "organization_registration_number": organization_registration_number,
-        "organization_taxpayer_number": organization_taxpayer_number,
-        "sessid": sessid
-      }),
+      url: "/local/templates/main/include/pages/mail_to_bank/ajax/thank.php",
+      data: formData,
+      processData: false,
+      contentType: false,
+      // data: ({
+      //   "type": type,
+      //   "phone": phone,
+      //   "fio": fio,
+      //   "email": email,
+      //   "organization_name": organization_name,
+      //   "text": text,
+      //   "topic": topic,
+      //   "organization_registration_number": organization_registration_number,
+      //   "organization_taxpayer_number": organization_taxpayer_number,
+      //   "sessid": sessid
+      // }),
       success: function (msg) {
-        $('#result').html(msg);
+        $(".popup_wrapper.feedback .popup-tabs").remove();
+        $('#result_mail').html(msg);
       }
     });
   }
@@ -298,6 +308,12 @@ $(document).on('click', function (event) {
   $('.popup_wrapper').removeClass('active');
   $('body').css('overflow', 'scroll');
   event.stopPropagation();
+});
+
+$(document).on('click', '.popup_wrapper.active .inner .close', function () {
+  $('.popup_wrapper').removeClass('active');
+  $('body').css('overflow', 'scroll');
+  return false;
 });
 
 $(document).on("click", "#buttons_final", function () {

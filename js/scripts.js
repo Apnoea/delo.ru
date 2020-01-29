@@ -179,11 +179,6 @@ function style() {
     showMaskOnHover: false
   });
 
-  $(function () {
-    $("#tariff").selectmenu();
-    $("#discount").selectmenu();
-  });
-
   $('.popup-block-form-input.email input').blur(function () {
     if ($(this).val().length !== 0) {
       $(this).addClass('filled');

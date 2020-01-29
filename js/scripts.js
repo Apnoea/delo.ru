@@ -35,6 +35,7 @@ function init() {
         if (screenWidth > 1239 && tariffs_slider == undefined) {
           tariffs_slider = new Swiper('.best-tariffs-slider', {
             followFinger: false,
+            autoHeight: true,
             slidesPerView: 'auto',
             centeredSlides: true,
             loop: true,
@@ -332,7 +333,7 @@ function style() {
       myMap.geoObjects.add(objectManager);
 
       $.ajax({
-        url: "data.json"
+        url: "/local/templates/main/include/pages/departments/data.json"
       }).done(function (data) {
         objectManager.add(data);
         objectManager.setFilter('properties.type == "Банкомат"');

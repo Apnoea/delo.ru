@@ -5822,6 +5822,24 @@ ul.list li:before {
 .wrapper main .legal-assistance-page .inner .steps-block-item {
   width: 32%;
 }
+.wrapper main .multibank-page .inner .top-banner:after {
+  content: '';
+  top: -10px;
+  right: 36%;
+  width: 52px;
+  height: 52px;
+}
+.wrapper main .multibank-page .inner .top-banner-content-text-desc {
+  max-width: 620px;
+}
+.wrapper main .multibank-page .inner .top-banner-image {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 305px;
+}
+.wrapper main .multibank-page .inner .steps-block-item {
+  width: 32%;
+}
 .wrapper main .news-detail-page .inner .text {
   position: relative;
   margin-top: 80px;

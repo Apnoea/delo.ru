@@ -69,7 +69,7 @@ $(document).on("click", ".open-account", function () {
 $(document).on("click", ".open-mail-to-bank", function () {
   $('.popup_wrapper.feedback').addClass('active');
   $('#mail_to_bank').parsley();
-  $('#phone_mail').blur(function () {
+  $('#phone_mail, #name_mail').blur(function () {
     if ($(this).val().length !== 0) {
       $(this).addClass('filled');
     } else {

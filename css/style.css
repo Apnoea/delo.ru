@@ -134,14 +134,26 @@ ul.list li:before {
 .text-block-title {
   font: 700 36px/1.3 'Gilroy', sans-serif;
 }
+.text-block-desc {
+  margin-top: 15px;
+  font: 300 18px/1.5 'Gilroy', sans-serif;
+}
 ::-ms-clear {
   display: none;
 }
 .wrapper {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
   max-width: 1920px;
   min-width: 320px;
+  min-height: 100vh;
   margin: 0 auto;
   font-family: 'Gilroy', sans-serif;
   color: #000;
@@ -163,6 +175,9 @@ ul.list li:before {
 }
 .wrapper header {
   position: fixed;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   width: 100%;
   background: #fff;
   z-index: 10;
@@ -497,6 +512,9 @@ ul.list li:before {
   color: #f65e64;
 }
 .wrapper main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   padding-top: 100px;
 }
 .wrapper main > div {
@@ -1459,7 +1477,7 @@ ul.list li:before {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 28px;
+  width: 29px;
   height: 32px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -1653,6 +1671,9 @@ ul.list li:before {
   width: 24%;
 }
 .wrapper main .inner .steps-block-item.active .steps-block-item-image-circle svg circle {
+  stroke: #fff;
+}
+.wrapper main .inner .steps-block-item.active .steps-block-item-image-circle svg circle:first-child {
   fill: #f65e64;
   stroke: #f65e64;
 }
@@ -1976,7 +1997,7 @@ ul.list li:before {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 28px;
+  width: 29px;
   height: 32px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -2098,6 +2119,7 @@ ul.list li:before {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 100%;
   margin-top: 30px;
 }
 .wrapper main .inner .services-block:after {
@@ -2147,8 +2169,8 @@ ul.list li:before {
   height: 100%;
 }
 .wrapper main .inner .services-block-item-content-title {
-  margin-right: -20px;
-  font: 700 24px/1 'Gilroy', sans-serif;
+  margin-right: -26px;
+  font: 700 24px/1.3 'Gilroy', sans-serif;
 }
 .wrapper main .inner .services-block-item-content-desc {
   margin-top: 15px;
@@ -2215,12 +2237,12 @@ ul.list li:before {
   transition: 0.3s;
 }
 .wrapper main .inner .services-block-item-image {
-  width: 35%;
-  text-align: center;
+  width: 40%;
+  text-align: right;
 }
 .wrapper main .inner .services-block-item-image img {
   max-width: 100%;
-  max-height: 190px;
+  max-height: 150px;
 }
 .wrapper main .main-page .inner .category {
   display: -webkit-box;
@@ -4227,7 +4249,7 @@ ul.list li:before {
   border-radius: 20px;
 }
 .wrapper main .acquiring-detail-page .inner .how-much-block-table-title {
-  font: 700 24px/1.5 'Gilroy', sans-serif;
+  font: 700 22px/1.5 'Gilroy', sans-serif;
   margin-bottom: 10px;
 }
 .wrapper main .acquiring-detail-page .inner .how-much-block-table-line {
@@ -4246,6 +4268,11 @@ ul.list li:before {
 }
 .wrapper main .acquiring-detail-page .inner .how-much-block-table-line-desc {
   font: 300 18px/1.5 'Gilroy', sans-serif;
+}
+.wrapper main .acquiring-detail-page .inner .how-much-block-table-line-desc span {
+  display: block;
+  font: 300 14px/1.5 'Gilroy', sans-serif;
+  color: #808080;
 }
 .wrapper main .acquiring-detail-page .inner .how-much-block-table-line-value {
   font: 700 24px/1.3 'Gilroy', sans-serif;
@@ -4311,7 +4338,7 @@ ul.list li:before {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 28px;
+  width: 29px;
   height: 32px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -4440,7 +4467,7 @@ ul.list li:before {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 25px 40px 50px;
+  padding: 25px 30px 50px;
 }
 .wrapper main .bonuses-page .inner .bonuses-block-item-text-title {
   font: 700 22px/1 'Gilroy', sans-serif;
@@ -4463,7 +4490,7 @@ ul.list li:before {
   margin-top: auto;
 }
 .wrapper main .bonuses-page .inner .bonuses-block-item-text-line-value {
-  font: 22px/1 'Gilroy', sans-serif;
+  font: 18px/1.3 'Gilroy', sans-serif;
   color: #f65e64;
 }
 .wrapper main .bonuses-page .inner .bonuses-block-item-text-line-value span {
@@ -4474,7 +4501,7 @@ ul.list li:before {
 .wrapper main .bonuses-page .inner .bonuses-block-item-text-line-detail a {
   position: relative;
   display: block;
-  width: 165px;
+  width: 160px;
   text-align: center;
   font: 300 18px/53px 'Gilroy', sans-serif;
   color: #f65e64;
@@ -6059,6 +6086,50 @@ ul.list li:before {
   margin-top: 20px;
   font: 300 18px/1.5 'Gilroy', sans-serif;
 }
+.wrapper main .not-found-page .inner .top-banner-content-text-title {
+  font: 700 36px/1.3 'Gilroy', sans-serif;
+}
+.wrapper main .not-found-page .inner .top-banner-content-text-open a {
+  width: 180px;
+  line-height: 53px;
+  color: #f65e64;
+  background: none;
+  border: 1px solid #f65e64;
+}
+.wrapper main .not-found-page .inner .top-banner-content-text-open a:hover {
+  line-height: 55px;
+  color: #fff;
+  border: none;
+}
+.wrapper main .not-found-page .inner .top-banner-content-text-open a:hover:before {
+  opacity: 1;
+}
+.wrapper main .not-found-page .inner .top-banner-content-text-open a:hover span:before {
+  border-color: #fff;
+}
+.wrapper main .not-found-page .inner .top-banner-content-text-open a span {
+  position: relative;
+  padding-right: 20px;
+}
+.wrapper main .not-found-page .inner .top-banner-content-text-open a span:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+  border-top: 1px solid #f65e64;
+  border-right: 1px solid #f65e64;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.wrapper main .not-found-page .inner .top-banner-image {
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 588px;
+}
 .wrapper main .open-api-page .inner .top-banner:before {
   content: '';
   top: 36px;
@@ -6118,10 +6189,13 @@ ul.list li:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 50px;
 }
 .wrapper main .overdraft-page .inner .freely-use-block-item {
-  width: 25%;
+  width: 24%;
 }
 .wrapper main .overdraft-page .inner .freely-use-block-item-value {
   font: 36px/1 'Gilroy', sans-serif;
@@ -6167,7 +6241,7 @@ ul.list li:before {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 28px;
+  width: 29px;
   height: 32px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -6551,7 +6625,7 @@ ul.list li:before {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 28px;
+  width: 29px;
   height: 32px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -7087,7 +7161,7 @@ ul.list li:before {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 28px;
+  width: 29px;
   height: 32px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -7396,7 +7470,7 @@ ul.list li:before {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 28px;
+  width: 29px;
   height: 32px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -8160,6 +8234,11 @@ ul.list li:before {
 .wrapper main .all-tools-page .inner .steps-title {
   font: 500 30px/1.3 'Gilroy', sans-serif;
 }
+.wrapper footer {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
 .wrapper footer .inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8755,6 +8834,7 @@ ul.list li:before {
 }
 .wrapper .popup_wrapper .inner .popup-block-form-file label {
   position: relative;
+  margin-bottom: 0;
   padding-left: 40px;
   font: 300 14px/1.5 'Gilroy', sans-serif;
   cursor: pointer;
@@ -8764,9 +8844,8 @@ ul.list li:before {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 28px;
+  width: 29px;
   height: 32px;
-  margin-bottom: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background: url(../img/icon_list.svg) no-repeat;

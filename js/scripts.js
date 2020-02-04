@@ -162,7 +162,7 @@ function style() {
     $('body').css('overflow', 'scroll');
   })
 
-  $('.important-block-item-title').on('click', function () {
+  $(document).on('click', '.important-block-item-title', function () {
     $(this).parent().siblings().removeClass('active');
     $(this).parent().siblings().find('.important-block-item-desc').slideUp();
     $(this).parent().toggleClass('active');
@@ -198,6 +198,27 @@ function style() {
     });
   }
   burger();
+
+  if ($('.tariffs-page').length > 0) { // tariffs_page scripts
+      $(document).on('click', '.tabs-block a', function () {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+          var page = $(this).attr("href");
+          history.pushState({}, '',  page );
+          $.ajax({
+              type: "POST",
+              url: "/local/templates/main/include/pages/tariffs/ajax"+page+"index.php",
+              success: function (msg) {
+                  $('#tariffs_tab').html(msg);
+                  $('#phone').inputmask({
+                    mask: '+7 (999) 999-99-99',
+                    showMaskOnHover: false
+                  });
+              }
+          });
+          return false;
+      });
+  }
 
   if ($('.bonuses-page').length > 0) { // about_page scripts
     $("[data-fancybox]").fancybox({
@@ -262,7 +283,7 @@ function style() {
         //setLocation(cat_name);
         $.ajax({
           type: "POST",
-          url: "/local/templates/main/include/pages/journal/ajax/journal_list/index.php",
+          url: "/local/templates/main/include/pages/news/ajax/journal_list/index.php",
           data: ({
             "FILTER": cat_name
           }),
@@ -426,6 +447,8 @@ function style() {
       $(this).addClass('active');
       $(this).parent().siblings('.switcher-block-content').find('.switcher-block-content-box.active').removeClass('active');
       $(this).parent().siblings('.switcher-block-content').find('.switcher-block-content-box').eq(index).addClass('active');
+      var page = $(this).data("link");
+      history.pushState({}, '',  page );
     })
   }
 

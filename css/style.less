@@ -134,8 +134,14 @@ ul.list {
     }
   }
 }
-.text-block-title {
-  font: 700 36px/1.3 @font;
+.text-block {
+  &-title {
+    font: 700 36px/1.3 @font;
+  }
+  &-desc {
+    margin-top: 15px;
+    font: 300 18px/1.5 @font;
+  }
 }
 ::-ms-clear {
   display: none;
@@ -143,9 +149,12 @@ ul.list {
 
 .wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   max-width: 1920px;
   min-width: 320px;
+  min-height: 100vh;
   margin: 0 auto;
   font-family: @font;
   color: @black;
@@ -165,6 +174,7 @@ ul.list {
   }
   header {
     position: fixed;
+    flex: 0 0 auto;
     width: 100%;
     background: #fff;
     z-index: 10;
@@ -466,6 +476,7 @@ ul.list {
     }
   }
   main {
+    flex: 1 0 auto;
     padding-top: 100px;
     > div {
       padding-top: 40px;
@@ -1319,7 +1330,7 @@ ul.list {
                   position: absolute;
                   left: 0;
                   top: 50%;
-                  width: 28px;
+                  width: 29px;
                   height: 32px;
                   transform: translateY(-50%);
                   background: url(../img/icon_list.svg) no-repeat;
@@ -1503,8 +1514,11 @@ ul.list {
                 &-circle {
                   svg {
                     circle {
-                      fill: @pink;
-                      stroke: @pink;
+                      stroke: #fff;
+                      &:first-child {
+                        fill: @pink;
+                        stroke: @pink;
+                      }
                     }
                     path,
                     rect {
@@ -1808,7 +1822,7 @@ ul.list {
                   position: absolute;
                   left: 0;
                   top: 50%;
-                  width: 28px;
+                  width: 29px;
                   height: 32px;
                   transform: translateY(-50%);
                   background: url(../img/icon_list.svg) no-repeat;
@@ -1920,6 +1934,7 @@ ul.list {
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
+          width: 100%;
           margin-top: 30px;
           &:after {
             content: '';
@@ -1954,8 +1969,8 @@ ul.list {
               flex-direction: column;
               height: 100%;
               &-title {
-                margin-right: -20px;
-                font: 700 24px/1 @font;
+                margin-right: -26px;
+                font: 700 24px/1.3 @font;
               }
               &-desc {
                 margin-top: 15px;
@@ -2020,11 +2035,11 @@ ul.list {
               }
             }
             &-image {
-              width: 35%;
-              text-align: center;
+              width: 40%;
+              text-align: right;
               img {
                 max-width: 100%;
-                max-height: 190px;
+                max-height: 150px;
               }
             }
           }
@@ -3859,7 +3874,7 @@ ul.list {
               background: #fff;
               border-radius: 20px;
               &-title {
-                font: 700 24px/1.5 @font;
+                font: 700 22px/1.5 @font;
                 margin-bottom: 10px;
               }
               &-line {
@@ -3873,6 +3888,11 @@ ul.list {
                 }
                 &-desc {
                   font: 300 18px/1.5 @font;
+                  span {
+                    display: block;
+                    font: 300 14px/1.5 'Gilroy', sans-serif;
+                    color: #808080;
+                  }
                 }
                 &-value {
                   font: 700 24px/1.3 @font;
@@ -3929,7 +3949,7 @@ ul.list {
                     position: absolute;
                     left: 0;
                     top: 50%;
-                    width: 28px;
+                    width: 29px;
                     height: 32px;
                     transform: translateY(-50%);
                     background: url(../img/icon_list.svg) no-repeat;
@@ -4040,7 +4060,7 @@ ul.list {
                 flex-grow: 1;
                 display: flex;
                 flex-direction: column;
-                padding: 25px 40px 50px;
+                padding: 25px 30px 50px;
                 &-title {
                   font: 700 22px/1 @font;
                 }
@@ -4055,7 +4075,7 @@ ul.list {
                   align-items: center;
                   margin-top: auto;
                   &-value {
-                    font: 22px/1 @font;
+                    font: 18px/1.3 @font;
                     color: @pink;
                     span {
                       display: block;
@@ -4067,7 +4087,7 @@ ul.list {
                     a {
                       position: relative;
                       display: block;
-                      width: 165px;
+                      width: 160px;
                       text-align: center;
                       font: 300 18px/53px @font;
                       color: @pink;
@@ -5650,6 +5670,61 @@ ul.list {
         }
       }
     }
+    .not-found-page {
+      .inner {
+        .top-banner {
+          &-content {
+            &-text {
+              &-title {
+                font: 700 36px/1.3 @font;
+              }
+              &-open {
+                a {
+                  width: 180px;
+                  line-height: 53px;
+                  color: @pink;
+                  background: none;
+                  border: 1px solid @pink;
+                  &:hover {
+                    line-height: 55px;
+                    color: #fff;
+                    border: none;
+                    &:before {
+                      opacity: 1;
+                    }
+                    span {
+                      &:before {
+                        border-color: #fff;
+                      }
+                    }
+                  }
+                  span {
+                    position: relative;
+                    padding-right: 20px;
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      right: 0;
+                      top: 50%;
+                      width: 13px;
+                      height: 13px;
+                      transform: translateY(-50%) rotate(45deg);
+                      border-top: 1px solid @pink;
+                      border-right: 1px solid @pink;
+                      transition: 0.3s;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &-image {
+            align-self: center;
+            width: 588px;
+          }
+        }
+      }
+    }
     .open-api-page {
       .inner {
         .top-banner {
@@ -5726,9 +5801,10 @@ ul.list {
           }
           &-block {
             display: flex;
+            justify-content: space-between;
             margin-top: 50px;
             &-item {
-              width: 25%;
+              width: 24%;
               &-value {
                 font: 36px/1 @font;
                 color: @pink;
@@ -5771,7 +5847,7 @@ ul.list {
                 position: absolute;
                 left: 0;
                 top: 50%;
-                width: 28px;
+                width: 29px;
                 height: 32px;
                 transform: translateY(-50%);
                 background: url(../img/icon_list.svg) no-repeat;
@@ -6146,7 +6222,7 @@ ul.list {
                     position: absolute;
                     left: 0;
                     top: 50%;
-                    width: 28px;
+                    width: 29px;
                     height: 32px;
                     transform: translateY(-50%);
                     background: url(../img/icon_list.svg) no-repeat;
@@ -6690,7 +6766,7 @@ ul.list {
                   position: absolute;
                   left: 0;
                   top: 50%;
-                  width: 28px;
+                  width: 29px;
                   height: 32px;
                   transform: translateY(-50%);
                   background: url(../img/icon_list.svg) no-repeat;
@@ -7018,7 +7094,7 @@ ul.list {
                   position: absolute;
                   left: 0;
                   top: 50%;
-                  width: 28px;
+                  width: 29px;
                   height: 32px;
                   transform: translateY(-50%);
                   background: url(../img/icon_list.svg) no-repeat;
@@ -7776,6 +7852,7 @@ ul.list {
     }
   }
   footer {
+    flex: 0 0 auto;
     .inner {
       display: flex;
       flex-wrap: wrap;
@@ -8323,6 +8400,7 @@ ul.list {
               }
               label {
                 position: relative;
+                margin-bottom: 0;
                 padding-left: 40px;
                 font: 300 14px/1.5 @font;
                 cursor: pointer;
@@ -8331,9 +8409,8 @@ ul.list {
                   position: absolute;
                   left: 0;
                   top: 50%;
-                  width: 28px;
+                  width: 29px;
                   height: 32px;
-                  margin-bottom: 0;
                   transform: translateY(-50%);
                   background: url(../img/icon_list.svg) no-repeat;
                   background-size: contain;

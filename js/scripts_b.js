@@ -63,6 +63,9 @@ $(document).on("click", ".best-tariffs-slider .swiper-slide-item-button", functi
 
 $(document).on("click", ".open-account", function () {
   $('.popup_wrapper.rko').addClass('active');
+  setTimeout(() => {
+     $('#popup_phone').focus();
+   },  200);  
   return false;
 });
 
@@ -300,6 +303,9 @@ $(document).on("submit", "#mail_to_bank", function () {
 
 $(document).on("click", ".page-nav-item-open", function () {
   $('.popup_wrapper.rko').addClass('active');
+  setTimeout(() => {
+     $('#popup_phone').focus();
+   },  200);
   return false;
 });
 
@@ -1165,12 +1171,22 @@ $(document).on("submit", "#open_account_step2", function () {
         "sessid": sessid
       }),
       success: function (msg) {
-        $('#result').html(msg);
-        $('#sms_code').inputmask({
-          mask: '9999',
-          showMaskOnHover: false
-        });
-        startTimer();
+        test = msg.split('<');
+alert(test);
+        const array = JSON.parse(msg);
+        alert(array.email);
+        if(array.email){
+          $('#open_account_step2 input[name=email]').addClass("parsley-error");
+        }else{
+          $('#open_account_step2 input[name=email]').removeClass("parsley-error");
+          $('#result').html(msg);
+          $('#sms_code').inputmask({
+            mask: '9999',
+            showMaskOnHover: false
+          });
+          startTimer();
+        }
+
       }
     });
   }
@@ -1314,4 +1330,18 @@ $(document).on("click", "#open_account_sms .repeat-sms", function () {
   });
 
   return false;
+});
+
+
+$(document).ready(function () {
+  var nav_last = 0;
+  $( ".nav_last" ).each(function() {
+      nav_last++; 
+      if(nav_last>1){
+          $(this).remove();
+      } else{
+          $(this).show();
+      }
+      console.log(1);
+  });
 });

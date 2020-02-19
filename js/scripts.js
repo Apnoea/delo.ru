@@ -5,37 +5,37 @@ $(document).ready(function () {
 
 function init() {
   function swiper_init() {
-    var actions_slider = new Swiper('.actions_slider', {
-      spaceBetween: 20,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-      },
-      on: {
-        slideChange: function () {
-          $('.fill').removeClass('active');
-          setTimeout(function () {
-            $('.fill').addClass('active');
-          }, 300);
+    if ($('.main-page').length > 0) {
+      var actions_slider = new Swiper('.actions_slider', {
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'fraction',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+        },
+        on: {
+          slideChange: function () {
+            $('.fill').removeClass('active');
+            setTimeout(function () {
+              $('.fill').addClass('active');
+            }, 300);
+          }
         }
-      }
-    });
-    if ($('.best-tariffs-slider').length > 0) {
+      });
+
       var tariffs_slider = undefined;
       function tariffs_init() {
         var screenWidth = $(window).width();
         if (screenWidth > 1239 && tariffs_slider == undefined) {
           tariffs_slider = new Swiper('.best-tariffs-slider', {
             followFinger: false,
-            autoHeight: true,
             slidesPerView: 'auto',
             centeredSlides: true,
             loop: true,
@@ -101,8 +101,6 @@ function init() {
         }
       });
     }
-    if ($('.department-page').length > 0) {
-    }
   }
   swiper_init();
 }
@@ -116,14 +114,6 @@ function style() {
     });
   });
 
-  function num2str(n, text_forms) {
-    n = Math.abs(n) % 100; var n1 = n % 10;
-    if (n > 10 && n < 20) { return text_forms[2]; }
-    if (n1 > 1 && n1 < 5) { return text_forms[1]; }
-    if (n1 == 1) { return text_forms[0]; }
-    return text_forms[2];
-  }
-
   if ($('.top-banner').length > 0) {
     function wave_anim() {
       $(window).on('scroll load', function () {
@@ -136,7 +126,7 @@ function style() {
   }
 
   if ($('.steps').length > 0) {
-    function scroll_anim() {
+    function steps_anim() {
       $(window).on('scroll load', function () {
         if ($(window).scrollTop() + $(window).height() > ($('.steps').offset().top) + 200) {
           $('.steps-block-item:first-child').addClass('active');
@@ -148,7 +138,7 @@ function style() {
         }
       })
     }
-    scroll_anim();
+    steps_anim();
   }
 
   $('.docs-download-block .docs-download-block-more').on('click', function () {
@@ -199,28 +189,7 @@ function style() {
   }
   burger();
 
-  if ($('.tariffs-page').length > 0) { // tariffs_page scripts
-      $(document).on('click', '.tabs-block a', function () {
-          $(this).siblings().removeClass('active');
-          $(this).addClass('active');
-          var page = $(this).attr("href");
-          history.pushState({}, '',  page );
-          $.ajax({
-              type: "POST",
-              url: "/local/templates/main/include/pages/tariffs/ajax"+page+"index.php",
-              success: function (msg) {
-                  $('#tariffs_tab').html(msg);
-                  $('#phone').inputmask({
-                    mask: '+7 (999) 999-99-99',
-                    showMaskOnHover: false
-                  });
-              }
-          });
-          return false;
-      });
-  }
-
-  if ($('.bonuses-page').length > 0) { // about_page scripts
+  if ($('.about-page').length > 0) { // about_page scripts
     $("[data-fancybox]").fancybox({
       animationeffect: false
     });
@@ -257,6 +226,7 @@ function style() {
   }
 
   if ($('.help-page').length > 0) { // help_page scripts
+    $('.wrapper').css('overflow', 'visible'); // position: sticky fix (on page load)
     $('.info-titles-item-name').on('click', function () {
       let list_index = $(this).attr('list-index');
       $(this).siblings().removeClass('active');
@@ -264,6 +234,29 @@ function style() {
       $(this).addClass('active');
       $(this).parents().siblings('.info-content').find('.info-content-item.active').removeClass('active');
       $("#" + list_index).addClass('active');
+    })
+
+    if ($(window).width() <= 979) {
+      $('.wrapper').css('overflow', 'hidden'); // position: sticky fix (on page load)
+      let header_h = $('header').height();
+      $('.info-titles-item-name').on('click', function () {
+        let item_h = $('.info-content-item.active').offset().top;
+        total_height = item_h - header_h * 2;
+        $("html, body").animate({ scrollTop: total_height + 'px' });
+      })
+      $('.info-content-item-title').on('click', function () {
+        let item_h = $('.info-titles-item-name.active').offset().top
+        total_height = item_h - header_h * 2;
+        $("html, body").animate({ scrollTop: total_height + 'px' });
+      })
+    }
+
+    $(window).resize(function () { // position: sticky fix (on page resize)
+      if ($(window).width() <= 979) {
+        $('.wrapper').css('overflow', 'hidden');
+      } else {
+        $('.wrapper').css('overflow', 'visible');
+      }
     })
   }
 
@@ -305,9 +298,7 @@ function style() {
         }
       })
     }
-    if ($('.mobile_app').length > 0) {
-      main_scroll_anim();
-    }
+    main_scroll_anim();
 
     function main_awards_more() {
       $('.features-awards-more').on('click', function () {
@@ -330,8 +321,8 @@ function style() {
     ymaps.ready(init);
     function init() {
       var myMap = new ymaps.Map('atms_map', {
-        center: [55.76, 37.64],
-        zoom: 10,
+        center: [58.337364, 82.861901],
+        zoom: 3,
         controls: ['zoomControl', 'fullscreenControl']
       }),
         objectManager = new ymaps.ObjectManager({
@@ -352,7 +343,7 @@ function style() {
         url: "/local/templates/main/include/pages/departments/data.json"
       }).done(function (data) {
         objectManager.add(data);
-        objectManager.setFilter('properties.type == "Банкомат"');
+        objectManager.setFilter('properties.partners == "no"');
       });
 
       if ($(window).width() < 767) {
@@ -376,7 +367,7 @@ function style() {
       }
 
       objectManager.objects.events.add('click', function (e) {
-        $('.atms-address-map-baloon').addClass('active');
+        $('.atms-map-baloon').addClass('active');
         var objectId = e.get('objectId');
         var objectType = objectManager.objects.getById(e.get("objectId")).properties.type;
         var objectName = objectManager.objects.getById(e.get("objectId")).properties.name;
@@ -387,9 +378,11 @@ function style() {
         $('#atms_baloon_addr').html(objectAddress);
         $('#atms_baloon_time').html(objectTime);
       });
-
-      $('.atms-address-map-baloon-btn').on('click', function () {
-        $('.atms-address-map-baloon').removeClass('active');
+      $('.atms-map-baloon-content').mCustomScrollbar({
+        axis: "y"
+      });
+      $('.atms-map-baloon-btn').on('click', function () {
+        $('.atms-map-baloon').removeClass('active');
       });
     }
 
@@ -428,6 +421,32 @@ function style() {
 
   }
 
+  if ($('.tariffs-page').length > 0) { // tariffs_page scripts
+    $(document).on('click', '.tabs-block a', function () {
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+      var page = $(this).attr("href");
+      history.pushState({}, '', page);
+      var page = page + '/';
+      var text = $(this).data("nav");
+      var title = $(this).data("title");
+      $('.top-banner-content-breadcrumbs li:last-child span').html(text);
+      $('h1').html(title);
+      $.ajax({
+        type: "POST",
+        url: "/local/templates/main/include/pages/tariffs/ajax" + page + "index.php",
+        success: function (msg) {
+          $('#tariffs_tab').html(msg);
+          $('#phone').inputmask({
+            mask: '+7 (999) 999-99-99',
+            showMaskOnHover: false
+          });
+        }
+      });
+      return false;
+    });
+  }
+
   // MARKETPLACE //
 
   if ($('.start-business-page').length > 0) { // start_business_page scripts
@@ -448,7 +467,7 @@ function style() {
       $(this).parent().siblings('.switcher-block-content').find('.switcher-block-content-box.active').removeClass('active');
       $(this).parent().siblings('.switcher-block-content').find('.switcher-block-content-box').eq(index).addClass('active');
       var page = $(this).data("link");
-      history.pushState({}, '',  page );
+      history.pushState({}, '', page);
     })
   }
 

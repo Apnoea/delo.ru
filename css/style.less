@@ -189,7 +189,6 @@ ul.list {
         &-logo {
           position: relative;
           width: 220px;
-          height: 40px;
           z-index: 1000;
           img {
             width: 100%;
@@ -483,11 +482,14 @@ ul.list {
       padding-bottom: 120px;
     }
     .inner {
+      & > section:not(:first-child),
+      & > div:not(:first-child) {
+        margin-top: 80px;
+      }
       .top-banner {
         position: relative;
         display: flex;
         justify-content: space-between;
-        height: 0px;
         min-height: 320px;
         padding-left: 70px;
         background: #f4f4f4;
@@ -497,6 +499,11 @@ ul.list {
           position: absolute;
           background: url(../img/icon_bubble.svg);
           background-size: contain;
+        }
+        &-ie_fix {
+          // ie11 align-self fix
+          min-height: inherit;
+          font-size: 0;
         }
         &-wave {
           position: absolute;
@@ -623,7 +630,6 @@ ul.list {
         }
       }
       .account {
-        margin-top: 80px;
         &-block {
           display: flex;
           align-items: center;
@@ -683,7 +689,6 @@ ul.list {
         }
       }
       .advantage {
-        margin-top: 80px;
         &-title {
           font: 700 36px/1.3 @font;
         }
@@ -748,7 +753,6 @@ ul.list {
         }
       }
       .choose {
-        margin-top: 80px;
         &-title {
           font: 700 36px/1.3 @font;
         }
@@ -925,7 +929,6 @@ ul.list {
         }
       }
       .cost {
-        margin-top: 80px;
         &-title {
           font: 700 36px/1.3 @font;
         }
@@ -1082,7 +1085,6 @@ ul.list {
         }
       }
       .features {
-        margin-top: 80px;
         &-title {
           font: 700 36px/1.3 @font;
         }
@@ -1096,7 +1098,7 @@ ul.list {
             flex-basis: 25%;
           }
           &-item {
-            width: 25%;
+            width: 24%;
             margin-top: 60px;
             &:nth-child(-n + 4) {
               margin-top: 0;
@@ -1125,7 +1127,6 @@ ul.list {
         }
       }
       .important {
-        margin-top: 80px;
         &-title {
           font: 700 36px/1.3 @font;
         }
@@ -1174,7 +1175,6 @@ ul.list {
       .payment-system {
         display: flex;
         align-items: center;
-        margin-top: 80px;
         &-text {
           &-title {
             font: 700 36px/1.3 @font;
@@ -1208,7 +1208,6 @@ ul.list {
         position: relative;
         display: flex;
         justify-content: space-between;
-        margin-top: 80px;
         padding: 45px 60px 0 50px;
         background: @lgray;
         border-radius: 20px;
@@ -1284,7 +1283,6 @@ ul.list {
       }
       .receive {
         display: flex;
-        margin-top: 80px;
         &-content {
           max-width: 600px;
           &-title {
@@ -1348,14 +1346,12 @@ ul.list {
         }
         &-image {
           width: 500px;
-          margin-top: 80px;
           img {
             width: 100%;
           }
         }
       }
       .request {
-        margin-top: 80px;
         padding: 75px 70px 70px;
         border: 1px solid @gray;
         border-radius: 20px;
@@ -1505,7 +1501,6 @@ ul.list {
         }
       }
       .steps {
-        margin-top: 80px;
         &-title {
           font: 700 36px/1.3 @font;
         }
@@ -1591,7 +1586,6 @@ ul.list {
         }
       }
       .tariffs {
-        margin-top: 80px;
         padding: 60px 30px 40px;
         background: @lgray;
         border-radius: 20px;
@@ -1840,7 +1834,6 @@ ul.list {
         }
       }
       .tariffs-info {
-        margin-top: 80px;
         &-title {
           font: 700 36px/1.3 @font;
         }
@@ -1855,6 +1848,7 @@ ul.list {
           margin-top: 30px;
           padding: 40px 45px 50px;
           background: @lgray;
+          border-radius: 20px;
           &-item {
             width: ~'calc((100% - 40px)/3)';
             padding: 30px 35px 50px;
@@ -1931,7 +1925,6 @@ ul.list {
         }
       }
       .services {
-        margin-top: 80px;
         &-title {
           font: 700 36px/1.3 @font;
         }
@@ -1992,7 +1985,6 @@ ul.list {
                   text-align: center;
                   font: 300 16px/38px @font;
                   color: @pink;
-                  background: #fff;
                   border: 1px solid @pink;
                   border-radius: 35px;
                   transition: color 0.3s;
@@ -2304,7 +2296,6 @@ ul.list {
                   z-index: 5;
                   &-current {
                     font: 30px/1 @font;
-                    color: @pink;
                   }
                 }
                 .progress {
@@ -2398,7 +2389,6 @@ ul.list {
           }
         }
         .best-tariffs {
-          margin-top: 80px;
           &-top {
             display: flex;
             justify-content: space-between;
@@ -2728,7 +2718,6 @@ ul.list {
           }
         }
         .features {
-          margin-top: 80px;
           &-title {
             font: 700 48px/1 @font;
           }
@@ -2777,6 +2766,9 @@ ul.list {
                   display: flex;
                   align-items: center;
                   height: 100px;
+                  img {
+                    height: 100%;
+                  }
                 }
                 &-place {
                   margin-top: 30px;
@@ -3109,7 +3101,6 @@ ul.list {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-top: 80px;
           background: #fff1f2;
           border-radius: 20px;
           overflow: hidden;
@@ -3407,7 +3398,7 @@ ul.list {
         .licenses {
           margin-top: 125px;
           padding: 65px 0 70px;
-          background: #f2f9fd;
+          background: @lgray;
           border-radius: 20px;
           &-top {
             display: flex;
@@ -3656,6 +3647,7 @@ ul.list {
             top: 110px;
           }
           &-image {
+            align-self: flex-end;
             width: 320px;
             margin-top: -25px;
           }
@@ -3725,7 +3717,6 @@ ul.list {
           }
         }
         .actions {
-          margin-top: 80px;
           &-block {
             display: flex;
             flex-wrap: wrap;
@@ -3742,10 +3733,16 @@ ul.list {
                 margin-top: 0;
               }
               &-image {
+                position: relative;
                 height: 280px;
                 overflow: hidden;
                 img {
+                  position: absolute;
+                  left: 50%;
+                  top: 0;
+                  width: auto;
                   height: 100%;
+                  transform: translateX(-50%);
                 }
               }
               &-text {
@@ -3827,7 +3824,6 @@ ul.list {
           }
         }
         .docs {
-          margin-top: 80px;
           &-title {
             font: 700 36px/1.3 @font;
           }
@@ -4031,7 +4027,6 @@ ul.list {
           }
         }
         .actions-detail {
-          margin-top: 80px;
           &-title {
             font: 700 36px/1.3 @font;
           }
@@ -4041,7 +4036,9 @@ ul.list {
           }
         }
         .features {
+          margin-top: 40px;
           &-block {
+            margin-top: 0;
             &-item {
               width: 32%;
               &-desc {
@@ -4133,7 +4130,6 @@ ul.list {
           }
         }
         .how-much {
-          margin-top: 80px;
           padding: 55px 60px 65px;
           background: @lgray;
           border-radius: 20px;
@@ -4511,7 +4507,6 @@ ul.list {
           }
         }
         .bonus-content {
-          margin-top: 80px;
           &-title {
             font: 500 30px/1.2 @font;
           }
@@ -4901,7 +4896,6 @@ ul.list {
           }
         }
         .solution {
-          margin-top: 80px;
           &-title {
             font: 700 36px/1.3 @font;
           }
@@ -5032,7 +5026,6 @@ ul.list {
           }
         }
         .purpose {
-          margin-top: 80px;
           &-title {
             font: 700 36px/1.3 @font;
           }
@@ -5126,7 +5119,11 @@ ul.list {
           }
           &-image {
             align-self: flex-end;
-            width: 425px;
+            height: 320px;
+            img {
+              width: auto;
+              height: 100%;
+            }
           }
         }
         .advantage {
@@ -5141,7 +5138,6 @@ ul.list {
           }
         }
         .calculate {
-          margin-top: 80px;
           &-title {
             font: 700 30px/1.3 @font;
           }
@@ -5181,11 +5177,8 @@ ul.list {
                       border-radius: 14px;
                       background: none;
                       color: #8e8f8e;
+                      transition: 0.3s;
                       outline: none;
-                      &.ui-button {
-                        width: auto;
-                        text-align: center;
-                      }
                       .ui-icon {
                         width: 8px;
                         height: 8px;
@@ -5193,6 +5186,21 @@ ul.list {
                         transform: rotate(-45deg);
                         border: 1px solid #8e8f8e;
                         border-width: 0 0 1px 1px;
+                        transition: 0.3s;
+                      }
+                      &-open {
+                        color: #fff;
+                        background: @pink;
+                        border-color: @pink;
+                        .ui-icon {
+                          margin-top: 11px;
+                          transform: rotate(135deg);
+                          border-color: #fff;
+                        }
+                      }
+                      &.ui-button {
+                        width: auto;
+                        text-align: center;
                       }
                     }
                   }
@@ -5208,6 +5216,7 @@ ul.list {
                       background: #f4f4f4;
                       &-range {
                         background: @pink;
+                        transition: 0.3s;
                       }
                       &-handle {
                         top: 50%;
@@ -5218,6 +5227,7 @@ ul.list {
                         background: @pink;
                         border: 0;
                         border-radius: 50%;
+                        transition: 0.3s;
                         cursor: pointer;
                         outline: none;
                       }
@@ -5352,7 +5362,6 @@ ul.list {
         .interface {
           display: flex;
           justify-content: space-between;
-          margin-top: 80px;
           padding: 35px 165px 20px 70px;
           background: @lgray;
           border-radius: 20px;
@@ -5390,7 +5399,6 @@ ul.list {
         .info {
           display: flex;
           justify-content: space-between;
-          margin-top: 80px;
           &-titles {
             &-item {
               margin-top: 75px;
@@ -5490,6 +5498,7 @@ ul.list {
             height: 36px;
           }
           &-image {
+            align-self: flex-end;
             width: 270px;
             margin-top: -5px;
           }
@@ -5743,7 +5752,6 @@ ul.list {
       .inner {
         .text {
           position: relative;
-          margin-top: 80px;
           padding-right: 42px;
           &-social {
             position: absolute;
@@ -5947,7 +5955,6 @@ ul.list {
         .news {
           display: flex;
           justify-content: space-between;
-          margin-top: 80px;
           &-item {
             display: flex;
             width: ~'calc((100% - 40px)/2)';
@@ -6114,7 +6121,6 @@ ul.list {
           }
         }
         .freely-use {
-          margin-top: 80px;
           &-title {
             font: 700 36px/1.3 @font;
           }
@@ -6283,7 +6289,11 @@ ul.list {
             }
           }
           &-image {
-            width: 388px;
+            height: 320px;
+            img {
+              width: auto;
+              height: 100%;
+            }
           }
         }
         .features {
@@ -6306,7 +6316,6 @@ ul.list {
         }
         .reward {
           display: flex;
-          margin-top: 80px;
           padding: 70px 50px 20px;
           background: @lgray;
           border-radius: 20px;
@@ -6343,7 +6352,6 @@ ul.list {
           }
         }
         .earn-money {
-          margin-top: 80px;
           &-title {
             font: 700 36px/1.3 @font;
           }
@@ -6372,7 +6380,6 @@ ul.list {
         .cozy-lk {
           display: flex;
           align-items: center;
-          margin-top: 80px;
           &-image {
             max-width: 450px;
             margin-right: 60px;
@@ -6410,7 +6417,6 @@ ul.list {
           }
         }
         .work-together {
-          margin-top: 80px;
           padding: 90px 0 85px;
           background: @lgray;
           border-radius: 20px;
@@ -6514,7 +6520,6 @@ ul.list {
           }
         }
         .questions {
-          margin-top: 80px;
           &-desc {
             font: 300 22px/1.3 @font;
             a {
@@ -6563,7 +6568,6 @@ ul.list {
           }
         }
         .atms {
-          margin-top: 80px;
           &-title {
             font: 700 30px/1.3 @font;
           }
@@ -7020,7 +7024,6 @@ ul.list {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-top: 80px;
           padding: 0 130px 0 80px;
           background: @lgray;
           border-radius: 20px;
@@ -7098,7 +7101,6 @@ ul.list {
           justify-content: space-between;
           align-items: center;
           flex-wrap: wrap;
-          margin-top: 80px;
           &-item {
             display: flex;
             justify-content: space-between;
@@ -7188,7 +7190,6 @@ ul.list {
         }
         .content {
           max-width: 900px;
-          margin-top: 80px;
           &-text {
             margin-top: 50px;
             font: 300 22px/1.5 @font;
@@ -7415,7 +7416,6 @@ ul.list {
         .control {
           display: flex;
           justify-content: space-between;
-          margin-top: 80px;
           padding: 70px 100px 60px 60px;
           background: @lgray;
           border-radius: 20px;
@@ -7485,7 +7485,6 @@ ul.list {
           }
         }
         .sitemap {
-          margin-top: 80px;
           &-block {
             display: flex;
             justify-content: space-between;
@@ -7539,13 +7538,15 @@ ul.list {
           }
         }
         .tabs {
-          margin-top: 80px;
           &-title {
             font: 700 36px/1.3 @font;
           }
           &-block {
             display: flex;
             margin-top: 40px;
+            &::-webkit-scrollbar {
+              display: none;
+            }
             &-item {
               display: block;
               margin-left: 15px;
@@ -7567,7 +7568,7 @@ ul.list {
           }
         }
         .selected-tab {
-          margin-top: 80px;
+          margin-top: 55px;
           &-title {
             font: 500 30px/1.3 @font;
           }
@@ -7619,16 +7620,6 @@ ul.list {
           }
           &-block {
             margin-top: 40px;
-            &:after {
-              flex-basis: 33%;
-            }
-            &-item {
-              width: 33%;
-              margin-top: 45px;
-              &:nth-child(-n + 3) {
-                margin-top: 0;
-              }
-            }
           }
         }
         .steps {
@@ -7788,11 +7779,7 @@ ul.list {
         .features {
           &-block {
             margin-top: 40px;
-            &:after {
-              flex-basis: 33%;
-            }
             &-item {
-              width: 33%;
               margin-top: 45px;
             }
           }
@@ -7820,7 +7807,6 @@ ul.list {
           }
         }
         .docs {
-          margin-top: 80px;
           &-title {
             font: 700 36px/1.3 @font;
           }
@@ -8113,7 +8099,6 @@ ul.list {
           }
         }
         .switcher {
-          margin-top: 80px;
           &-block {
             &-title {
               display: flex;
@@ -8242,12 +8227,14 @@ ul.list {
                     }
                   }
                 }
+                .services-block {
+                  margin-top: 0;
+                }
               }
             }
           }
         }
         .integration {
-          margin-top: 80px;
           &-title {
             font: 700 36px/1.3 @font;
           }

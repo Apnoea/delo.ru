@@ -2,7 +2,16 @@
 
 @black: #000;
 @pink: #f65e64;
-@pink-bg: #fff1f2;
+
+.ui-selectmenu {
+  &-menu {
+    .ui-menu-item {
+      & > div {
+        font-size: 16px;
+      }
+    }
+  }
+}
 
 .bg-outside {
   position: relative;
@@ -33,7 +42,6 @@
       width: auto;
       margin-right: 40px;
     }
-
     header {
       .inner {
         margin: 0 40px;
@@ -58,15 +66,9 @@
         }
       }
     }
-
     main {
-      & > div {
-        padding-top: 40px;
-      }
-
       .inner {
         margin-left: 300px;
-
         .cost {
           &-block {
             &-item {
@@ -74,7 +76,6 @@
             }
           }
         }
-
         .tariffs {
           &-block {
             &-item {
@@ -95,98 +96,7 @@
           }
         }
       }
-
-      .main-page {
-        .inner {
-          .category {
-            &-item {
-              &.small-business {
-                padding-right: 10px;
-              }
-            }
-          }
-        }
-      }
-
-      .actions-page {
-        .inner {
-          .actions {
-            &-block {
-              &-item {
-                &-image {
-                  height: auto;
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .bonuses-page {
-        .inner {
-          .top-banner {
-            &-image {
-              width: 425px;
-            }
-          }
-        }
-      }
-
-      .journal-page {
-        .inner {
-          .articles {
-            &-block {
-              &-item {
-                &-image {
-                  height: auto;
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .remote-service-page {
-        .inner {
-          .content {
-            &-block {
-              &-image {
-                max-width: 50%;
-
-                img {
-                  max-width: 100%;
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .direct-bank-page {
-        .inner {
-          .top-banner {
-            padding-right: 0;
-          }
-        }
-      }
-
-      .open-api-page {
-        .inner {
-          .top-banner {
-            padding-right: 0;
-          }
-        }
-      }
-
-      .transfer-page {
-        .inner {
-          .top-banner {
-            padding-right: 0;
-          }
-        }
-      }
     }
-
     footer {
       .inner {
         margin: 0 40px 0 0;
@@ -194,7 +104,6 @@
         max-width: 100%;
       }
     }
-
     .popup_wrapper {
       .inner {
         padding: 80px 0 80px 80px;
@@ -229,8 +138,7 @@
 
         .header {
           &-logo {
-            width: 180px;
-
+            width: 200px;
             a {
               display: flex;
               align-items: center;
@@ -312,18 +220,18 @@
         }
       }
     }
-
     main {
       & > div {
         padding-top: 30px;
       }
-
       .inner {
         margin-left: 280px;
-
+        & > section:not(:first-child),
+        & > div:not(:first-child) {
+          margin-top: 70px;
+        }
         .top-banner {
-          padding-left: 30px;
-
+          padding-left: 35px;
           &-content {
             &-breadcrumbs {
               flex-wrap: wrap;
@@ -339,11 +247,10 @@
 
             &-text {
               &-title {
-                font-size: 38px;
+                font-size: 40px;
               }
 
               &-desc {
-                margin-top: 10px;
                 font-size: 16px;
               }
             }
@@ -352,180 +259,6 @@
             padding-right: 50px;
           }
         }
-
-        .request {
-          padding: 55px;
-
-          &-desc {
-            font-size: 20px;
-          }
-        }
-
-        .steps {
-          &-block {
-            &-item {
-              &-text {
-                &-title {
-                  font-size: 20px;
-                }
-
-                &-desc {
-                  font-size: 16px;
-                }
-              }
-            }
-          }
-        }
-
-        .features {
-          &-block {
-            &-item {
-              &-image {
-                width: 75px;
-                height: 75px;
-              }
-
-              &-desc {
-                font-size: 16px;
-              }
-            }
-          }
-        }
-
-        .important {
-          &-block {
-            &-item {
-              &-title {
-                font-size: 20px;
-              }
-
-              &-desc {
-                font-size: 16px;
-              }
-            }
-          }
-        }
-
-        .usefull-services {
-          &-block {
-            &-item {
-              &:not(:last-child) {
-                padding: 30px 35px;
-                min-height: 265px;
-
-                .usefull-services-block-item-content {
-                  width: 100%;
-
-                  &-desc {
-                    br {
-                      display: none;
-                    }
-                  }
-                }
-
-                .usefull-services-block-item-image {
-                  display: none;
-                }
-              }
-
-              &:last-child {
-                .usefull-services-block-item-image {
-                  width: 420px;
-                }
-              }
-            }
-          }
-        }
-
-        .tariffs {
-          padding-top: 45px;
-
-          &-desc {
-            margin-top: 15px;
-            font-size: 16px;
-          }
-
-          &-top {
-            margin-top: 20px;
-
-            &-title {
-              display: none;
-            }
-
-            &-item {
-              margin: 0 20px 0 0;
-            }
-          }
-        }
-
-        .tariffs-info {
-          &-desc {
-            font-size: 16px;
-          }
-
-          &-block {
-            padding: 35px 40px 45px;
-
-            &-item {
-              padding: 25px 30px 45px;
-              min-width: 270px;
-
-              &-title {
-                font-size: 22px;
-              }
-
-              &-value {
-                font-size: 20px;
-              }
-            }
-          }
-        }
-
-        .receive {
-          &-content {
-            .list {
-              li {
-                font-size: 16px;
-              }
-            }
-          }
-
-          &-image {
-            margin-top: 110px;
-            width: 440px;
-          }
-        }
-
-        .profit-spend {
-          padding: 45px 30px 0;
-
-          &-content {
-            margin: 0 0 45px;
-
-            &-title {
-              font-size: 28px;
-            }
-
-            &-list {
-              li {
-                margin-top: 25px;
-                font-size: 16px;
-              }
-            }
-
-            &-desc {
-              margin-top: 40px;
-              padding-left: 65px;
-            }
-          }
-
-          &-image {
-            align-self: flex-end;
-            max-width: 350px;
-            margin-left: 50px;
-          }
-        }
-
         .account {
           &-block {
             &-content {
@@ -546,47 +279,6 @@
             }
           }
         }
-
-        .cost {
-          &-block {
-            &-item {
-              &-value {
-                margin-right: 20px;
-                margin-bottom: 5px;
-                font-size: 32px;
-              }
-
-              &-desc {
-                margin-left: 0;
-              }
-
-              &-table {
-                padding: 25px 30px;
-
-                &-line {
-                  padding: 8px 0;
-
-                  &-desc {
-                    font-size: 16px;
-                  }
-
-                  &-value {
-                    font-size: 22px;
-                  }
-                }
-
-                &-list {
-                  ul {
-                    li {
-                      font-size: 16px;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-
         .choose {
           &-block {
             &-item {
@@ -639,13 +331,187 @@
             }
           }
         }
-      }
+        .cost {
+          &-block {
+            &-item {
+              &-value {
+                margin-right: 20px;
+                margin-bottom: 5px;
+                font-size: 32px;
+              }
 
+              &-desc {
+                margin-left: 0;
+              }
+
+              &-table {
+                padding: 25px 30px;
+
+                &-line {
+                  padding: 8px 0;
+
+                  &-desc {
+                    font-size: 16px;
+                  }
+
+                  &-value {
+                    font-size: 22px;
+                  }
+                }
+
+                &-list {
+                  ul {
+                    li {
+                      font-size: 16px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .features {
+          &-block {
+            &-item {
+              &-image {
+                width: 75px;
+                height: 75px;
+              }
+
+              &-desc {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+        .profit-spend {
+          padding: 45px 30px 0;
+          &-content {
+            margin: 0 0 45px;
+
+            &-title {
+              font-size: 28px;
+            }
+
+            &-list {
+              li {
+                margin-top: 25px;
+                font-size: 16px;
+              }
+            }
+
+            &-desc {
+              margin-top: 40px;
+              padding-left: 65px;
+            }
+          }
+          &-image {
+            align-self: flex-end;
+            max-width: 350px;
+            margin-left: 50px;
+          }
+        }
+        .receive {
+          &-content {
+            .list {
+              li {
+                font-size: 16px;
+              }
+            }
+          }
+          &-image {
+            margin-top: 110px;
+            width: 440px;
+          }
+        }
+        .request {
+          padding: 55px;
+          &-desc {
+            font-size: 20px;
+          }
+        }
+        .services {
+          &-block {
+            &-item {
+              padding: 30px;
+              &-content {
+                &-desc {
+                  br {
+                    display: none;
+                  }
+                }
+                &-detail {
+                  a {
+                    width: 130px;
+                  }
+                }
+              }
+              &-image {
+                position: absolute;
+                right: 0;
+                bottom: 20px;
+              }
+            }
+          }
+        }
+        .steps {
+          &-block {
+            &-item {
+              &-text {
+                &-title {
+                  font-size: 20px;
+                }
+
+                &-desc {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+        .tariffs {
+          padding-top: 45px;
+          &-desc {
+            margin-top: 15px;
+            font-size: 16px;
+          }
+          &-top {
+            margin-top: 20px;
+
+            &-title {
+              display: none;
+            }
+
+            &-item {
+              margin: 0 20px 0 0;
+            }
+          }
+        }
+        .tariffs-info {
+          &-desc {
+            font-size: 16px;
+          }
+          &-block {
+            padding: 35px 40px 45px;
+
+            &-item {
+              padding: 25px 30px 45px;
+              min-width: 270px;
+
+              &-title {
+                font-size: 22px;
+              }
+
+              &-value {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
       .main-page {
         .inner {
           .category {
-            margin-top: -10px;
-
             &-item {
               &.start-business {
                 margin-left: 0;
@@ -726,7 +592,6 @@
                 }
               }
             }
-
             .actions_slider {
               .swiper-slide {
                 &-content {
@@ -743,7 +608,6 @@
                 }
               }
             }
-
             .bonus {
               &-content {
                 &-badge {
@@ -761,7 +625,6 @@
               }
             }
           }
-
           .best-tariffs {
             &-top {
               &-title {
@@ -791,7 +654,6 @@
               }
             }
           }
-
           .features {
             &-title {
               font-size: 36px;
@@ -817,7 +679,6 @@
               }
             }
           }
-
           .news {
             &-top {
               &-title {
@@ -837,7 +698,6 @@
               }
             }
           }
-
           .special {
             &-badge {
               right: 27%;
@@ -872,7 +732,6 @@
           }
         }
       }
-
       .actions-page {
         .inner {
           .actions {
@@ -907,9 +766,13 @@
           }
         }
       }
-
       .bonuses-page {
         .inner {
+          .top-banner {
+            &-image {
+              width: 400px;
+            }
+          }
           .bonuses {
             &-block {
               &-item {
@@ -950,7 +813,6 @@
           }
         }
       }
-
       .about-page {
         .inner {
           .purpose {
@@ -966,7 +828,6 @@
               }
             }
           }
-
           .reliable-hands {
             &-block {
               justify-content: space-between;
@@ -988,7 +849,6 @@
               }
             }
           }
-
           .awards {
             &-slider {
               .swiper {
@@ -1002,15 +862,6 @@
           }
         }
       }
-
-      .journal-page {
-        .inner {
-          .top-banner {
-            padding-right: 90px;
-          }
-        }
-      }
-
       .policy-page {
         .inner {
           .top-banner {
@@ -1028,15 +879,8 @@
           }
         }
       }
-
       .requisite-page {
         .inner {
-          .top-banner {
-            &:after {
-              top: -20px;
-            }
-          }
-
           .content {
             margin-top: 55px;
 
@@ -1068,7 +912,6 @@
           }
         }
       }
-
       .help-page {
         .inner {
           .info {
@@ -1100,7 +943,6 @@
           }
         }
       }
-
       .safety-page {
         .inner {
           .recommendation {
@@ -1112,21 +954,16 @@
           }
         }
       }
-
       .news-detail-page {
         .inner {
           .text {
-            margin-top: 70px;
             padding-right: 50px;
-
             &-title {
               font-size: 34px;
             }
-
             &-date {
               font-size: 17px;
             }
-
             &-block {
               font-size: 20px;
 
@@ -1149,7 +986,6 @@
               }
             }
           }
-
           .news {
             &-item {
               &-content {
@@ -1161,7 +997,6 @@
           }
         }
       }
-
       .acquiring-page {
         .advantage {
           &-block {
@@ -1199,7 +1034,6 @@
           }
         }
       }
-
       .remote-service-page {
         ul {
           &.list {
@@ -1249,7 +1083,6 @@
           }
         }
       }
-
       .start-business-page {
         .inner {
           .advantage {
@@ -1281,7 +1114,6 @@
               }
             }
           }
-
           .docs {
             &-block {
               &-title {
@@ -1314,12 +1146,10 @@
               }
             }
           }
-
           .services {
             &-block {
               &-item {
                 padding: 35px;
-
                 &:not(:last-child) {
                   .services-block-item-image {
                     display: none;
@@ -1338,45 +1168,17 @@
           }
         }
       }
-
       .all-tools-page {
         .inner {
           .switcher {
-            margin-top: 60px;
-
             &-block {
               &-title {
                 &-item {
                   font-size: 16px;
                 }
               }
-
-              &-content {
-                &-box {
-                  .services {
-                    &-block {
-                      &-item {
-                        padding: 35px;
-
-                        &-image {
-                          display: none;
-                        }
-
-                        &-content {
-                          &-desc {
-                            br {
-                              display: none;
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
             }
           }
-
           .advantage {
             &-title {
               font-size: 32px;
@@ -1402,29 +1204,8 @@
               }
             }
           }
-
-          .services {
-            &-block {
-              &-item {
-                padding: 35px;
-
-                &-image {
-                  display: none;
-                }
-
-                &-content {
-                  &-desc {
-                    br {
-                      display: none;
-                    }
-                  }
-                }
-              }
-            }
-          }
         }
       }
-
       .small-business-page {
         .inner {
           .services {
@@ -1449,7 +1230,6 @@
           }
         }
       }
-
       .freelancer-page {
         .inner {
           .services {
@@ -1485,7 +1265,6 @@
           }
         }
       }
-
       .internet-business-page {
         .inner {
           .services {
@@ -1521,7 +1300,6 @@
           }
         }
       }
-
       .salary-page {
         .inner {
           .features {
@@ -1569,7 +1347,6 @@
           }
         }
       }
-
       .acquiring-detail-page {
         .inner {
           .payment-system {
@@ -1644,7 +1421,6 @@
           }
         }
       }
-
       .delokassa-page {
         .inner {
           .steps {
@@ -1817,16 +1593,10 @@
           }
         }
       }
-
       .partner-program-page {
         .inner {
           .top-banner {
-            position: relative;
-            padding-right: 0;
-
             &-content {
-              max-width: 530px;
-
               &-text {
                 &-buttons {
                   &-open {
@@ -1850,13 +1620,6 @@
                   }
                 }
               }
-            }
-
-            &-image {
-              position: absolute;
-              top: 0;
-              right: 0;
-              bottom: 0;
             }
           }
 
@@ -1956,7 +1719,6 @@
           }
         }
       }
-
       .deposit-page {
         .inner {
           .advantage {
@@ -2043,7 +1805,6 @@
           }
         }
       }
-
       .debit-card-page {
         .inner {
           .payment-system {
@@ -2097,7 +1858,6 @@
           }
         }
       }
-
       .corporate-card-page {
         .inner {
           .advantage {
@@ -2129,7 +1889,6 @@
           }
         }
       }
-
       .payment-page {
         .inner {
           .advantage {
@@ -2160,13 +1919,8 @@
           }
         }
       }
-
       .legal-assistance-page {
         .inner {
-          .top-banner {
-            padding-right: 0;
-          }
-
           .advantage {
             &-block {
               &-item {
@@ -2190,7 +1944,6 @@
           }
         }
       }
-
       .direct-bank-page {
         .inner {
           .advantage {
@@ -2217,7 +1970,15 @@
           }
         }
       }
-
+      .remote-service-page {
+        .top-banner {
+          &-content {
+            &-text {
+              max-width: 500px;
+            }
+          }
+        }
+      }
       .open-api-page {
         .inner {
           .advantage {
@@ -2244,7 +2005,6 @@
           }
         }
       }
-
       .multibank-page {
         .inner {
           .advantage {
@@ -2275,7 +2035,6 @@
           }
         }
       }
-
       .sitemap-page {
         .inner {
           .sitemap-block-item {
@@ -2293,7 +2052,6 @@
           }
         }
       }
-
       .tariffs-page {
         .inner {
           .advantage {
@@ -2307,7 +2065,6 @@
               }
             }
           }
-
           .tabs {
             &-block {
               margin-top: 30px;
@@ -2333,7 +2090,6 @@
           }
         }
       }
-
       .overdraft-page {
         .inner {
           .freely-use {
@@ -2350,7 +2106,6 @@
           }
         }
       }
-
       .not-found-page {
         .inner {
           .top-banner {
@@ -2369,7 +2124,6 @@
           }
         }
       }
-
       .bonuses-page-detail {
         .inner {
           .top-banner {
@@ -2380,7 +2134,6 @@
           }
         }
       }
-
       .departments-page {
         .inner {
           .atms {
@@ -2395,7 +2148,6 @@
         }
       }
     }
-
     footer {
       .inner {
         padding-left: 280px;
@@ -2423,7 +2175,6 @@
         }
       }
     }
-
     .popup_wrapper {
       .inner {
         margin-left: auto;
@@ -2521,7 +2272,6 @@
       }
     }
   }
-
   .popup_city {
     width: 80%;
   }
@@ -2533,7 +2283,6 @@
       width: 960px;
       margin: auto !important;
     }
-
     header {
       .inner {
         width: 960px;
@@ -2543,7 +2292,6 @@
         .header {
           &-logo {
             width: 180px;
-            height: 32px;
           }
 
           &-lk {
@@ -2576,59 +2324,42 @@
         display: none;
       }
     }
-
     main {
       & > div {
         padding-bottom: 90px;
       }
-
       .inner {
+        & > section:not(:first-child),
+        & > div:not(:first-child) {
+          margin-top: 60px;
+        }
         .top-banner {
+          padding-left: 30px;
+          &.pr50,
+          &.pr100 {
+            padding-right: 40px;
+          }
           &-content {
             &-text {
               &-title {
                 font-size: 36px;
-                line-height: 48px;
                 white-space: normal;
               }
-
-              &-desc {
-                font-size: 16px;
-              }
-
               &-open {
                 a {
                   width: 200px;
-                  line-height: 45px;
                   font-size: 16px;
+                  line-height: 45px;
                 }
               }
             }
           }
         }
-
         .advantage {
-          margin-top: 60px;
-
           &-block {
             margin-top: 30px;
           }
         }
-
-        .cost {
-          &-block {
-            &-item {
-              padding: 25px 30px 30px;
-
-              &-table {
-                &-line {
-                  padding: 5px 0;
-                }
-              }
-            }
-          }
-        }
-
         .choose {
           &-block {
             &-item {
@@ -2659,7 +2390,19 @@
             }
           }
         }
+        .cost {
+          &-block {
+            &-item {
+              padding: 25px 30px 30px;
 
+              &-table {
+                &-line {
+                  padding: 5px 0;
+                }
+              }
+            }
+          }
+        }
         .request {
           &-block {
             &-phone {
@@ -2690,7 +2433,6 @@
             }
           }
         }
-
         .tariffs {
           &-about {
             &-block {
@@ -2701,11 +2443,9 @@
           }
         }
       }
-
       .main-page {
         padding-top: 0;
         padding-bottom: 90px;
-
         .inner {
           .category {
             &-item {
@@ -2785,16 +2525,6 @@
                   background-size: cover;
                 }
               }
-
-              &-text {
-                &-title {
-                  font-size: 20px;
-                }
-
-                &-desc {
-                  font-size: 16px;
-                }
-              }
             }
 
             .actions_slider {
@@ -2819,9 +2549,12 @@
                 }
                 &-controls {
                   left: 0;
-                  bottom: 5px;
+                  bottom: 10px;
                   width: 100%;
-                  padding: 0 20px;
+                  padding: 0 30px;
+                  .swiper-pagination {
+                    color: #b3b3b3;
+                  }
                   .progress {
                     display: none;
                   }
@@ -2866,14 +2599,12 @@
               }
             }
           }
-
           .best-tariffs {
             position: relative;
             margin-top: 65px;
             padding: 0;
             border-radius: 0;
             overflow: visible;
-
             &-top {
               &-title {
                 font-size: 36px;
@@ -2890,7 +2621,6 @@
                 }
               }
             }
-
             &-slider {
               position: relative;
               left: 50%;
@@ -2903,7 +2633,9 @@
               transform: translateX(-50%);
               overflow: unset;
               overflow-x: scroll;
-
+              &::-webkit-scrollbar {
+                display: none;
+              }
               .swiper {
                 &-wrapper {
                   &:after {
@@ -2912,7 +2644,6 @@
                     height: 100px;
                   }
                 }
-
                 &-slide {
                   width: 400px;
                   height: auto;
@@ -2920,11 +2651,9 @@
                   margin-left: 20px;
                   opacity: 1;
                   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-
                   &:first-child {
                     margin-left: 0;
                   }
-
                   &-item {
                     &:first-child {
                       padding-top: 30px;
@@ -2973,20 +2702,42 @@
                     }
 
                     &-button {
+                      position: relative;
                       margin-top: 20px;
+                      font-weight: 300;
                       font-size: 16px;
                       line-height: 45px;
+                      color: #fff;
+                      background: linear-gradient(to right, #eb5760, #fd9b5c);
+                      border: none;
+                      z-index: 1;
+                      &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(to top right, #eb5760, #fd9b5c);
+                        border-radius: 35px;
+                        opacity: 0;
+                        transition: 0.3s;
+                        z-index: -1;
+                      }
+                      &:hover {
+                        &:before {
+                          opacity: 1;
+                        }
+                      }
                     }
                   }
                 }
-
                 &-pagination {
                   display: none;
                 }
               }
             }
           }
-
           .features {
             margin-top: 75px;
 
@@ -3034,7 +2785,6 @@
               }
             }
           }
-
           .news {
             &-top {
               &-title {
@@ -3076,7 +2826,6 @@
               }
             }
           }
-
           .mobile_app {
             align-items: flex-start;
             justify-content: flex-start;
@@ -3122,16 +2871,12 @@
               }
             }
           }
-
           .special {
             position: relative;
-            margin-top: 60px;
             padding: 45px 0 75px 0;
-
             &-badge {
               z-index: 1;
             }
-
             &-content {
               padding-left: 35px;
 
@@ -3151,7 +2896,6 @@
                 }
               }
             }
-
             &-image {
               position: absolute;
               top: 0;
@@ -3169,8 +2913,6 @@
       }
 
       .bonuses-page {
-        padding-bottom: 90px;
-
         .inner {
           .top-banner {
             &:before {
@@ -3198,8 +2940,6 @@
           }
 
           .bonuses {
-            margin-top: 50px;
-
             &-block {
               margin-top: 30px;
 
@@ -3266,30 +3006,10 @@
       }
 
       .actions-page {
-        padding-bottom: 90px;
-
         .inner {
           .top-banner {
-            &:before {
-              bottom: 79px;
-              top: unset;
-              left: 52%;
-              width: 56px;
-              height: 56px;
-            }
-
             &-image {
-              position: absolute;
-              bottom: 0;
-              right: 20px;
-              margin: 0;
-              width: auto;
-              height: 193px;
-
-              img {
-                width: auto;
-                height: 100%;
-              }
+              height: 195px;
             }
 
             &.no-actions {
@@ -3302,15 +3022,11 @@
               }
             }
           }
-
           .actions {
-            margin-top: 70px;
-
             &-block {
               &-item {
                 &-image {
-                  height: auto;
-                  background: #e6e8e0;
+                  height: 250px;
                 }
 
                 &-text {
@@ -3404,8 +3120,6 @@
           }
 
           .bonuses {
-            margin-top: 50px;
-
             &-block {
               margin-top: 30px;
 
@@ -3471,23 +3185,8 @@
       }
 
       .about-page {
-        padding-bottom: 90px;
-
         .inner {
-          .top-banner {
-            &:before {
-              right: 260px;
-            }
-
-            &-wave {
-              right: 17%;
-              top: 77px;
-            }
-          }
-
           .features {
-            margin-top: 50px;
-
             &-desc {
               margin-top: 25px;
               font-size: 16px;
@@ -3497,7 +3196,6 @@
               justify-content: space-between;
 
               &-item {
-                padding-top: 75px;
                 width: ~'calc((100% - 60px)/2)';
 
                 &:before {
@@ -3513,6 +3211,9 @@
                 &-desc {
                   margin-top: 20px;
                   font-size: 16px;
+                  br {
+                    display: none;
+                  }
                 }
 
                 &-list {
@@ -3523,7 +3224,6 @@
               }
             }
           }
-
           .awards {
             &-slider {
               margin-top: 25px;
@@ -3547,11 +3247,8 @@
               }
             }
           }
-
           .licenses {
-            margin-top: 70px;
             padding-top: 50px;
-
             &-slider {
               .swiper {
                 &-slide {
@@ -3563,21 +3260,16 @@
               }
             }
           }
-
           .partnership {
-            margin-top: 70px;
             padding: 50px 30px 45px 30px;
-
             &:before {
               right: 30px;
               height: 100px;
             }
-
             &:after {
               bottom: 45px;
               right: 290px;
             }
-
             &-block {
               margin-top: 40px;
 
@@ -3593,7 +3285,6 @@
                 }
               }
             }
-
             &-buttons {
               &-button {
                 &.detail {
@@ -3621,7 +3312,6 @@
           }
         }
       }
-
       .journal-page {
         .inner {
           .articles {
@@ -3639,48 +3329,11 @@
           }
         }
       }
-
-      .policy-page {
-        padding-bottom: 90px;
-      }
-
-      .requisite-page {
-        padding-bottom: 90px;
-      }
-
-      .help-page {
-        padding-bottom: 90px;
-      }
-
       .news-detail-page {
         .inner {
           .text {
-            margin-top: 60px;
-
             &-title {
               font-size: 32px;
-            }
-          }
-        }
-      }
-
-      .acquiring-page {
-        padding-bottom: 90px;
-      }
-
-      .remote-service-page {
-        .inner {
-          .top-banner {
-            &:after {
-              right: 26%;
-              top: unset;
-              bottom: 25px;
-            }
-
-            &-wave {
-              top: unset;
-              right: 27%;
-              bottom: 39px;
             }
           }
         }
@@ -3712,16 +3365,6 @@
 
       .small-business-page {
         .inner {
-          .top-banner {
-            position: relative;
-
-            &-image {
-              position: absolute;
-              bottom: 0;
-              right: 0;
-            }
-          }
-
           .advantage {
             &-block {
               &-item {
@@ -3744,12 +3387,7 @@
       .freelancer-page {
         .inner {
           .top-banner {
-            position: relative;
-
             &-image {
-              position: absolute;
-              bottom: 0;
-              right: 0;
               width: 330px;
             }
           }
@@ -3781,13 +3419,9 @@
       .internet-business-page {
         .inner {
           .top-banner {
-            position: relative;
-
             &-image {
-              position: absolute;
-              bottom: 0;
-              right: 0;
-              width: 290px;
+              width: 280px;
+              margin-top: 0;
             }
           }
 
@@ -3920,15 +3554,6 @@
 
       .deposit-page {
         .inner {
-          .top-banner {
-            &-image {
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              right: 30px;
-            }
-          }
-
           .calculate {
             &-block {
               &-result {
@@ -3947,103 +3572,10 @@
         }
       }
 
-      .debit-card-page {
-        .inner {
-          .top-banner {
-            &-image {
-              margin-top: -15px;
-            }
-          }
-        }
-      }
-
-      .payment-page {
-        .inner {
-          .top-banner {
-            &-image {
-              margin-bottom: -17px;
-            }
-          }
-        }
-      }
-
-      .legal-assistance-page {
-        .inner {
-          .top-banner {
-            &-image {
-              margin: -17px -32px 0 0;
-            }
-          }
-        }
-      }
-
-      .ruble-deposit-page {
-        .inner {
-          .top-banner {
-            &-image {
-              margin-bottom: -17px;
-            }
-          }
-        }
-      }
-
       .direct-bank-page {
         .inner {
-          .top-banner {
-            &-image {
-              margin-right: -32px;
-            }
-          }
-
           .interface {
             padding-right: 100px;
-          }
-        }
-      }
-
-      .open-api-page {
-        .inner {
-          .top-banner {
-            &-image {
-              margin-bottom: -17px;
-            }
-          }
-        }
-      }
-
-      .transfer-page {
-        .inner {
-          .top-banner {
-            &-image {
-              margin-right: -32px;
-            }
-          }
-        }
-      }
-
-      .multibank-page {
-        .inner {
-          .top-banner {
-            &-image {
-              margin-bottom: -17px;
-            }
-          }
-        }
-      }
-
-      .tariffs-page {
-        .inner {
-          .top-banner {
-            position: relative;
-
-            &-image {
-              position: absolute;
-              top: 0;
-              right: 30px;
-              bottom: 0;
-              display: flex;
-              align-items: flex-end;
-            }
           }
         }
       }
@@ -4083,7 +3615,6 @@
         }
       }
     }
-
     footer {
       .inner {
         padding: 0 0 50px 0;
@@ -4127,7 +3658,6 @@
       }
     }
   }
-
   .popup_city {
     width: 90%;
   }
@@ -4138,13 +3668,14 @@
     .inner {
       width: 740px;
     }
-
     header {
       .inner {
         width: 740px;
         padding: 20px 0;
-
         .header {
+          &-logo {
+            width: 160px;
+          }
           &-open {
             a {
               font-size: 16px;
@@ -4162,41 +3693,50 @@
         }
       }
     }
-
     main {
       padding-top: 86px;
-
       .inner {
+        & > section:not(:first-child),
+        & > div:not(:first-child) {
+          margin-top: 50px;
+        }
         .top-banner {
-          &-wave {
+          padding-left: 25px;
+          &:before,
+          &:after {
             display: none;
           }
-
+          &.pr50,
+          &.pr100 {
+            padding-right: 30px;
+          }
+          &-wave {
+            display: none !important;
+          }
           &-content {
+            padding-bottom: 40px;
             &-text {
+              max-width: 400px;
               &-title {
-                font-size: 30px;
-                line-height: 42px;
+                font-size: 32px;
               }
-
               &-desc {
-                margin-top: 5px;
+                br {
+                  display: none;
+                }
               }
             }
           }
         }
-
         .advantage {
           &-title {
             font-size: 30px;
             line-height: 1.4;
           }
-
           &-desc {
             margin-top: 15px;
             font-size: 16px;
           }
-
           &-block {
             margin-top: 25px;
 
@@ -4205,19 +3745,90 @@
             }
           }
         }
-
-        .cost {
-          margin-top: 60px;
-
+        .choose {
           &-title {
             font-size: 30px;
           }
+          &-block {
+            margin-top: 40px;
 
+            &-item {
+              padding: 30px;
+              width: ~'calc((100% - 20px)/2)';
+
+              &-image {
+                width: 100%;
+                height: 200px;
+                justify-content: center;
+
+                img {
+                  max-width: 100%;
+                  max-height: 100%;
+                }
+              }
+
+              &-title {
+                font-size: 28px;
+              }
+
+              &-desc {
+                font-size: 16px;
+
+                min-height: 72px;
+              }
+
+              &-features {
+                margin-top: 20px;
+                display: block;
+
+                &-point {
+                  margin-top: 10px;
+
+                  &:first-child {
+                    margin-top: 0;
+                  }
+
+                  &-value {
+                    font-size: 22px;
+                  }
+
+                  &-desc {
+                    br {
+                      display: none;
+                    }
+                  }
+                }
+              }
+
+              &-table {
+                margin-top: 25px;
+                padding: 20px 20px 10px 20px;
+                border-radius: 15px;
+
+                &-line {
+                  padding: 10px 0;
+                  align-items: baseline;
+
+                  &-desc {
+                    font-size: 16px;
+                  }
+
+                  &-value {
+                    font-size: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .cost {
+          &-title {
+            font-size: 30px;
+          }
           &-desc {
             margin-top: 10px;
             font-size: 16px;
           }
-
           &-block {
             margin-left: ~'calc((100vw - 100%)/-2)';
             padding: 0 ~'calc((100vw - 100%)/2)';
@@ -4261,18 +3872,51 @@
             }
           }
         }
-
-        .request {
-          padding: 40px;
-
+        .features {
           &-title {
             font-size: 30px;
           }
+        }
+        .profit-spend {
+          padding: 45px 30px;
+          &-content {
+            margin: 0;
+          }
+          &-image {
+            display: none;
+          }
+        }
+        .receive {
+          &-content {
+            &-title {
+              font-size: 30px;
+            }
 
+            .list {
+              li {
+                font-size: 16px;
+              }
+            }
+
+            &-docs {
+              &-item {
+                padding: 18px 30px;
+              }
+            }
+          }
+          &-image {
+            margin-top: 110px;
+            width: 440px;
+          }
+        }
+        .request {
+          padding: 40px;
+          &-title {
+            font-size: 30px;
+          }
           &-desc {
             font-size: 18px;
           }
-
           &-block {
             &-phone {
               input {
@@ -4287,14 +3931,35 @@
             }
           }
         }
-
+        .services {
+          &-block {
+            &-item {
+              margin-top: 20px;
+              padding: 25px;
+              padding-right: 100px;
+              width: 100%;
+              min-height: 200px;
+              &:nth-child(-n + 3) {
+                margin-top: 20px;
+              }
+              &:first-child {
+                margin-top: 0;
+              }
+              &:last-child {
+                padding: 30px;
+              }
+              &-image {
+                img {
+                  max-height: 100px;
+                }
+              }
+            }
+          }
+        }
         .steps {
-          margin-top: 60px;
-
           &-title {
             font-size: 30px;
           }
-
           &-block {
             margin-top: 40px;
             display: block;
@@ -4364,73 +4029,10 @@
             }
           }
         }
-
-        .important {
-          &-title {
-            font-size: 30px;
-          }
-        }
-
-        .usefull-services {
-          &-title {
-            font-size: 30px;
-          }
-
-          &-block {
-            margin-top: 20px;
-
-            &-item {
-              width: 100%;
-
-              &:not(:last-child) {
-                margin: 25px 0 0 0;
-                padding: 30px 0 30px 30px;
-                min-height: 200px;
-                .usefull-services-block-item-image {
-                  display: flex;
-                  justify-content: flex-end;
-                  align-items: center;
-                  height: 140px;
-
-                  img {
-                    width: auto;
-                    height: 100%;
-                  }
-                }
-              }
-
-              &:last-child {
-                margin: 25px 0 0 0;
-                padding: 30px 0 30px 30px;
-
-                .usefull-services-block-item-image {
-                  display: flex;
-                  align-items: center;
-                  width: 320px;
-                }
-              }
-
-              &-badge {
-                font-size: 14px;
-              }
-
-              &-image {
-                height: 140px;
-
-                img {
-                  max-height: 100%;
-                  height: auto;
-                }
-              }
-            }
-          }
-        }
-
         .tariffs {
           padding: 35px 0 40px 0;
-          .bg-outside;
           border-radius: 0;
-
+          .bg-outside;
           &-title {
             font-size: 30px;
           }
@@ -4635,14 +4237,10 @@
             }
           }
         }
-
         .tariffs-info {
-          margin-top: 60px;
-
           &-title {
             font-size: 30px;
           }
-
           &-block {
             margin-left: ~'calc((100vw - 100%)/-2)';
             padding-left: calc((100vw - 100%) / 2);
@@ -4650,151 +4248,22 @@
             padding-bottom: 40px;
             width: 100vw;
             overflow-x: scroll;
-
             &:after {
               content: '';
               display: block;
               height: 1px;
               padding-right: calc((100vw - 100%) / 2);
             }
-
             &-item {
               min-width: 280px;
               margin-left: 30px;
-
               &:first-child {
                 margin-left: 0;
               }
             }
           }
         }
-
-        .profit-spend {
-          padding: 45px 30px;
-
-          &-content {
-            margin: 0;
-          }
-
-          &-image {
-            display: none;
-          }
-        }
-
-        .features {
-          &-title {
-            font-size: 30px;
-          }
-        }
-
-        .receive {
-          margin-top: 60px;
-
-          &-content {
-            &-title {
-              font-size: 30px;
-            }
-
-            .list {
-              li {
-                font-size: 16px;
-              }
-            }
-
-            &-docs {
-              &-item {
-                padding: 18px 30px;
-              }
-            }
-          }
-
-          &-image {
-            margin-top: 110px;
-            width: 440px;
-          }
-        }
-
-        .choose {
-          margin-top: 60px;
-
-          &-title {
-            font-size: 30px;
-          }
-
-          &-block {
-            margin-top: 40px;
-
-            &-item {
-              padding: 30px;
-              width: ~'calc((100% - 20px)/2)';
-
-              &-image {
-                width: 100%;
-                height: 200px;
-                justify-content: center;
-
-                img {
-                  max-width: 100%;
-                  max-height: 100%;
-                }
-              }
-
-              &-title {
-                font-size: 28px;
-              }
-
-              &-desc {
-                font-size: 16px;
-
-                min-height: 72px;
-              }
-
-              &-features {
-                margin-top: 20px;
-                display: block;
-
-                &-point {
-                  margin-top: 10px;
-
-                  &:first-child {
-                    margin-top: 0;
-                  }
-
-                  &-value {
-                    font-size: 22px;
-                  }
-
-                  &-desc {
-                    br {
-                      display: none;
-                    }
-                  }
-                }
-              }
-
-              &-table {
-                margin-top: 25px;
-                padding: 20px 20px 10px 20px;
-                border-radius: 15px;
-
-                &-line {
-                  padding: 10px 0;
-                  align-items: baseline;
-
-                  &-desc {
-                    font-size: 16px;
-                  }
-
-                  &-value {
-                    font-size: 20px;
-                  }
-                }
-              }
-            }
-          }
-        }
       }
-
       .main-page {
         .inner {
           .category {
@@ -4823,17 +4292,23 @@
                 height: 200px;
               }
             }
-
             .actions_slider {
               .swiper {
                 &-slide {
+                  position: relative;
                   &-content {
+                    max-width: 75%;
                     &-badge {
+                      padding: 5px 15px;
                       font-size: 12px;
+                    }
+                    &-text {
+                      margin-top: 15px;
                     }
                   }
                   &-image {
-                    display: none;
+                    position: absolute;
+                    right: 0;
                   }
                 }
                 &-controls {
@@ -4853,11 +4328,14 @@
                 }
               }
             }
-
             .bonus {
               &-content {
                 &-badge {
+                  padding: 5px 15px;
                   font-size: 12px;
+                }
+                &-text {
+                  margin-top: 15px;
                 }
               }
               &-image {
@@ -4865,7 +4343,6 @@
               }
             }
           }
-
           .best-tariffs {
             &-top {
               &-title {
@@ -4939,7 +4416,6 @@
               }
             }
           }
-
           .features {
             &-title {
               font-size: 30px;
@@ -4984,7 +4460,6 @@
               }
             }
           }
-
           .news {
             &-top {
               &-title {
@@ -5032,7 +4507,6 @@
               }
             }
           }
-
           .mobile_app {
             &-content {
               &-desc {
@@ -5073,7 +4547,6 @@
               }
             }
           }
-
           .special {
             padding-bottom: 35px;
             overflow: hidden;
@@ -5096,7 +4569,6 @@
               }
             }
           }
-
           .steps {
             margin-top: 0;
             padding: 20px 35px 0 35px;
@@ -5126,15 +4598,7 @@
             }
 
             &-image {
-              position: absolute;
-              right: 0;
-              bottom: 40px;
-              margin: 0;
               height: 65px;
-
-              img {
-                transform: translateX(35px);
-              }
             }
           }
 
@@ -5194,10 +4658,6 @@
       .actions-page {
         .inner {
           .top-banner {
-            &-image {
-              right: 35px;
-            }
-
             &.no-actions {
               height: 350px;
               .top-banner {
@@ -5284,15 +4744,7 @@
 
       .about-page {
         .inner {
-          .top-banner {
-            &-wave {
-              right: 22%;
-            }
-          }
-
           .purpose {
-            margin-top: 40px;
-
             &-block {
               &-text {
                 span {
@@ -5320,17 +4772,13 @@
           }
 
           .reliable-hands {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
-
             &-desc {
               margin-top: 15px;
               font-size: 16px;
             }
-
             &-block {
               &-item {
                 position: relative;
@@ -5365,7 +4813,6 @@
                 }
               }
             }
-
             &-image {
               position: absolute;
               top: 0;
@@ -5382,7 +4829,6 @@
               }
             }
           }
-
           .licenses {
             padding-top: 40px;
             padding-bottom: 40px;
@@ -5399,7 +4845,6 @@
               padding: 0 40px;
             }
           }
-
           .partnership {
             padding: 40px;
 
@@ -5421,7 +4866,6 @@
               }
             }
           }
-
           .awards {
             &-top {
               &-title {
@@ -5435,8 +4879,6 @@
       .journal-page {
         .inner {
           .articles {
-            margin-top: 60px;
-
             &-block {
               &-item {
                 margin-top: 25px;
@@ -5470,8 +4912,6 @@
       .requisite-page {
         .inner {
           .content {
-            margin-top: 40px;
-
             &-text {
               margin-top: 40px;
               font-size: 18px;
@@ -5511,7 +4951,6 @@
           .info {
             display: block;
             height: auto;
-            margin-top: 50px;
 
             &-titles {
               width: 100%;
@@ -5557,8 +4996,6 @@
       }
 
       .safety-page {
-        padding-bottom: 90px;
-
         .inner {
           .recommendation {
             margin-top: 65px;
@@ -5577,8 +5014,6 @@
 
         .inner {
           .text {
-            margin-top: 40px;
-
             &-title {
               font-size: 28px;
             }
@@ -5619,11 +5054,8 @@
               }
             }
           }
-
           .news {
-            margin-top: 60px;
             display: block;
-
             &-item {
               margin-top: 25px;
               width: 100%;
@@ -5639,15 +5071,6 @@
       .acquiring-page {
         .inner {
           .top-banner {
-            &:after,
-            &:before {
-              display: none;
-            }
-
-            &-wave {
-              display: none;
-            }
-
             &-image {
               width: 230px;
             }
@@ -5683,14 +5106,6 @@
 
       .remote-service-page {
         .inner {
-          .top-banner {
-            &:before,
-            &:after,
-            &-wave {
-              display: none;
-            }
-          }
-
           .features {
             &-title {
               font-size: 28px;
@@ -5769,24 +5184,10 @@
       .start-business-page {
         .inner {
           .top-banner {
-            position: relative;
-
-            &:after {
-              display: none;
-            }
-
-            &-wave {
-              display: none;
-            }
-
             &-image {
-              position: absolute;
-              right: 0;
-              bottom: 0;
               width: 325px;
             }
           }
-
           .advantage {
             &-block {
               &-item {
@@ -5803,11 +5204,6 @@
               }
             }
           }
-
-          .tariffs {
-            margin-top: 60px;
-          }
-
           .services {
             &-title {
               font-size: 30px;
@@ -5838,7 +5234,6 @@
               }
             }
           }
-
           .features {
             &-title {
               font-size: 30px;
@@ -5855,7 +5250,6 @@
               }
             }
           }
-
           .docs {
             &-title {
               font-size: 30px;
@@ -5900,82 +5294,24 @@
 
       .all-tools-page {
         .inner {
-          .top-banner {
-            position: relative;
-
-            &:after {
-              display: none;
-            }
-
-            &-wave {
-              display: none;
-            }
-
-            &-content {
-              &-text {
-                &-title {
-                  max-width: 400px;
-                }
-              }
-            }
-
-            &-image {
-              position: absolute;
-              bottom: 0;
-              right: 30px;
-            }
-          }
-
           .switcher {
-            margin-top: 40px;
-
             &-block {
               &-content {
                 margin-top: 40px;
-
                 &-box {
                   .services {
                     &-title {
                       font-size: 30px;
-                    }
-
-                    &-block {
-                      &-item {
-                        margin-top: 20px;
-                        padding: 30px;
-                        width: 100%;
-                        min-height: 200px;
-
-                        &:nth-child(-n + 3) {
-                          margin-top: 20px;
-                        }
-
-                        &:first-child {
-                          margin-top: 0;
-                        }
-
-                        &:last-child {
-                          padding: 30px;
-                        }
-
-                        &-image {
-                          display: none;
-                        }
-                      }
                     }
                   }
                 }
               }
             }
           }
-
           .integration {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
-
             &-block {
               &-item {
                 padding: 30px 20px;
@@ -5995,7 +5331,6 @@
               }
             }
           }
-
           .steps {
             &-title {
               font-size: 30px;
@@ -6007,64 +5342,12 @@
               font-size: 30px;
             }
           }
-
-          .services {
-            &-title {
-              font-size: 30px;
-            }
-
-            &-block {
-              &-item {
-                margin-top: 20px;
-                padding: 30px;
-                width: 100%;
-                min-height: 200px;
-
-                &:nth-child(-n + 3) {
-                  margin-top: 20px;
-                }
-
-                &:first-child {
-                  margin-top: 0;
-                }
-
-                &:last-child {
-                  padding: 30px;
-                }
-
-                &-image {
-                  display: none;
-                }
-              }
-            }
-          }
         }
       }
 
       .small-business-page {
         .inner {
-          .top-banner {
-            &:before {
-              display: none;
-            }
-
-            &:after {
-              display: none;
-            }
-
-            &-wave {
-              display: none;
-            }
-
-            &-image {
-              right: 20px;
-              width: 80px;
-            }
-          }
-
           .services {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -6091,26 +5374,11 @@
       .freelancer-page {
         .inner {
           .top-banner {
-            &:before {
-              display: none;
-            }
-
-            &:after {
-              display: none;
-            }
-
-            &-wave {
-              display: none;
-            }
-
             &-image {
               width: 300px;
             }
           }
-
           .services {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -6136,27 +5404,7 @@
 
       .internet-business-page {
         .inner {
-          .top-banner {
-            &:before {
-              display: none;
-            }
-
-            &:after {
-              display: none;
-            }
-
-            &-wave {
-              display: none;
-            }
-
-            &-image {
-              width: 270px;
-            }
-          }
-
           .services {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -6197,9 +5445,9 @@
           }
 
           .control {
-            margin-top: 60px;
-            padding: 0;
-            background: transparent;
+            padding: 20px 0;
+            border-radius: 0;
+            .bg-outside;
 
             &-content {
               &-title {
@@ -6225,8 +5473,6 @@
           }
 
           .features {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -6238,7 +5484,7 @@
               &-item {
                 margin-top: 20px;
                 display: flex;
-                align-items: flex-start;
+                align-items: center;
                 width: 100%;
 
                 &:first-child {
@@ -6252,9 +5498,9 @@
                 }
 
                 &-desc {
-                  margin: 0;
-                  padding: 18px 0 0 20px;
                   max-width: 500px;
+                  margin-top: 0;
+                  margin-left: 15px;
                 }
               }
             }
@@ -6264,20 +5510,8 @@
 
       .acquiring-detail-page {
         .inner {
-          .top-banner {
-            &:after {
-              display: none;
-            }
-
-            &-wave {
-              display: none !important;
-            }
-          }
-
           .payment-system {
-            margin-top: 60px;
             display: block;
-
             &-text {
               width: 100%;
 
@@ -6318,9 +5552,7 @@
           }
 
           .how-much {
-            margin-top: 60px;
             padding: 35px 40px 45px;
-
             &-title {
               font-size: 30px;
             }
@@ -6365,12 +5597,6 @@
       .delokassa-page {
         .inner {
           .top-banner {
-            &:after,
-            &:before,
-            &-wave {
-              display: none;
-            }
-
             &-image {
               width: 260px;
             }
@@ -6382,8 +5608,6 @@
           }
 
           .features {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -6420,8 +5644,6 @@
           }
 
           .solution {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -6489,9 +5711,7 @@
           }
 
           .payment-system {
-            margin-top: 60px;
             display: block;
-
             &-text {
               width: 100%;
 
@@ -6499,7 +5719,6 @@
                 font-size: 30px;
               }
             }
-
             &-block {
               margin: 20px 0 0 0;
               width: 100%;
@@ -6514,8 +5733,6 @@
           }
 
           .purpose {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -6575,24 +5792,17 @@
 
                 &-buttons {
                   display: block;
-
                   &-open {
                     margin: 0 0 10px 0;
                   }
                 }
               }
             }
-
             &-image {
-              img {
-                transform: translateX(100px);
-              }
+              height: auto;
             }
           }
-
           .features {
-            margin-top: 60px;
-
             &.with-bg {
               background: transparent;
               padding: 0;
@@ -6639,10 +5849,8 @@
               }
             }
           }
-
           .reward {
             position: relative;
-            margin-top: 60px;
             padding: 40px 35px 30px;
 
             &-content {
@@ -6673,21 +5881,16 @@
               }
             }
           }
-
           .atms {
             &-title {
               font-size: 30px;
             }
           }
-
           .questions {
-            margin-top: 60px;
-
             &-desc {
               font-size: 18px;
             }
           }
-
           .work-together {
             padding: 50px 0 40px;
 
@@ -6704,10 +5907,7 @@
               margin-top: 40px;
             }
           }
-
           .earn-money {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -6730,7 +5930,6 @@
               }
             }
           }
-
           .cozy-lk {
             &-content {
               &-title {
@@ -6744,19 +5943,12 @@
       .deposit-page {
         .inner {
           .top-banner {
-            &:after {
-              display: none;
-            }
-
-            &-wave {
-              display: none;
-            }
-
+            padding-right: 0;
             &-image {
-              right: 0;
+              overflow: hidden;
+              border-radius: 0 20px 20px 0;
             }
           }
-
           .advantage {
             &-title {
               font-size: 30px;
@@ -6772,8 +5964,6 @@
           }
 
           .calculate {
-            margin-top: 60px;
-
             &-block {
               display: block;
 
@@ -6813,20 +6003,11 @@
         .inner {
           .top-banner {
             &-image {
-              position: relative;
-
-              img {
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 340px;
-              }
+              width: 340px;
             }
           }
 
           .features {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -6859,12 +6040,6 @@
 
       .corporate-card-page {
         .inner {
-          .top-banner {
-            &:before {
-              display: none;
-            }
-          }
-
           .steps {
             &-block {
               &-item {
@@ -6877,14 +6052,6 @@
 
       .payment-page {
         .inner {
-          .top-banner {
-            &-wave,
-            &:before,
-            &:after {
-              display: none;
-            }
-          }
-
           .how-much {
             padding: 0 40px 0 50px;
 
@@ -6919,14 +6086,6 @@
 
       .legal-assistance-page {
         .inner {
-          .top-banner {
-            &-wave,
-            &:before,
-            &:after {
-              display: none;
-            }
-          }
-
           .steps {
             &-block-item {
               width: 100%;
@@ -6937,14 +6096,6 @@
 
       .direct-bank-page {
         .inner {
-          .top-banner {
-            &-wave,
-            &:before,
-            &:after {
-              display: none;
-            }
-          }
-
           .steps {
             &-block-item {
               width: 100%;
@@ -6997,12 +6148,6 @@
 
       .open-api-page {
         .inner {
-          .top-banner {
-            &:before {
-              display: none;
-            }
-          }
-
           .steps {
             &-block-item {
               width: 100%;
@@ -7013,12 +6158,6 @@
 
       .multibank-page {
         .inner {
-          .top-banner {
-            &:after {
-              display: none;
-            }
-          }
-
           .steps {
             &-block-item {
               width: 100%;
@@ -7079,8 +6218,6 @@
           }
 
           .tabs {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -7106,8 +6243,6 @@
           }
 
           .features {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -7159,8 +6294,6 @@
           }
 
           .features {
-            margin-top: 60px;
-
             &-title {
               font-size: 30px;
             }
@@ -7200,20 +6333,13 @@
 
       .overdraft-page {
         .inner {
-          .top-banner {
-            &:after {
-              content: none;
-            }
-            &-wave {
-              display: none;
-            }
-          }
           .freely-use {
             &-title {
               font-size: 30px;
             }
           }
           .features {
+            padding: 50px;
             &-block {
               &-item {
                 width: 50%;
@@ -7226,7 +6352,7 @@
               }
             }
             .tariffs-about {
-              margin-top: 20px;
+              margin-top: 35px;
             }
           }
         }
@@ -7280,7 +6406,6 @@
         }
       }
     }
-
     footer {
       .inner {
         .footer {
@@ -7290,7 +6415,6 @@
         }
       }
     }
-
     .popup_wrapper {
       .inner {
         padding: 30px 20px;
@@ -7366,7 +6490,6 @@
       }
     }
   }
-
   .popup_city {
     width: 100%;
   }
@@ -7378,26 +6501,20 @@
       width: 100%;
       padding: 0 10px;
     }
-
     header {
       .inner {
         width: 100%;
         padding: 20px 10px;
-
         .header {
           &-logo {
-            width: 100px;
-            height: auto;
+            width: 140px;
           }
-
           &-open {
             width: 122px;
-
             a {
               font: 300 14px/30px @font;
             }
           }
-
           &-mb {
             margin: 0 -7px 0 9px;
 
@@ -7465,31 +6582,87 @@
         }
       }
     }
-
     main {
       padding-top: 70px;
-
       .inner {
+        & > section:not(:first-child),
+        & > div:not(:first-child) {
+          margin-top: 40px;
+        }
         .top-banner {
-          &:before {
-            z-index: 1;
+          padding-left: 20px;
+          &.pr50,
+          &.pr100 {
+            padding-right: 20px;
+          }
+          &-content {
+            padding-bottom: 35px;
+            &-breadcrumbs {
+              position: absolute;
+              left: 15px;
+              top: 15px;
+            }
+            &-text {
+              max-width: 310px;
+              margin-top: 45px;
+              padding-right: 20px;
+              &-title {
+                font-size: 28px;
+              }
+              &-desc {
+                font-size: 14px;
+              }
+              &-open {
+                a {
+                  width: 200px;
+                  line-height: 45px;
+                }
+              }
+            }
+          }
+          &-image {
+            width: 50% !important;
+            max-width: 250px;
+            max-height: 250px;
           }
         }
+        .account {
+          &-block {
+            align-items: flex-start;
 
+            &-content {
+              width: 70%;
+
+              &-title {
+                font-size: 24px;
+              }
+            }
+
+            &-image {
+              position: relative;
+              width: 30%;
+
+              img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: auto;
+                height: 250px;
+                transform: translateX(-30px);
+              }
+            }
+          }
+        }
         .advantage {
-          margin-top: 40px;
-
           &-title {
             font-size: 24px;
             line-height: 1.3;
           }
-
           &-desc {
             margin-top: 10px;
             font-size: 14px;
             line-height: 1.4;
           }
-
           &-block {
             display: block;
 
@@ -7523,304 +6696,10 @@
             }
           }
         }
-
-        .cost {
-          &-title {
-            font-size: 24px;
-          }
-
-          &-block {
-            &-item {
-              padding: 25px;
-
-              &-title {
-                padding-right: 40px;
-              }
-
-              &-value {
-                margin-top: 10px;
-                font-size: 24px;
-              }
-
-              &-table {
-                margin-top: 20px;
-                padding: 20px 0 0 0;
-                border-top: 1px solid #e2e2e2;
-                border-radius: 0;
-                background: transparent;
-
-                &-line {
-                  padding: 3px 0;
-
-                  &-value {
-                    font-size: 20px;
-                  }
-                }
-
-                &-list {
-                  margin-top: 20px;
-                  padding-top: 20px;
-
-                  ul {
-                    margin-top: 10px;
-                  }
-                }
-              }
-
-              &-line {
-                &-point {
-                  &-value {
-                    font-size: 20px;
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        .request {
-          margin-top: 70px;
-          padding: 35px 25px;
-
-          &-title {
-            font-size: 24px;
-          }
-
-          &-block {
-            margin-top: 40px;
-          }
-        }
-
-        .steps {
-          &-title {
-            font-size: 24px;
-          }
-
-          &-block {
-            &-item {
-              &-image {
-                &-circle {
-                  width: 50px;
-                  height: 50px;
-                }
-
-                &-progress {
-                  top: 50px;
-                  left: 25px;
-                  height: calc(100% - 50px);
-                }
-              }
-            }
-          }
-        }
-
-        .important {
-          margin-top: 60px;
-
-          &-title {
-            font-size: 24px;
-          }
-
-          &-block {
-            &-item {
-              &-title {
-                padding-right: 30px;
-                font-size: 16px;
-              }
-            }
-          }
-        }
-
-        .usefull-services {
-          margin-top: 60px;
-
-          &-title {
-            font-size: 24px;
-          }
-
-          &-block {
-            &-item {
-              &:not(:last-child),
-              &:last-child {
-                margin-top: 15px;
-                padding: 35px 0 40px 25px;
-              }
-
-              &:first-child {
-                margin-top: 0;
-              }
-
-              &-content {
-                &-title {
-                  font-size: 22px;
-                }
-
-                &-desc {
-                  margin-top: 20px;
-                  max-width: 350px;
-                  font: 300 16px/24px @font;
-                }
-              }
-            }
-          }
-        }
-
-        .tariffs {
-          &-top {
-            position: relative;
-            margin-left: -10px;
-            margin-right: -10px;
-            z-index: 2;
-            overflow-x: scroll;
-
-            &:after {
-              content: '';
-              display: block;
-              padding-right: 10px;
-              height: 1px;
-            }
-
-            &-item {
-              margin: 0 0 0 10px;
-              white-space: nowrap;
-            }
-          }
-
-          &-title {
-            font-size: 24px;
-          }
-
-          &-block {
-            padding-top: 25px;
-            padding-bottom: 30px;
-
-            &:after {
-              padding-right: 5px;
-            }
-
-            &-item {
-              &-subitem {
-                &:nth-child(5) {
-                  .tariffs-block-item-subitem-value {
-                    &:before {
-                      width: 25px;
-                      height: 25px;
-                    }
-                  }
-                }
-
-                .price_block {
-                  .tariffs-block-item-subitem-value {
-                    font-size: 24px;
-                  }
-                }
-              }
-            }
-          }
-
-          &-about {
-            &-block {
-              display: block;
-
-              &-item {
-                margin: 25px 0 0 0;
-                padding: 0;
-                background: transparent;
-
-                &:first-child {
-                  margin-top: 0;
-                }
-              }
-            }
-          }
-        }
-
-        .tariffs-info {
-          &-title {
-            font-size: 24px;
-          }
-
-          &-block {
-            &-item {
-              padding: 25px 25px 35px;
-
-              &-title {
-                font-size: 20px;
-              }
-
-              &-value {
-                margin-top: 15px;
-                font-size: 18px;
-              }
-
-              &-point {
-                margin-top: 25px;
-
-                &-desc {
-                  font-size: 16px;
-                }
-              }
-            }
-          }
-        }
-
-        .receive {
-          position: relative;
-
-          &-content {
-            &-title {
-              margin-right: 0;
-              font-size: 24px;
-            }
-          }
-
-          &-image {
-            display: none;
-          }
-        }
-
-        .account {
-          margin-top: 60px;
-
-          &-block {
-            align-items: flex-start;
-
-            &-content {
-              width: 70%;
-
-              &-title {
-                font-size: 24px;
-              }
-            }
-
-            &-image {
-              position: relative;
-              width: 30%;
-
-              img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: auto;
-                height: 250px;
-                transform: translateX(-30px);
-              }
-            }
-          }
-        }
-
-        .features {
-          &-title {
-            font-size: 24px;
-            line-height: 1.3;
-          }
-        }
-
         .choose {
           &-title {
             font-size: 24px;
           }
-
           &-block {
             margin-top: 30px;
             display: block;
@@ -7900,65 +6779,245 @@
             }
           }
         }
-      }
+        .cost {
+          &-title {
+            font-size: 24px;
+          }
+          &-block {
+            &-item {
+              padding: 25px;
 
+              &-title {
+                padding-right: 40px;
+              }
+
+              &-value {
+                margin-top: 10px;
+                font-size: 24px;
+              }
+
+              &-table {
+                margin-top: 20px;
+                padding: 20px 0 0 0;
+                border-top: 1px solid #e2e2e2;
+                border-radius: 0;
+                background: transparent;
+
+                &-line {
+                  padding: 3px 0;
+
+                  &-value {
+                    font-size: 20px;
+                  }
+                }
+
+                &-list {
+                  margin-top: 20px;
+                  padding-top: 20px;
+
+                  ul {
+                    margin-top: 10px;
+                  }
+                }
+              }
+
+              &-line {
+                &-point {
+                  &-value {
+                    font-size: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .features {
+          &-title {
+            font-size: 24px;
+            line-height: 1.3;
+          }
+        }
+        .receive {
+          position: relative;
+          &-content {
+            &-title {
+              margin-right: 0;
+              font-size: 24px;
+            }
+          }
+          &-image {
+            display: none;
+          }
+        }
+        .request {
+          padding: 35px 25px;
+          &-title {
+            font-size: 24px;
+          }
+          &-block {
+            margin-top: 40px;
+          }
+        }
+        .services {
+          &-block {
+            &-item {
+              padding: 20px;
+              padding-right: 100px;
+            }
+          }
+        }
+        .steps {
+          &-title {
+            font-size: 24px;
+          }
+          &-block {
+            margin-top: 30px;
+            &-item {
+              &-image {
+                &-circle {
+                  width: 50px;
+                  height: 50px;
+                }
+
+                &-progress {
+                  top: 50px;
+                  left: 25px;
+                  height: calc(100% - 50px);
+                }
+              }
+            }
+          }
+        }
+        .tariffs {
+          &-top {
+            position: relative;
+            margin-left: -10px;
+            margin-right: -10px;
+            z-index: 2;
+            overflow-x: scroll;
+
+            &:after {
+              content: '';
+              display: block;
+              padding-right: 10px;
+              height: 1px;
+            }
+
+            &-item {
+              margin: 0 0 0 10px;
+              white-space: nowrap;
+            }
+          }
+          &-title {
+            font-size: 24px;
+          }
+          &-block {
+            padding-top: 25px;
+            padding-bottom: 30px;
+
+            &:after {
+              padding-right: 5px;
+            }
+
+            &-item {
+              &-subitem {
+                &:nth-child(5) {
+                  .tariffs-block-item-subitem-value {
+                    &:before {
+                      width: 25px;
+                      height: 25px;
+                    }
+                  }
+                }
+
+                .price_block {
+                  .tariffs-block-item-subitem-value {
+                    font-size: 24px;
+                  }
+                }
+              }
+            }
+          }
+          &-about {
+            &-block {
+              &-item {
+                margin: 25px 0 0 0;
+                &:first-child {
+                  margin-top: 0;
+                }
+              }
+            }
+          }
+        }
+        .tariffs-info {
+          &-title {
+            font-size: 24px;
+          }
+          &-block {
+            &-item {
+              padding: 25px 25px 35px;
+
+              &-title {
+                font-size: 20px;
+              }
+
+              &-value {
+                margin-top: 15px;
+                font-size: 18px;
+              }
+
+              &-point {
+                margin-top: 25px;
+
+                &-desc {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
       .main-page {
         .inner {
           .category {
             &-item {
+              padding: 20px 15px 0 !important;
               &:before {
                 right: 0 !important;
                 left: unset !important;
               }
 
               &.start-business {
-                height: 220px;
-                padding: 30px 0 0 15px;
-
+                height: 240px;
+                padding-top: 30px !important;
                 &:before {
                   display: block;
                   width: 160px;
                   height: 144px;
                 }
-
                 .category-item-text {
                   &-title {
                     font-size: 20px;
-
-                    br {
-                      display: none;
-                    }
-                  }
-
-                  &-desc {
-                    padding-right: 130px;
-                    font-size: 16px;
                   }
                 }
               }
 
               &.internet-business {
-                padding: 25px 15px 0 15px;
-
                 &:before {
                   width: 160px;
                   height: 160px;
                 }
               }
 
-              &.small-business {
-                padding: 25px 15px 0 15px;
-              }
-
-              &.self-employed {
-                padding: 25px 15px 0 15px;
-              }
-
-              &.all-tools {
-                padding: 25px 15px 0 15px;
+              &-text {
+                &-title {
+                  font-size: 16px;
+                }
+                &-desc {
+                  font-size: 14px;
+                }
               }
             }
-
             .actions_slider {
               width: 100%;
               height: 190px;
@@ -7967,12 +7026,19 @@
                   padding: 0 15px;
                   &-content {
                     &-text {
-                      margin-top: 15px;
+                      margin-top: 10px;
                       &-desc {
                         margin-top: 10px;
                       }
                     }
                   }
+                  &-image {
+                    width: auto;
+                    max-width: unset;
+                  }
+                }
+                &-controls {
+                  padding: 0 15px;
                 }
               }
             }
@@ -7982,7 +7048,7 @@
               padding: 0 15px;
               &-content {
                 &-text {
-                  margin-top: 15px;
+                  margin-top: 10px;
                   &-desc {
                     margin-top: 10px;
                   }
@@ -7990,9 +7056,7 @@
               }
             }
           }
-
           .best-tariffs {
-            margin-top: 40px;
             padding: 10px 0 30px;
 
             &-top {
@@ -8046,39 +7110,32 @@
               }
             }
           }
-
           .features {
-            margin-top: 40px;
-
             &-title {
               font-size: 24px;
             }
-
             &-block {
               display: block;
-
+              margin-top: 20px;
               &-item {
                 width: 100%;
-
-                &:before {
-                  width: 48px;
-                  height: 48px;
-                }
-
                 &:nth-child(n) {
                   margin-top: 25px;
                 }
-
                 &:first-child {
                   margin-top: 0;
                 }
-
+                &-image {
+                  flex-shrink: 0;
+                  width: 50px;
+                  height: 50px;
+                  margin-right: 25px;
+                }
                 br {
                   display: none;
                 }
               }
             }
-
             &-awards {
               margin-top: 40px;
 
@@ -8111,10 +7168,7 @@
               }
             }
           }
-
           .news {
-            margin-top: 50px;
-
             &-top {
               &-title {
                 font-size: 24px;
@@ -8169,7 +7223,6 @@
               }
             }
           }
-
           .mobile_app {
             justify-content: space-between;
 
@@ -8202,7 +7255,6 @@
               }
             }
           }
-
           .special {
             padding-top: 70px;
             padding-bottom: 25px;
@@ -8243,31 +7295,20 @@
               display: none;
             }
           }
-
           .steps {
             padding: 20px 25px 0 25px;
           }
         }
       }
-
       .bonuses-page {
-        padding-top: 0;
-
         .inner {
           .top-banner {
             &-image {
-              bottom: 20px;
-              height: 55px;
-
-              img {
-                transform: translateX(25px);
-              }
+              height: 45px;
             }
           }
 
           .bonuses {
-            margin-top: 40px;
-
             &-title {
               font-size: 24px;
               line-height: 32px;
@@ -8335,40 +7376,11 @@
           }
         }
       }
-
       .actions-page {
-        padding-top: 0;
-
         .inner {
-          .top-banner {
-            &:before {
-              left: 35%;
-              bottom: 30px;
-            }
-
-            &-wave {
-              right: 65%;
-              top: 162px;
-            }
-          }
-
           .actions {
-            margin-top: 40px;
-
             &-block {
               &-item {
-                &-image {
-                  display: flex;
-                  justify-content: center;
-                  background: @black;
-
-                  img {
-                    max-height: 270px;
-                    width: auto;
-                    max-width: 100%;
-                  }
-                }
-
                 &-text {
                   padding: 20px 20px 25px 15px;
 
@@ -8395,7 +7407,6 @@
           }
         }
       }
-
       .bonuses-page-detail {
         .inner {
           .bonus {
@@ -8414,8 +7425,6 @@
           }
 
           .bonuses {
-            margin-top: 40px;
-
             &-title {
               font-size: 24px;
               line-height: 32px;
@@ -8427,7 +7436,6 @@
           }
         }
       }
-
       .help-page {
         .inner {
           .info {
@@ -8458,40 +7466,8 @@
           }
         }
       }
-
       .about-page {
-        padding-top: 0;
-
         .inner {
-          .top-banner {
-            &:before {
-              top: unset;
-              bottom: 20px;
-              right: 60px;
-            }
-
-            &-wave {
-              top: unset;
-              bottom: 34px;
-              right: 13%;
-            }
-
-            &-content {
-              &-text {
-                &-title {
-                  max-width: 380px;
-                }
-              }
-            }
-
-            &-image {
-              position: absolute;
-              top: 0;
-              right: -15px;
-              width: 180px;
-            }
-          }
-
           .purpose {
             margin-top: 10px;
 
@@ -8529,30 +7505,21 @@
 
               &-item {
                 width: 100%;
-                margin-top: 30px;
-                padding-top: 13px;
-
-                &:nth-child(-n + 2) {
-                  margin-top: 30px;
+                &:nth-child(n) {
+                  margin-top: 25px;
                 }
-
                 &:first-child {
                   margin-top: 0;
                 }
-
                 &-title {
-                  padding-left: 70px;
+                  margin-top: 15px;
                   font-size: 18px;
-
                   br {
                     display: none;
                   }
                 }
-
                 &-desc {
-                  br {
-                    display: none;
-                  }
+                  margin-top: 10px;
                 }
               }
             }
@@ -8591,11 +7558,12 @@
           }
 
           .awards {
-            margin-top: 50px;
-
             &-top {
               &-title {
                 font-size: 24px;
+              }
+              &-controls {
+                display: none;
               }
             }
           }
@@ -8611,6 +7579,9 @@
               &-title {
                 font-size: 24px;
                 line-height: 1.3;
+              }
+              &-controls {
+                display: none;
               }
             }
 
@@ -8665,31 +7636,15 @@
           }
         }
       }
-
       .journal-page {
         .inner {
           .top-banner {
-            &:before {
-              width: 51px;
-              height: 51px;
-            }
-
-            &:after {
-              left: 40%;
-              bottom: 45px;
-            }
-
             &-image {
-              position: absolute;
-              bottom: 0;
-              right: 15px;
               width: 220px;
             }
           }
 
           .articles {
-            margin-top: 30px;
-
             &-filter {
               flex-wrap: nowrap;
               max-width: 100%;
@@ -8721,7 +7676,6 @@
           }
         }
       }
-
       .requisite-page {
         .inner {
           .content {
@@ -8740,11 +7694,9 @@
           }
         }
       }
-
       .news-detail-page {
         .inner {
           .text {
-            margin-top: 30px;
             padding-right: 0;
 
             &-social {
@@ -8791,29 +7743,7 @@
           }
         }
       }
-
       .acquiring-page {
-        .inner {
-          .top-banner {
-            position: relative;
-
-            &:after {
-              display: none;
-            }
-
-            &-wave {
-              display: none;
-            }
-
-            &-image {
-              position: absolute;
-              right: 20px;
-              bottom: 0;
-              width: 200px;
-            }
-          }
-        }
-
         .advantage {
           &-block {
             margin-top: 25px;
@@ -8862,12 +7792,9 @@
           }
         }
       }
-
       .remote-service-page {
         .inner {
           .features {
-            margin-top: 60px;
-
             &-title {
               font-size: 20px;
             }
@@ -8910,27 +7837,8 @@
           }
         }
       }
-
       .start-business-page {
         .inner {
-          .top-banner {
-            &-content {
-              width: 60%;
-
-              &-text {
-                &-desc {
-                  br {
-                    display: none;
-                  }
-                }
-              }
-            }
-
-            &-image {
-              width: 270px;
-            }
-          }
-
           .advantage {
             &-desc {
               margin-top: 20px;
@@ -8984,8 +7892,6 @@
           }
 
           .features {
-            margin-top: 60px;
-
             &-title {
               font-size: 24px;
             }
@@ -9039,8 +7945,6 @@
           }
 
           .docs {
-            margin-top: 60px;
-
             &-title {
               font-size: 24px;
             }
@@ -9068,9 +7972,14 @@
           }
         }
       }
-
       .all-tools-page {
         .inner {
+          .top-banner {
+            &-image {
+              max-width: 100px;
+              margin-top: 0;
+            }
+          }
           .switcher {
             &-block {
               &-title {
@@ -9191,9 +8100,13 @@
           }
         }
       }
-
       .small-business-page {
         .inner {
+          .top-banner {
+            &-image {
+              max-width: 100px;
+            }
+          }
           .steps {
             &-title {
               font-size: 24px;
@@ -9232,8 +8145,6 @@
           }
 
           .advantage {
-            margin-top: 60px;
-
             &-title {
               font-size: 24px;
             }
@@ -9286,7 +8197,6 @@
           }
         }
       }
-
       .freelancer-page {
         .inner {
           .top-banner {
@@ -9339,8 +8249,6 @@
           }
 
           .advantage {
-            margin-top: 60px;
-
             &-title {
               font-size: 24px;
             }
@@ -9393,15 +8301,8 @@
           }
         }
       }
-
       .internet-business-page {
         .inner {
-          .top-banner {
-            &-image {
-              width: 210px;
-            }
-          }
-
           .steps {
             &-title {
               font-size: 24px;
@@ -9446,8 +8347,6 @@
           }
 
           .advantage {
-            margin-top: 60px;
-
             &-title {
               font-size: 24px;
             }
@@ -9500,12 +8399,10 @@
           }
         }
       }
-
       .salary-page {
         .inner {
           .top-banner {
             &-image {
-              display: none;
             }
           }
 
@@ -9534,16 +8431,8 @@
           }
         }
       }
-
       .acquiring-detail-page {
         .inner {
-          .top-banner {
-            &-image {
-              min-width: 170px;
-              padding-left: 20px;
-            }
-          }
-
           .payment-system {
             &-text {
               &-title {
@@ -9650,14 +8539,11 @@
           }
         }
       }
-
       .delokassa-page {
         .inner {
           .top-banner {
             &-image {
-              padding-left: 10px;
               align-self: center;
-              min-width: 230px;
             }
           }
 
@@ -9847,24 +8733,36 @@
           }
         }
       }
-
       .partner-program-page {
         .inner {
           .top-banner {
             &-content {
               &-text {
                 &-buttons {
+                  &-open {
+                    a {
+                      width: 200px;
+                      font-size: 16px;
+                      line-height: 45px;
+                    }
+                  }
                   &-lk {
                     a {
-                      width: 260px;
+                      width: 200px;
+                      font: 300 16px/43px @font;
+                      &:hover {
+                        line-height: 43px;
+                      }
+                      span {
+                        padding-right: 0;
+                        &:before {
+                          display: none;
+                        }
+                      }
                     }
                   }
                 }
               }
-            }
-
-            &-image {
-              display: none;
             }
           }
 
@@ -10010,17 +8908,11 @@
           }
         }
       }
-
       .deposit-page {
         .inner {
           .top-banner {
-            &-image {
-              img {
-                transform: translateX(170px);
-              }
-            }
+            padding-right: 0;
           }
-
           .advantage {
             &-title {
               font-size: 24px;
@@ -10092,15 +8984,8 @@
           }
         }
       }
-
       .debit-card-page {
         .inner {
-          .top-banner {
-            &-image {
-              display: none;
-            }
-          }
-
           .features {
             &-title {
               font-size: 24px;
@@ -10170,15 +9055,8 @@
           }
         }
       }
-
       .corporate-card-page {
         .inner {
-          .top-banner {
-            &-image {
-              display: none;
-            }
-          }
-
           .advantage {
             &-block {
               &-item {
@@ -10204,19 +9082,8 @@
           }
         }
       }
-
       .payment-page {
         .inner {
-          .top-banner {
-            &-image {
-              position: absolute;
-              bottom: 0;
-              right: 10px;
-              width: 100px;
-              margin: 0;
-            }
-          }
-
           .advantage {
             &-block {
               &-item {
@@ -10256,15 +9123,8 @@
           }
         }
       }
-
       .legal-assistance-page {
         .inner {
-          .top-banner {
-            &-image {
-              display: none;
-            }
-          }
-
           .advantage {
             &-block {
               &-item {
@@ -10295,21 +9155,11 @@
           }
         }
       }
-
       .ruble-deposit-page {
         .inner {
           .top-banner {
-            &-wave,
-            &:after {
-              display: none;
-            }
-
             &-image {
-              position: absolute;
-              right: 10px;
-              bottom: 0;
               width: 230px;
-              margin: 0;
             }
           }
 
@@ -10345,7 +9195,6 @@
           }
         }
       }
-
       .direct-bank-page {
         .inner {
           .interface {
@@ -10363,7 +9212,6 @@
           }
         }
       }
-
       .open-api-page {
         .inner {
           .advantage {
@@ -10391,27 +9239,8 @@
           }
         }
       }
-
-      .transfer-page {
-        .inner {
-          .top-banner {
-            &-wave,
-            &:before,
-            &:after {
-              display: none;
-            }
-          }
-        }
-      }
-
       .multibank-page {
         .inner {
-          .top-banner {
-            &-image {
-              margin-right: -20px;
-            }
-          }
-
           .advantage {
             &-block {
               &-item {
@@ -10441,7 +9270,6 @@
           }
         }
       }
-
       .tariffs-page {
         .inner {
           .top-banner {
@@ -10494,8 +9322,6 @@
           }
 
           .selected-tab {
-            margin-top: 60px;
-
             &-title {
               font-size: 24px;
             }
@@ -10567,15 +9393,8 @@
           }
         }
       }
-
       .cloud-accounting-page {
         .inner {
-          .top-banner {
-            &-image {
-              display: none;
-            }
-          }
-
           .features {
             &-title {
               font-size: 24px;
@@ -10617,23 +9436,28 @@
           }
         }
       }
-
       .overdraft-page {
         .inner {
-          .top-banner {
-            &:before {
-              content: none;
-            }
-          }
           .freely-use {
             &-title {
               font-size: 24px;
               line-height: 1.3;
             }
           }
+          .features {
+            padding: 30px;
+            &-block {
+              &-item {
+                &-desc {
+                  br {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
         }
       }
-
       .departments-page {
         .inner {
           .atms {
@@ -10687,11 +9511,9 @@
         }
       }
     }
-
     footer {
       .inner {
         padding: 0 10px 20px;
-
         .footer {
           &-nav {
             margin-bottom: 30px;
@@ -10730,7 +9552,7 @@
 
             &-item {
               width: auto;
-              margin: 5px 0;
+              margin: 5px;
 
               a {
                 font-size: 14px;
@@ -10753,16 +9575,10 @@
           &-terms {
             width: 100%;
             order: 1;
-
-            span {
-              display: block;
-              text-align: center;
-            }
           }
         }
       }
     }
-
     .popup_wrapper {
       .inner {
         .popup {
@@ -10790,7 +9606,6 @@
       }
     }
   }
-
   .popup_city {
     padding: 20px;
     &-close {
@@ -10823,6 +9638,9 @@
     header {
       .inner {
         .header {
+          &-logo {
+            width: 120px;
+          }
           &-mb {
             &-wrapper {
               &-inner {
@@ -10839,22 +9657,21 @@
         }
       }
     }
-
     main {
       & > div {
         padding-top: 15px;
       }
-
       .inner {
-        .top-banner {
-          min-height: 225px;
+        & > section:not(:first-child),
+        & > div:not(:first-child) {
           margin-top: 30px;
-          padding: 30px 20px !important;
-
+        }
+        .top-banner {
+          min-height: 270px;
+          margin-top: 30px;
           &-content {
-            padding-bottom: 0;
+            padding: 30px 0;
             &-breadcrumbs {
-              position: absolute;
               left: 0;
               top: -30px;
               flex-wrap: nowrap;
@@ -10883,23 +9700,43 @@
                 }
               }
             }
-
             &-text {
               margin-top: 0;
               &-title {
-                font-size: 24px;
-                line-height: 32px;
+                font-size: 20px;
               }
-              &-desc {
-                margin-bottom: 10px;
+              &-open {
+                a {
+                  width: 130px;
+                  font: 300 14px/35px @font;
+                }
               }
             }
           }
+          &-image {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 45% !important;
+            max-height: 140px;
+          }
         }
+        .account {
+          &-block {
+            &-content {
+              width: 100%;
 
+              &-desc {
+                width: 100%;
+              }
+            }
+
+            &-image {
+              display: none;
+            }
+          }
+        }
         .choose {
-          margin-top: 50px;
-
           &-block {
             &-item {
               padding: 25px 20px;
@@ -10958,7 +9795,6 @@
             }
           }
         }
-
         .cost {
           &-block {
             &-item {
@@ -10988,16 +9824,55 @@
             }
           }
         }
+        .profit-spend {
+          padding: 65px 20px 35px;
+          &-content {
+            &-title {
+              font-size: 22px;
+            }
 
+            &-list {
+              margin-top: 20px;
+
+              ul {
+                li {
+                  margin-top: 20px;
+                  font-size: 14px;
+                }
+              }
+            }
+
+            .desc {
+              margin-top: 30px;
+              padding-left: 30px;
+              font-size: 12px;
+            }
+          }
+        }
+        .receive {
+          &-content {
+            &-docs {
+              &-item {
+                padding: 0;
+                background: transparent;
+
+                a {
+                  br {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
         .request {
+          margin-top: 50px !important;
           padding: 25px 15px 35px 15px;
-
           &-desc {
             margin-top: 15px;
             font-size: 16px;
             font-weight: normal;
           }
-
           &-block {
             margin-top: 30px;
 
@@ -11032,9 +9907,22 @@
             }
           }
         }
-
+        .services {
+          &-block {
+            &-item {
+              padding: 15px;
+              padding-right: 100px;
+              &-image {
+                img {
+                  max-height: 80px;
+                }
+              }
+            }
+          }
+        }
         .steps {
           &-block {
+            margin-top: 20px;
             &-item {
               &-image {
                 &-circle {
@@ -11061,91 +9949,6 @@
             }
           }
         }
-
-        .important {
-          &-block {
-            &-item {
-              &-desc {
-                padding-right: 15px;
-              }
-            }
-          }
-        }
-
-        .profit-spend {
-          padding: 65px 20px 35px;
-
-          &-content {
-            &-title {
-              font-size: 22px;
-            }
-
-            &-list {
-              margin-top: 20px;
-
-              ul {
-                li {
-                  margin-top: 20px;
-                  font-size: 14px;
-                }
-              }
-            }
-
-            .desc {
-              margin-top: 30px;
-              padding-left: 30px;
-              font-size: 12px;
-            }
-          }
-        }
-
-        .usefull-services {
-          &-block {
-            &-item {
-              &:not(:last-child),
-              &:last-child {
-                padding: 30px 25px;
-
-                .usefull-services-block-item-content {
-                  &-desc {
-                    max-width: 100%;
-                  }
-                }
-
-                .usefull-services-block-item-image {
-                  display: none;
-                }
-              }
-
-              &:last-child {
-                padding-top: 50px;
-
-                .usefull-services-block-item-badge {
-                  right: unset;
-                  left: 25px;
-                  top: 15px;
-                }
-              }
-            }
-          }
-        }
-
-        .account {
-          &-block {
-            &-content {
-              width: 100%;
-
-              &-desc {
-                width: 100%;
-              }
-            }
-
-            &-image {
-              display: none;
-            }
-          }
-        }
-
         .tariffs-info {
           &-block {
             &-item {
@@ -11158,29 +9961,20 @@
             }
           }
         }
-
-        .receive {
-          &-content {
-            &-docs {
-              &-item {
-                padding: 0;
-                background: transparent;
-
-                a {
-                  br {
-                    display: none;
-                  }
-                }
-              }
-            }
-          }
-        }
       }
-
       .main-page {
         .inner {
           .category {
             &-item {
+              padding-top: 20px;
+              &.start-business {
+                padding-top: 30px;
+                .category-item-text {
+                  &-desc {
+                    display: block;
+                  }
+                }
+              }
               &.internet-business {
                 &:before {
                   width: 120px;
@@ -11198,6 +9992,13 @@
                   height: 125px;
                 }
               }
+              &.freelancer {
+                &:before {
+                  width: 100px;
+                  height: 80px;
+                  padding-left: 0;
+                }
+              }
               &.all-tools {
                 &:before {
                   width: 45px;
@@ -11205,24 +10006,44 @@
                 }
               }
               &-text {
-                &-title {
-                  font-size: 16px;
-                }
-
                 &-desc {
                   display: none;
                 }
-
                 &-open {
-                  width: 122px;
-                  line-height: 30px;
+                  width: 130px;
+                  line-height: 35px;
                   font-size: 14px;
                 }
               }
-
-              .bonus {
-                &-image {
-                  display: none;
+            }
+            .actions_slider {
+              height: 195px;
+              padding: 0 !important;
+              .swiper {
+                &-slide {
+                  &-content {
+                    padding: 25px 0;
+                    &-text {
+                      &-title {
+                        font-size: 16px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .bonus {
+              height: 195px;
+              padding: 0 15px !important;
+              &-content {
+                padding: 25px 0;
+                &-text {
+                  &-title {
+                    font-size: 16px;
+                  }
+                  &-desc {
+                    display: none;
+                  }
                 }
               }
             }
@@ -11253,7 +10074,130 @@
           }
         }
       }
+      .about-page {
+        .inner {
+          .purpose {
+            &-block {
+              &-text {
+                max-width: unset;
+              }
+              &-image {
+                display: none;
+              }
+            }
+          }
+          .features {
+            &-block {
+              &-item {
+                &-image {
+                  width: 50px;
+                  height: 50px;
+                }
+              }
+            }
+          }
+          .reliable-hands {
+            &-block {
+              &-item {
+                margin-top: 30px;
 
+                &:nth-child(-n + 2) {
+                  margin-top: 30px;
+                }
+
+                &:first-child {
+                  margin-top: 0;
+                }
+
+                &-title {
+                  position: relative;
+                  padding-top: 0;
+                  padding-left: 20px;
+                  width: 100%;
+                  font-size: 18px;
+
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background: @pink;
+                  }
+                }
+
+                &-desc {
+                  margin-top: 15px;
+                }
+              }
+            }
+
+            &-image {
+              display: none;
+            }
+          }
+          .licenses {
+            margin-left: -10px;
+            margin-right: -10px;
+            border-radius: 0;
+            &-top {
+              padding: 0 20px;
+            }
+            &-slider {
+              margin-top: 30px;
+              .swiper {
+                &-slide {
+                  &-name {
+                    margin-top: 20px;
+                  }
+                }
+              }
+            }
+          }
+          .partnership {
+            padding: 30px 20px;
+            &:before,
+            &:after {
+              display: none;
+            }
+            &-title {
+              br {
+                display: none;
+              }
+            }
+            &-block {
+              display: block;
+              margin-top: 20px;
+              &-item {
+                width: 100%;
+                margin: 10px 0 0 0;
+                &:first-child {
+                  margin-top: 0;
+                }
+                &-desc {
+                  margin-top: 0;
+                }
+              }
+            }
+            &-buttons {
+              display: block;
+              margin-top: 30px;
+              &-button {
+                margin: 15px 0 0 0;
+                &:first-child {
+                  margin-top: 0;
+                }
+                &.apply,
+                &.detail {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
       .bonuses-page {
         .inner {
           .top-banner {
@@ -11262,18 +10206,8 @@
               right: 15px;
               font-size: 12px;
             }
-
-            &-content {
-              &-text {
-                &-title {
-                  max-width: 230px;
-                }
-              }
-            }
-
             &-image {
-              right: 15px;
-              height: 45px;
+              height: 35px;
             }
           }
 
@@ -11295,7 +10229,6 @@
           }
         }
       }
-
       .bonuses-page-detail {
         .inner {
           .bonus {
@@ -11331,21 +10264,11 @@
           }
         }
       }
-
       .actions-page {
         .inner {
           .top-banner {
-            &:before {
-              display: none;
-            }
-
-            &-wave {
-              display: none;
-            }
-
             &-image {
-              right: 15px;
-              height: 117px;
+              height: 115px;
             }
 
             &.no-actions {
@@ -11391,191 +10314,11 @@
           }
         }
       }
-
-      .about-page {
-        .inner {
-          .top-banner {
-            &:before {
-              display: none;
-            }
-
-            &-wave {
-              display: none;
-            }
-
-            &-content {
-              &-text {
-                &-title {
-                  max-width: 280px;
-                }
-              }
-            }
-
-            &-image {
-              display: none;
-            }
-          }
-
-          .purpose {
-            &-block {
-              &-image {
-                img {
-                  transform: translateX(55%);
-                }
-              }
-            }
-          }
-
-          .features {
-            &-block {
-              &-item {
-                padding-top: 3px;
-
-                &:before {
-                  width: 41px;
-                  height: 41px;
-                }
-
-                &-title {
-                  padding-left: 55px;
-                }
-              }
-            }
-          }
-
-          .reliable-hands {
-            &-block {
-              &-item {
-                margin-top: 30px;
-
-                &:nth-child(-n + 2) {
-                  margin-top: 30px;
-                }
-
-                &:first-child {
-                  margin-top: 0;
-                }
-
-                &-title {
-                  position: relative;
-                  padding-top: 0;
-                  padding-left: 20px;
-                  width: 100%;
-                  font-size: 18px;
-
-                  &:before {
-                    content: '';
-                    position: absolute;
-                    top: 10px;
-                    left: 0;
-                    width: 7px;
-                    height: 7px;
-                    border-radius: 50%;
-                    background: @pink;
-                  }
-                }
-
-                &-desc {
-                  margin-top: 15px;
-                }
-              }
-            }
-
-            &-image {
-              display: none;
-            }
-          }
-
-          .licenses {
-            margin-left: -10px;
-            margin-right: -10px;
-            border-radius: 0;
-
-            &-top {
-              padding: 0 20px;
-
-              &-controls {
-                display: flex;
-                align-items: center;
-              }
-            }
-
-            &-slider {
-              margin-top: 30px;
-
-              .swiper {
-                &-slide {
-                  &-name {
-                    margin-top: 20px;
-                  }
-                }
-              }
-            }
-          }
-
-          .partnership {
-            padding: 30px 20px;
-
-            &:before {
-              display: none;
-            }
-
-            &:after {
-              display: none;
-            }
-
-            &-title {
-              br {
-                display: none;
-              }
-            }
-
-            &-block {
-              display: block;
-              margin-top: 20px;
-
-              &-item {
-                width: 100%;
-                margin: 10px 0 0 0;
-
-                &:first-child {
-                  margin-top: 0;
-                }
-
-                &-desc {
-                  margin-top: 0;
-                }
-              }
-            }
-
-            &-buttons {
-              display: block;
-              margin-top: 30px;
-
-              &-button {
-                margin: 15px 0 0 0;
-
-                &:first-child {
-                  margin-top: 0;
-                }
-              }
-            }
-          }
-        }
-      }
-
       .journal-page {
         .inner {
           .top-banner {
-            &:before {
-              display: none;
-            }
-
-            &:after {
-              display: none;
-            }
-
             &-image {
+              right: 10px;
               width: 170px;
             }
           }
@@ -11620,7 +10363,6 @@
           }
         }
       }
-
       .policy-page {
         .inner {
           .top-banner {
@@ -11634,32 +10376,15 @@
           }
 
           .text {
-            margin-top: 40px;
-
             span {
               font-size: 16px;
             }
           }
         }
       }
-
       .requisite-page {
         .inner {
-          .top-banner {
-            margin-top: 30px;
-
-            &:before {
-              display: none;
-            }
-
-            &:after {
-              display: none;
-            }
-          }
-
           .content {
-            margin-top: 30px;
-
             &-text {
               margin-top: 30px;
               font-size: 16px;
@@ -11707,22 +10432,9 @@
           }
         }
       }
-
       .help-page {
         .inner {
-          .top-banner {
-            &:before {
-              display: none;
-            }
-
-            &:after {
-              display: none;
-            }
-          }
-
           .info {
-            margin-top: 40px;
-
             &-titles {
               &-item {
                 margin-top: 30px;
@@ -11764,19 +10476,8 @@
           }
         }
       }
-
       .safety-page {
         .inner {
-          .top-banner {
-            &:before {
-              display: none;
-            }
-
-            &:after {
-              display: none;
-            }
-          }
-
           .recommendation {
             margin-top: 45px;
 
@@ -11811,7 +10512,6 @@
           }
         }
       }
-
       .news-detail-page {
         .inner {
           .top-banner {
@@ -11899,8 +10599,6 @@
           }
 
           .news {
-            margin-top: 40px;
-
             &-item {
               &-image {
                 display: none;
@@ -11915,58 +10613,34 @@
           }
         }
       }
-
       .acquiring-page {
         .inner {
-          .top-banner {
-            &:before {
-              display: none;
-            }
+          .advantage {
+            &-block {
+              &-item {
+                &-image {
+                  padding: 0;
+                }
 
-            &-image {
-              display: none;
-            }
-
-            &-content {
-              &-text {
-                &-desc {
-                  br {
-                    display: none;
-                  }
+                &-text-desc {
+                  padding: 20px 10px 20px 20px;
                 }
               }
             }
           }
         }
-
-        .advantage {
-          &-block {
-            &-item {
-              &-image {
-                padding: 0;
-              }
-
-              &-text-desc {
-                padding: 20px 10px 20px 20px;
-              }
-            }
-          }
-        }
       }
-
       .remote-service-page {
         .inner {
           .top-banner {
-            &:after {
-              display: none;
-            }
-
-            &-wave {
-              display: none;
+            &-image {
+              right: 10px;
             }
           }
-
           .features {
+            &-title {
+              margin-top: 40px;
+            }
             &-block {
               &-item {
                 &-image {
@@ -11995,36 +10669,40 @@
                 }
               }
             }
-
-            .request {
-              margin-top: 40px;
-            }
           }
         }
       }
-
       .salary-page {
         .inner {
           .top-banner {
-            &-content {
-              padding-bottom: 0;
+            &-image {
+              width: 50% !important;
+              overflow: hidden;
+              bottom: 20px;
+              img {
+                margin-right: -20px;
+              }
+            }
+          }
+          .features {
+            &-block {
+              margin-top: 20px;
             }
           }
         }
       }
-
       .acquiring-detail-page {
-        .inner {
-          .top-banner {
-            &-image {
-              display: none;
-            }
-
-            &-content {
-              padding-bottom: 0;
+        &.trade-acquiring {
+          .inner {
+            .top-banner {
+              &-image {
+                width: 40% !important;
+                max-height: 130px;
+              }
             }
           }
-
+        }
+        .inner {
           .advantage {
             &-block {
               &-item {
@@ -12071,19 +10749,8 @@
           }
         }
       }
-
       .delokassa-page {
         .inner {
-          .top-banner {
-            &-content {
-              padding-bottom: 0;
-            }
-
-            &-image {
-              display: none;
-            }
-          }
-
           .features {
             &-title {
               font-size: 24px;
@@ -12177,15 +10844,37 @@
           }
         }
       }
-
       .partner-program-page {
         .inner {
           .top-banner {
             &-content {
-              padding-bottom: 0;
+              &-text {
+                &-buttons {
+                  &-open {
+                    a {
+                      width: 150px;
+                      font: 300 12px/35px @font;
+                    }
+                  }
+                  &-lk {
+                    a {
+                      width: 150px;
+                      font: 300 12px/33px @font;
+                      &:hover {
+                        line-height: 33px;
+                      }
+                    }
+                  }
+                }
+              }
             }
+            // &-image {
+            //   width: auto !important;
+            //   max-width: 210px;
+            //   height: 270px;
+            //   max-height: unset;
+            // }
           }
-
           .features {
             &-block {
               &-item {
@@ -12205,7 +10894,6 @@
               }
             }
           }
-
           .reward {
             &-content {
               &-line {
@@ -12238,7 +10926,6 @@
               }
             }
           }
-
           .questions {
             &-desc {
               font-size: 16px;
@@ -12253,10 +10940,7 @@
               }
             }
           }
-
           .cozy-lk {
-            margin-top: 60px;
-
             &-image {
               display: none;
             }
@@ -12277,19 +10961,8 @@
           }
         }
       }
-
       .deposit-page {
         .inner {
-          .top-banner {
-            &-content {
-              padding-bottom: 0;
-            }
-
-            &-image {
-              display: none;
-            }
-          }
-
           .advantage {
             &-block {
               &-item {
@@ -12318,7 +10991,6 @@
               }
             }
           }
-
           .calculate {
             &-block {
               &-value {
@@ -12332,38 +11004,25 @@
                   }
                 }
               }
-
               &-result {
                 margin: 25px -10px 0 -10px;
                 width: ~'calc(100% + 20px)';
                 padding: 25px 20px;
                 border-radius: 0;
-
                 &-main {
                   margin-bottom: 25px;
-                  display: block;
-
+                  padding-bottom: 20px;
+                  border-bottom: 1px solid #d1d1d1;
                   &-item {
-                    margin-top: 20px;
-                    padding-bottom: 20px;
-                    width: 100%;
-                    border-bottom: 1px solid #d1d1d1;
-
-                    &:first-child {
-                      margin-top: 0;
-                    }
-
                     &-num {
                       margin-bottom: 8px;
                       font-size: 22px;
                     }
-
                     &-txt {
                       font-size: 14px;
                     }
                   }
                 }
-
                 &-foot {
                   padding-left: 0;
 
@@ -12376,15 +11035,17 @@
           }
         }
       }
-
       .debit-card-page {
         .inner {
           .top-banner {
-            &-content {
-              padding-bottom: 0;
+            &-image {
+              bottom: 10px;
+              max-width: 175px;
+              img {
+                transform: translateX(36%);
+              }
             }
           }
-
           .features {
             &-block {
               &-item {
@@ -12460,15 +11121,14 @@
           }
         }
       }
-
       .corporate-card-page {
         .inner {
           .top-banner {
-            &-content {
-              padding-bottom: 0;
+            &-image {
+              right: 10px;
+              bottom: 20px;
             }
           }
-
           .advantage {
             &-block {
               &-item {
@@ -12493,19 +11153,14 @@
           }
         }
       }
-
       .payment-page {
         .inner {
           .top-banner {
-            &-content {
-              padding-bottom: 0;
-            }
-
             &-image {
-              display: none;
+              max-width: 140px;
+              max-height: 140px;
             }
           }
-
           .advantage {
             &-block {
               &-item {
@@ -12551,15 +11206,17 @@
           }
         }
       }
-
       .legal-assistance-page {
         .inner {
           .top-banner {
-            &-content {
-              padding-bottom: 0;
+            &-image {
+              max-width: 135px;
+              border-radius: 0;
+              img {
+                transform: translateX(35%);
+              }
             }
           }
-
           .advantage {
             &-block {
               &-item {
@@ -12595,19 +11252,8 @@
           }
         }
       }
-
       .ruble-deposit-page {
         .inner {
-          .top-banner {
-            &-image {
-              display: none;
-            }
-
-            &-content {
-              padding-bottom: 0;
-            }
-          }
-
           .features {
             &-block {
               &-item {
@@ -12625,27 +11271,8 @@
           }
         }
       }
-
       .direct-bank-page {
         .inner {
-          .top-banner {
-            &-image {
-              display: none;
-            }
-
-            &-content {
-              padding-bottom: 0;
-
-              &-text {
-                &-desc {
-                  br {
-                    display: none;
-                  }
-                }
-              }
-            }
-          }
-
           .interface {
             &-image {
               display: none;
@@ -12687,19 +11314,14 @@
           }
         }
       }
-
       .open-api-page {
         .inner {
           .top-banner {
-            &-content {
-              padding-bottom: 0;
-            }
-
             &-image {
-              display: none;
+              width: 40% !important;
+              max-height: 120px;
             }
           }
-
           .advantage {
             &-block {
               &-item {
@@ -12728,32 +11350,7 @@
           }
         }
       }
-
-      .transfer-page {
-        .inner {
-          .top-banner {
-            &-image {
-              display: none;
-            }
-
-            &-content {
-              padding-bottom: 0;
-            }
-          }
-        }
-      }
-
       .multibank-page {
-        .top-banner {
-          &-content {
-            padding-bottom: 0;
-          }
-
-          &-image {
-            display: none;
-          }
-        }
-
         .advantage {
           &-block {
             &-item {
@@ -12777,7 +11374,6 @@
           }
         }
       }
-
       .sitemap-page {
         .inner {
           .sitemap-block {
@@ -12808,15 +11404,8 @@
           }
         }
       }
-
       .tariffs-page {
         .inner {
-          .top-banner {
-            &-image {
-              display: none;
-            }
-          }
-
           .advantage {
             &-block {
               &-item {
@@ -12876,9 +11465,14 @@
           }
         }
       }
-
       .cloud-accounting-page {
         .inner {
+          .top-banner {
+            &-image {
+              right: 10px;
+              bottom: 10px;
+            }
+          }
           .features {
             &-block {
               &-item {
@@ -12897,12 +11491,18 @@
           }
         }
       }
-
       .overdraft-page {
         .inner {
+          .top-banner {
+            &-image {
+              right: 10px;
+              bottom: 10px;
+            }
+          }
           .freely-use {
             &-block {
               flex-wrap: wrap;
+              margin-top: 30px;
               &-item {
                 width: 49%;
                 margin-top: 15px;
@@ -12913,11 +11513,32 @@
             }
           }
           .features {
-            padding: 20px 15px 25px;
+            padding: 15px;
+            &-block {
+              &-item {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                &:nth-child(n) {
+                  margin-top: 15px;
+                }
+                &:first-child {
+                  margin-top: 0;
+                }
+                &-image {
+                  flex-shrink: 0;
+                  width: 50px;
+                  height: 50px;
+                }
+                &-desc {
+                  margin-top: 0;
+                  margin-left: 15px;
+                }
+              }
+            }
           }
         }
       }
-
       .not-found-page {
         .inner {
           .top-banner {
@@ -12943,16 +11564,9 @@
           }
         }
       }
-
       .departments-page {
         .inner {
-          .top-banner {
-            &:after {
-              content: none;
-            }
-          }
           .atms {
-            margin-top: 50px;
             &-sort {
               flex-wrap: wrap;
               margin-bottom: 30px;
@@ -13081,11 +11695,6 @@
       // Marketplace
       .start-business-page {
         .inner {
-          .top-banner {
-            &-content {
-              width: 100%;
-            }
-          }
           .advantage {
             &-block {
               &-item {
@@ -13188,16 +11797,6 @@
       }
       .internet-business-page {
         .inner {
-          .top-banner {
-            &-content {
-              padding-bottom: 0;
-            }
-
-            &-image {
-              display: none;
-            }
-          }
-
           .services {
             &-block {
               &-item {
@@ -13267,15 +11866,10 @@
       .small-business-page {
         .inner {
           .top-banner {
-            &-content {
-              padding-bottom: 0;
-            }
-
             &-image {
-              display: none;
+              max-width: 75px;
             }
           }
-
           .services {
             &-block {
               &-item {
@@ -13349,16 +11943,6 @@
       }
       .freelancer-page {
         .inner {
-          .top-banner {
-            &-content {
-              padding-bottom: 0;
-            }
-
-            &-image {
-              display: none;
-            }
-          }
-
           .services {
             &-block {
               &-item {
@@ -13434,27 +12018,21 @@
         .inner {
           .top-banner {
             &-image {
-              display: none;
+              right: 20px;
+              max-width: 75px;
             }
           }
-
           .switcher {
-            margin-top: 30px;
-
             &-block {
               &-content {
                 margin-top: 30px;
-
                 &-box {
                   .services {
                     &-title {
                       font-size: 24px;
                     }
-
                     &-block {
                       &-item {
-                        padding: 25px 20px;
-
                         &:last-child {
                           padding-top: 60px;
 
@@ -13478,7 +12056,6 @@
               }
             }
           }
-
           .integration {
             &-title {
               font-size: 24px;
@@ -13510,7 +12087,6 @@
               }
             }
           }
-
           .advantage {
             &-block {
               &-item {
@@ -13542,16 +12118,12 @@
               }
             }
           }
-
           .services {
             &-title {
               font-size: 24px;
             }
-
             &-block {
               &-item {
-                padding: 25px 20px;
-
                 &:last-child {
                   padding-top: 60px;
 
@@ -13574,7 +12146,16 @@
         }
       }
     }
-
+    footer {
+      .inner {
+        .footer {
+          &-nav-small {
+            width: 220px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
     .popup_wrapper {
       .inner {
         padding: 30px 10px;
@@ -13678,7 +12259,6 @@
       }
     }
   }
-
   .popup_city {
     padding: 25px 10px 0;
     &-close {
@@ -13699,16 +12279,6 @@
       &-col {
         width: 50%;
         margin-bottom: 35px;
-      }
-    }
-  }
-}
-
-.ui-selectmenu {
-  &-menu {
-    .ui-menu-item {
-      & > div {
-        font-size: 16px;
       }
     }
   }

@@ -123,6 +123,7 @@
   color: #c4c4c4;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+  cursor: pointer;
 }
 .wrapper main .departments-page .inner .atms-sort-switch-txt.active {
   color: #f65e64;

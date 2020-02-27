@@ -249,13 +249,6 @@
   .wrapper main .inner .cost-block-item-table-list ul li {
     font-size: 16px;
   }
-  .wrapper main .inner .features-block-item-image {
-    width: 75px;
-    height: 75px;
-  }
-  .wrapper main .inner .features-block-item-desc {
-    font-size: 16px;
-  }
   .wrapper main .inner .profit-spend {
     padding: 45px 30px 0;
   }
@@ -307,10 +300,10 @@
     bottom: 20px;
   }
   .wrapper main .inner .steps-block-item-text-title {
-    font-size: 20px;
+    font-size: 22px;
   }
-  .wrapper main .inner .steps-block-item-text-desc {
-    font-size: 16px;
+  .wrapper main .inner .steps-block-item-text-desc br {
+    display: none;
   }
   .wrapper main .inner .tariffs {
     padding-top: 45px;
@@ -412,17 +405,11 @@
   .wrapper main .main-page .inner .category .actions_slider .swiper-slide-content-text {
     margin-top: 25px;
   }
-  .wrapper main .main-page .inner .category .actions_slider .swiper-slide-content-text-title {
-    font-size: 24px;
-  }
   .wrapper main .main-page .inner .category .bonus-content-badge {
     font-size: 16px;
   }
   .wrapper main .main-page .inner .category .bonus-content-text {
     margin-top: 25px;
-  }
-  .wrapper main .main-page .inner .category .bonus-content-text-title {
-    font-size: 24px;
   }
   .wrapper main .main-page .inner .category .bonus-image {
     width: 370px;
@@ -493,6 +480,32 @@
     line-height: 45px;
     font-size: 16px;
   }
+  .wrapper main .about-page .inner .purpose-block-text span {
+    font-size: 18px;
+  }
+  .wrapper main .about-page .inner .purpose-block-image {
+    max-width: 405px;
+  }
+  .wrapper main .about-page .inner .reliable-hands-block {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .wrapper main .about-page .inner .reliable-hands-block-item {
+    width: calc((100% - 50px)/2);
+  }
+  .wrapper main .about-page .inner .reliable-hands-block-item-title {
+    font-size: 22px;
+  }
+  .wrapper main .about-page .inner .reliable-hands-block-item-desc {
+    font-size: 17px;
+  }
+  .wrapper main .about-page .inner .reliable-hands-block-item-desc br {
+    display: none;
+  }
+  .wrapper main .about-page .inner .awards-slider .swiper-slide-desc {
+    font-size: 17px;
+  }
   .wrapper main .actions-page .inner .actions-block-item-text-line {
     display: block;
   }
@@ -536,32 +549,6 @@
   .wrapper main .bonuses-page .inner .bonuses-more a:hover {
     line-height: 43px;
     border: 1px solid transparent;
-  }
-  .wrapper main .about-page .inner .purpose-block-text span {
-    font-size: 18px;
-  }
-  .wrapper main .about-page .inner .purpose-block-image {
-    max-width: 405px;
-  }
-  .wrapper main .about-page .inner .reliable-hands-block {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .wrapper main .about-page .inner .reliable-hands-block-item {
-    width: calc((100% - 50px)/2);
-  }
-  .wrapper main .about-page .inner .reliable-hands-block-item-title {
-    font-size: 22px;
-  }
-  .wrapper main .about-page .inner .reliable-hands-block-item-desc {
-    font-size: 17px;
-  }
-  .wrapper main .about-page .inner .reliable-hands-block-item-desc br {
-    display: none;
-  }
-  .wrapper main .about-page .inner .awards-slider .swiper-slide-desc {
-    font-size: 17px;
   }
   .wrapper main .policy-page .inner .top-banner:after {
     top: -20px;
@@ -984,9 +971,6 @@
   }
   .wrapper main .delokassa-page .inner .solution-block {
     padding: 30px 0 0 50px;
-  }
-  .wrapper main .delokassa-page .inner .solution-block-content {
-    padding-bottom: 40px;
   }
   .wrapper main .delokassa-page .inner .solution-block-content-title {
     font-size: 34px;
@@ -1577,6 +1561,9 @@
     width: 73px;
     height: 138px;
     background-size: cover;
+  }
+  .wrapper main .main-page .inner .category-item-text-title {
+    font-size: 20px;
   }
   .wrapper main .main-page .inner .category .actions_slider {
     width: calc(50% - 10px);
@@ -2534,6 +2521,16 @@
   .wrapper main .inner .features-title {
     font-size: 30px;
   }
+  .wrapper main .inner .features-block-item-image {
+    width: 75px;
+    height: 75px;
+  }
+  .wrapper main .inner .important-title {
+    font-size: 32px;
+  }
+  .wrapper main .inner .important-block-item-title {
+    font-size: 20px;
+  }
   .wrapper main .inner .profit-spend {
     padding: 45px 30px;
   }
@@ -2596,19 +2593,25 @@
     font-size: 30px;
   }
   .wrapper main .inner .steps-block {
-    margin-top: 40px;
     display: block;
+    margin-top: 40px;
   }
   .wrapper main .inner .steps-block-item {
     position: relative;
+    width: 100% !important;
     padding-bottom: 45px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .wrapper main .inner .steps-block-item:last-child {
+    padding-bottom: 0;
+  }
+  .wrapper main .inner .steps-block-item-image {
+    margin-right: 20px;
   }
   .wrapper main .inner .steps-block-item-image-circle {
     width: 55px;
@@ -2644,18 +2647,9 @@
   }
   .wrapper main .inner .steps-block-item-text {
     margin-top: 0;
-    padding-top: 14px;
-    width: calc(100% - 55px);
-    padding-left: 20px;
   }
-  .wrapper main .inner .steps-block-item-text-desc {
-    font-size: 16px;
-  }
-  .wrapper main .inner .steps-block-item-text-desc br {
-    display: none;
-  }
-  .wrapper main .inner .steps-block-item:last-child {
-    padding-bottom: 0;
+  .wrapper main .inner .steps-block-item-text-title {
+    font-size: 20px;
   }
   .wrapper main .inner .steps-block-item.active .steps-block-item-image-progress:before {
     height: 100%;
@@ -2693,14 +2687,15 @@
     font-weight: 300;
   }
   .wrapper main .inner .tariffs-block {
-    margin-left: calc((100vw - 100%)/-2);
-    margin-top: 0;
-    padding: 35px calc((100vw - 100%)/2);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     overflow-x: scroll;
     width: 100vw;
+    margin-left: calc((100vw - 100%)/-2);
+    margin-top: 0;
+    padding: 35px calc((100vw - 100%)/2);
+    border-radius: 0;
   }
   .wrapper main .inner .tariffs-block:after {
     content: '';
@@ -2863,12 +2858,13 @@
     font-size: 30px;
   }
   .wrapper main .inner .tariffs-info-block {
+    width: 100vw;
     margin-left: calc((100vw - 100%)/-2);
     padding-left: calc((100vw - 100%) / 2);
     padding-top: 40px;
     padding-bottom: 40px;
-    width: 100vw;
     overflow-x: scroll;
+    border-radius: 0;
   }
   .wrapper main .inner .tariffs-info-block:after {
     content: '';
@@ -3149,9 +3145,6 @@
   }
   .wrapper main .bonuses-page .inner .top-banner-image {
     height: 65px;
-  }
-  .wrapper main .bonuses-page .inner .bonuses {
-    margin-top: 65px;
   }
   .wrapper main .bonuses-page .inner .bonuses-title {
     font-size: 30px;
@@ -3621,9 +3614,6 @@
   .wrapper main .all-tools-page .inner .integration-block-item-image {
     display: none;
   }
-  .wrapper main .all-tools-page .inner .steps-title {
-    font-size: 30px;
-  }
   .wrapper main .all-tools-page .inner .advantage-title {
     font-size: 30px;
   }
@@ -3674,9 +3664,6 @@
   }
   .wrapper main .salary-page .inner .top-banner-image {
     width: 335px;
-  }
-  .wrapper main .salary-page .inner .steps-block-item {
-    width: 100%;
   }
   .wrapper main .salary-page .inner .control {
     padding: 20px 0;
@@ -3830,10 +3817,6 @@
   .wrapper main .delokassa-page .inner .features-block-item:first-child {
     margin-top: 0;
   }
-  .wrapper main .delokassa-page .inner .features-block-item-image {
-    width: 55px;
-    height: 55px;
-  }
   .wrapper main .delokassa-page .inner .features-block-item-desc {
     margin: 0;
     padding: 18px 0 0 20px;
@@ -3846,7 +3829,7 @@
   }
   .wrapper main .delokassa-page .inner .solution-block {
     margin-top: 30px;
-    padding: 25px 0 0 35px;
+    padding: 30px;
   }
   .wrapper main .delokassa-page .inner .solution-block-content {
     padding-top: 0;
@@ -3982,10 +3965,6 @@
   .wrapper main .partner-program-page .inner .features-block-item-title {
     padding-top: 16px;
   }
-  .wrapper main .partner-program-page .inner .features-block-item-image {
-    width: 55px;
-    height: 55px;
-  }
   .wrapper main .partner-program-page .inner .features-block-item-desc {
     padding-left: 75px;
   }
@@ -4063,9 +4042,6 @@
   .wrapper main .deposit-page .inner .advantage-title {
     font-size: 30px;
   }
-  .wrapper main .deposit-page .inner .steps-block-item {
-    width: 100%;
-  }
   .wrapper main .deposit-page .inner .calculate-block {
     display: block;
   }
@@ -4095,9 +4071,6 @@
   .wrapper main .debit-card-page .inner .features-title {
     font-size: 30px;
   }
-  .wrapper main .debit-card-page .inner .features-block {
-    margin-top: 40px;
-  }
   .wrapper main .debit-card-page .inner .payment-system {
     padding: 30px;
     display: block;
@@ -4112,9 +4085,6 @@
   .wrapper main .debit-card-page .inner .payment-system-block-item {
     width: 70px;
     height: 70px;
-  }
-  .wrapper main .corporate-card-page .inner .steps-block-item {
-    width: 100%;
   }
   .wrapper main .payment-page .inner .how-much {
     padding: 0 40px 0 50px;
@@ -4134,12 +4104,6 @@
     width: 320px;
   }
   .wrapper main .payment-page .inner .steps.connect .steps-block-item {
-    width: 100%;
-  }
-  .wrapper main .legal-assistance-page .inner .steps-block-item {
-    width: 100%;
-  }
-  .wrapper main .direct-bank-page .inner .steps-block-item {
     width: 100%;
   }
   .wrapper main .direct-bank-page .inner .interface {
@@ -4174,12 +4138,6 @@
   }
   .wrapper main .direct-bank-page .inner .advantage-block-item-image {
     background: transparent;
-  }
-  .wrapper main .open-api-page .inner .steps-block-item {
-    width: 100%;
-  }
-  .wrapper main .multibank-page .inner .steps-block-item {
-    width: 100%;
   }
   .wrapper main .sitemap-page .inner .sitemap-block {
     -ms-flex-wrap: wrap;
@@ -4269,9 +4227,6 @@
     padding: 0;
     background: transparent;
   }
-  .wrapper main .cloud-accounting-page .inner .steps-block-item {
-    width: 100%;
-  }
   .wrapper main .cloud-accounting-page .inner .features-title {
     font-size: 30px;
   }
@@ -4319,7 +4274,7 @@
     margin-top: 0;
   }
   .wrapper main .overdraft-page .inner .features .tariffs-about {
-    margin-top: 35px;
+    margin-top: 20px;
   }
   .wrapper main .not-found-page .inner .top-banner {
     height: 350px;
@@ -4424,6 +4379,12 @@
   }
 }
 @media (max-width: 768px) {
+  ul.list li {
+    font-size: 16px;
+  }
+  ul.list li:before {
+    top: 13px;
+  }
   .wrapper .inner {
     width: 100%;
     padding: 0 10px;
@@ -4709,6 +4670,20 @@
     font-size: 24px;
     line-height: 1.3;
   }
+  .wrapper main .inner .features-block {
+    display: block;
+    margin-top: 30px;
+  }
+  .wrapper main .inner .important-title {
+    font-size: 28px;
+  }
+  .wrapper main .inner .important-block-item-title {
+    font-size: 18px;
+  }
+  .wrapper main .inner .important-block-item-desc {
+    padding-top: 20px;
+    font-size: 16px;
+  }
   .wrapper main .inner .receive {
     position: relative;
   }
@@ -4729,11 +4704,11 @@
     margin-top: 40px;
   }
   .wrapper main .inner .services-block-item {
-    padding: 20px;
-    padding-right: 100px;
+    min-height: 225px;
+    padding: 30px 100px 20px 20px;
   }
   .wrapper main .inner .steps-title {
-    font-size: 24px;
+    font-size: 24px !important;
   }
   .wrapper main .inner .steps-block {
     margin-top: 30px;
@@ -4746,6 +4721,12 @@
     top: 50px;
     left: 25px;
     height: calc(100% - 50px);
+  }
+  .wrapper main .inner .steps-block-item-text-title {
+    font-size: 18px;
+  }
+  .wrapper main .inner .steps-block-item-text-desc {
+    font-size: 16px;
   }
   .wrapper main .inner .tariffs-top {
     position: relative;
@@ -4807,7 +4788,7 @@
     font-size: 16px;
   }
   .wrapper main .main-page .inner .category-item {
-    padding: 20px 15px 0 !important;
+    padding: 20px 20px 0 !important;
   }
   .wrapper main .main-page .inner .category-item:before {
     right: 0 !important;
@@ -4837,6 +4818,7 @@
   }
   .wrapper main .main-page .inner .category .actions_slider {
     width: 100%;
+    padding: 0 !important;
     height: 190px;
   }
   .wrapper main .main-page .inner .category .actions_slider .swiper-slide {
@@ -4844,6 +4826,9 @@
   }
   .wrapper main .main-page .inner .category .actions_slider .swiper-slide-content-text {
     margin-top: 10px;
+  }
+  .wrapper main .main-page .inner .category .actions_slider .swiper-slide-content-text-title {
+    font-size: 16px;
   }
   .wrapper main .main-page .inner .category .actions_slider .swiper-slide-content-text-desc {
     margin-top: 10px;
@@ -4863,17 +4848,14 @@
   .wrapper main .main-page .inner .category .bonus-content-text {
     margin-top: 10px;
   }
+  .wrapper main .main-page .inner .category .bonus-content-text-title {
+    font-size: 16px;
+  }
   .wrapper main .main-page .inner .category .bonus-content-text-desc {
     margin-top: 10px;
   }
-  .wrapper main .main-page .inner .best-tariffs {
-    padding: 10px 0 30px;
-  }
   .wrapper main .main-page .inner .best-tariffs-top-title {
     font-size: 24px;
-  }
-  .wrapper main .main-page .inner .best-tariffs-top-more {
-    display: none;
   }
   .wrapper main .main-page .inner .best-tariffs-slider {
     margin-top: 20px;
@@ -4891,16 +4873,6 @@
   }
   .wrapper main .main-page .inner .best-tariffs-slider .swiper-slide-item:last-child {
     padding-bottom: 25px;
-  }
-  .wrapper main .main-page .inner .best-tariffs-more {
-    display: block;
-  }
-  .wrapper main .main-page .inner .best-tariffs-more a {
-    font-size: 16px;
-    line-height: 45px;
-  }
-  .wrapper main .main-page .inner .best-tariffs-more a:hover {
-    line-height: 47px;
   }
   .wrapper main .main-page .inner .features-title {
     font-size: 24px;
@@ -5418,6 +5390,26 @@
   .wrapper main .remote-service-page .inner .features .content-block-item:last-child .content-block-text-title {
     font-size: 20px;
   }
+  .wrapper main .remote-service-page .inner .content-block.with-bg {
+    border-radius: 0;
+    position: relative;
+  }
+  .wrapper main .remote-service-page .inner .content-block.with-bg:before,
+  .wrapper main .remote-service-page .inner .content-block.with-bg:after {
+    content: '';
+    display: block;
+    width: 100%;
+    background: inherit;
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+  }
+  .wrapper main .remote-service-page .inner .content-block.with-bg:before {
+    right: 100%;
+  }
+  .wrapper main .remote-service-page .inner .content-block.with-bg:after {
+    left: 100%;
+  }
   .wrapper main .start-business-page .inner .advantage-desc {
     margin-top: 20px;
     font-size: 16px;
@@ -5504,9 +5496,6 @@
   .wrapper main .start-business-page .inner .steps-block-item {
     padding-bottom: 35px;
   }
-  .wrapper main .start-business-page .inner .steps-block-item-text-title {
-    font-size: 18px;
-  }
   .wrapper main .start-business-page .inner .docs-title {
     font-size: 24px;
   }
@@ -5569,9 +5558,6 @@
     width: auto;
     max-height: 140px;
   }
-  .wrapper main .all-tools-page .inner .steps-title {
-    font-size: 24px;
-  }
   .wrapper main .all-tools-page .inner .advantage-title {
     font-size: 24px;
   }
@@ -5625,9 +5611,6 @@
   }
   .wrapper main .small-business-page .inner .top-banner-image {
     max-width: 100px;
-  }
-  .wrapper main .small-business-page .inner .steps-title {
-    font-size: 24px;
   }
   .wrapper main .small-business-page .inner .services-title {
     font-size: 24px;
@@ -5704,9 +5687,6 @@
   .wrapper main .freelancer-page .inner .top-banner-image {
     width: 250px;
   }
-  .wrapper main .freelancer-page .inner .steps-title {
-    font-size: 24px;
-  }
   .wrapper main .freelancer-page .inner .services-title {
     font-size: 24px;
   }
@@ -5781,9 +5761,6 @@
   }
   .wrapper main .freelancer-page .inner .advantage-block-item-text-desc br {
     display: none;
-  }
-  .wrapper main .internet-business-page .inner .steps-title {
-    font-size: 24px;
   }
   .wrapper main .internet-business-page .inner .services-title {
     font-size: 24px;
@@ -5862,11 +5839,6 @@
   }
   .wrapper main .salary-page .inner .features-title {
     font-size: 24px;
-  }
-  .wrapper main .salary-page .inner .features-block-item-image {
-    width: 55px;
-    min-width: 55px;
-    height: 55px;
   }
   .wrapper main .salary-page .inner .control-content-title {
     font-size: 24px;
@@ -5966,11 +5938,6 @@
   .wrapper main .delokassa-page .inner .features-block-item:first-child {
     margin-top: 0;
   }
-  .wrapper main .delokassa-page .inner .features-block-item-image {
-    width: 50px;
-    min-width: 50px;
-    height: 50px;
-  }
   .wrapper main .delokassa-page .inner .features-block-item-desc {
     padding: 16px 0 0 20px;
   }
@@ -5981,6 +5948,7 @@
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    margin-bottom: -20px;
   }
   .wrapper main .delokassa-page .inner .payment-system-block-item {
     margin: 0 20px 20px 0;
@@ -5994,12 +5962,28 @@
     font-size: 24px;
   }
   .wrapper main .delokassa-page .inner .solution-block {
-    padding: 0;
-    background: transparent;
+    padding: 20px 10px;
+    border-radius: 0;
+    position: relative;
+  }
+  .wrapper main .delokassa-page .inner .solution-block:before,
+  .wrapper main .delokassa-page .inner .solution-block:after {
+    content: '';
+    display: block;
+    width: 100%;
+    background: inherit;
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+  }
+  .wrapper main .delokassa-page .inner .solution-block:before {
+    right: 100%;
+  }
+  .wrapper main .delokassa-page .inner .solution-block:after {
+    left: 100%;
   }
   .wrapper main .delokassa-page .inner .solution-block-content {
     width: 75%;
-    padding-bottom: 15px;
   }
   .wrapper main .delokassa-page .inner .solution-block-content-title {
     font-size: 24px;
@@ -6031,8 +6015,9 @@
             align-items: center;
   }
   .wrapper main .delokassa-page .inner .solution-block-image-badge {
-    top: -15px;
+    top: 15px;
     white-space: nowrap;
+    z-index: 1;
   }
   .wrapper main .delokassa-page .inner .solution-block-image img {
     width: 340px;
@@ -6104,6 +6089,10 @@
   .wrapper main .delokassa-page .inner .purpose-block-item-desc {
     margin-top: 10px;
     font-size: 16px;
+  }
+  .wrapper main .partner-program-page .inner .top-banner-image {
+    max-width: 350px;
+    max-height: 100%;
   }
   .wrapper main .partner-program-page .inner .top-banner-content-text-buttons-open a {
     width: 200px;
@@ -6280,10 +6269,6 @@
   }
   .wrapper main .debit-card-page .inner .features-title {
     font-size: 24px;
-  }
-  .wrapper main .debit-card-page .inner .features-block {
-    margin-top: 30px;
-    display: block;
   }
   .wrapper main .debit-card-page .inner .features-block-item {
     margin-top: 15px;
@@ -6549,10 +6534,6 @@
   .wrapper main .tariffs-page .inner .features-block-item:first-child {
     margin-top: 0;
   }
-  .wrapper main .tariffs-page .inner .features-block-item-image {
-    width: 55px;
-    height: 55px;
-  }
   .wrapper main .tariffs-page .inner .features-block-item-desc {
     margin: 0;
     padding: 14px 0 0 20px;
@@ -6592,10 +6573,6 @@
   }
   .wrapper main .cloud-accounting-page .inner .features-block-item:first-child {
     margin-top: 0;
-  }
-  .wrapper main .cloud-accounting-page .inner .features-block-item-image {
-    width: 55px;
-    height: 55px;
   }
   .wrapper main .cloud-accounting-page .inner .features-block-item-desc {
     margin: 0;
@@ -6752,6 +6729,15 @@
   }
 }
 @media (max-width: 520px) {
+  ul.list li {
+    padding-left: 15px;
+    font-size: 14px;
+  }
+  ul.list li:before {
+    top: 12px;
+    width: 5px;
+    height: 5px;
+  }
   .wrapper header .inner .header-logo {
     width: 120px;
   }
@@ -6896,6 +6882,22 @@
   .wrapper main .inner .cost-block-item-table-list-title {
     font-size: 18px;
   }
+  .wrapper main .inner .features-block {
+    margin-top: 20px;
+  }
+  .wrapper main .inner .features-block-item-image {
+    width: 50px;
+    height: 50px;
+  }
+  .wrapper main .inner .important-title {
+    font-size: 24px;
+  }
+  .wrapper main .inner .important-block-item-title {
+    font-size: 16px;
+  }
+  .wrapper main .inner .important-block-item-desc {
+    font-size: 14px;
+  }
   .wrapper main .inner .profit-spend {
     padding: 65px 20px 35px;
   }
@@ -6960,15 +6962,32 @@
     margin: 15px 0 0 0;
     width: 100%;
   }
-  .wrapper main .inner .services-block-item {
-    padding: 15px;
-    padding-right: 100px;
+  .wrapper main .inner .services-title {
+    font-size: 24px;
   }
-  .wrapper main .inner .services-block-item-image img {
-    max-height: 80px;
+  .wrapper main .inner .services-block-item {
+    padding: 30px 100px 15px 15px;
+  }
+  .wrapper main .inner .services-block-item:last-child {
+    padding-top: 60px;
+  }
+  .wrapper main .inner .services-block-item:last-child .services-block-item-badge {
+    top: 20px;
+    left: 20px;
+    right: unset;
+    font-size: 14px;
+  }
+  .wrapper main .inner .services-block-item-content-title {
+    font-size: 18px;
+  }
+  .wrapper main .inner .services-block-item-image {
+    width: 35%;
   }
   .wrapper main .inner .steps-block {
     margin-top: 20px;
+  }
+  .wrapper main .inner .steps-block-item-image {
+    margin-right: 15px;
   }
   .wrapper main .inner .steps-block-item-image-circle {
     width: 45px;
@@ -6979,13 +6998,11 @@
     left: 22px;
     height: calc(100% - 44px);
   }
-  .wrapper main .inner .steps-block-item-text {
-    padding-top: 11px;
-    padding-left: 15px;
-  }
   .wrapper main .inner .steps-block-item-text-title {
-    font-size: 18px;
     margin-bottom: 0;
+  }
+  .wrapper main .inner .steps-block-item-text-desc {
+    font-size: 14px;
   }
   .wrapper main .inner .tariffs-info-block-item {
     min-width: 270px;
@@ -7053,6 +7070,19 @@
   }
   .wrapper main .main-page .inner .category .bonus-content-text-desc {
     display: none;
+  }
+  .wrapper main .main-page .inner .best-tariffs-top-more {
+    display: none;
+  }
+  .wrapper main .main-page .inner .best-tariffs-more {
+    display: block;
+  }
+  .wrapper main .main-page .inner .best-tariffs-more a {
+    font-size: 16px;
+    line-height: 45px;
+  }
+  .wrapper main .main-page .inner .best-tariffs-more a:hover {
+    line-height: 47px;
   }
   .wrapper main .main-page .inner .special-badge {
     left: 20px;
@@ -7268,6 +7298,9 @@
   .wrapper main .policy-page .inner .text span {
     font-size: 16px;
   }
+  .wrapper main .requisite-page .inner .top-banner {
+    min-height: 175px;
+  }
   .wrapper main .requisite-page .inner .content-text {
     margin-top: 30px;
     font-size: 16px;
@@ -7422,10 +7455,6 @@
   .wrapper main .remote-service-page .inner .features-title {
     margin-top: 40px;
   }
-  .wrapper main .remote-service-page .inner .features-block-item-image {
-    width: 55px;
-    height: 55px;
-  }
   .wrapper main .remote-service-page .inner .features-block-item-desc {
     padding-left: 15px;
     width: calc(100% - 55px);
@@ -7484,11 +7513,6 @@
   .wrapper main .delokassa-page .inner .features-block {
     margin-top: 30px;
   }
-  .wrapper main .delokassa-page .inner .features-block-item-image {
-    width: 45px;
-    min-width: 45px;
-    height: 45px;
-  }
   .wrapper main .delokassa-page .inner .features-block-item-desc {
     padding: 13px 0 0 15px;
   }
@@ -7542,16 +7566,25 @@
   .wrapper main .delokassa-page .inner .solution-features-block-item:first-child {
     margin-top: 0;
   }
+  .wrapper main .partner-program-page .inner .top-banner-content-text {
+    max-width: 100%;
+  }
+  .wrapper main .partner-program-page .inner .top-banner-content-text-desc {
+    max-width: 300px;
+  }
   .wrapper main .partner-program-page .inner .top-banner-content-text-buttons-open a {
-    width: 150px;
-    font: 300 12px/35px 'Gilroy', sans-serif;
+    width: auto;
+    max-width: 100%;
   }
   .wrapper main .partner-program-page .inner .top-banner-content-text-buttons-lk a {
-    width: 150px;
-    font: 300 12px/33px 'Gilroy', sans-serif;
+    width: auto;
+    max-width: 100%;
   }
   .wrapper main .partner-program-page .inner .top-banner-content-text-buttons-lk a:hover {
     line-height: 33px;
+  }
+  .wrapper main .partner-program-page .inner .top-banner-image {
+    display: none;
   }
   .wrapper main .partner-program-page .inner .features-block-item-image {
     width: 50px;
@@ -7848,6 +7881,9 @@
   .wrapper main .open-api-page .inner .advantage-block-item-image img {
     max-height: 80px;
   }
+  .wrapper main .multibank-page .top-banner-image {
+    max-height: 125px;
+  }
   .wrapper main .multibank-page .advantage-block-item {
     margin-top: 15px;
     padding: 20px;
@@ -7954,7 +7990,7 @@
     margin-top: 0;
   }
   .wrapper main .overdraft-page .inner .features {
-    padding: 15px;
+    padding: 20px 10px;
   }
   .wrapper main .overdraft-page .inner .features-block-item {
     display: -webkit-box;
@@ -8180,9 +8216,6 @@
   .wrapper main .start-business-page .inner .steps-block {
     margin-top: 30px;
   }
-  .wrapper main .start-business-page .inner .steps-block-item-text-desc br {
-    display: none;
-  }
   .wrapper main .internet-business-page .inner .services-block-item {
     margin: 15px 0 0 0;
     padding: 25px 0 25px 20px;
@@ -8342,21 +8375,6 @@
   .wrapper main .all-tools-page .inner .switcher-block-content {
     margin-top: 30px;
   }
-  .wrapper main .all-tools-page .inner .switcher-block-content-box .services-title {
-    font-size: 24px;
-  }
-  .wrapper main .all-tools-page .inner .switcher-block-content-box .services-block-item:last-child {
-    padding-top: 60px;
-  }
-  .wrapper main .all-tools-page .inner .switcher-block-content-box .services-block-item:last-child .services-block-item-badge {
-    top: 20px;
-    left: 20px;
-    right: unset;
-    font-size: 14px;
-  }
-  .wrapper main .all-tools-page .inner .switcher-block-content-box .services-block-item-content-title {
-    font-size: 20px;
-  }
   .wrapper main .all-tools-page .inner .integration-title {
     font-size: 24px;
   }
@@ -8401,21 +8419,6 @@
   }
   .wrapper main .all-tools-page .inner .advantage-block-item-image {
     display: none;
-  }
-  .wrapper main .all-tools-page .inner .services-title {
-    font-size: 24px;
-  }
-  .wrapper main .all-tools-page .inner .services-block-item:last-child {
-    padding-top: 60px;
-  }
-  .wrapper main .all-tools-page .inner .services-block-item:last-child .services-block-item-badge {
-    top: 20px;
-    left: 20px;
-    right: unset;
-    font-size: 14px;
-  }
-  .wrapper main .all-tools-page .inner .services-block-item-content-title {
-    font-size: 20px;
   }
   .wrapper footer .inner .footer-nav-small {
     width: 220px;

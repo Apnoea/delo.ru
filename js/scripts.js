@@ -6,29 +6,31 @@ $(document).ready(function () {
 function init() {
   function swiper_init() {
     if ($('.main-page').length > 0) {
-      var actions_slider = new Swiper('.actions_slider', {
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'fraction',
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-        },
-        on: {
-          slideChange: function () {
-            $('.fill').removeClass('active');
-            setTimeout(function () {
-              $('.fill').addClass('active');
-            }, 300);
+      if ($('.actions_slider .swiper-slide').length > 1) {
+        var actions_slider = new Swiper('.actions_slider', {
+          spaceBetween: 20,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+          },
+          on: {
+            slideChange: function () {
+              $('.fill').removeClass('active');
+              setTimeout(function () {
+                $('.fill').addClass('active');
+              }, 300);
+            }
           }
-        }
-      });
+        })
+      }
 
       var tariffs_slider = undefined;
       function tariffs_init() {

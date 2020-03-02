@@ -142,6 +142,17 @@ ul.list {
     margin-top: 15px;
     font: 300 18px/1.5 @font;
   }
+  .footnotes {
+    margin-top: 40px;
+    &-item {
+      margin-top: 10px;
+      font: 300 18px/1.3 @font;
+      color: rgba(0, 0, 0, 0.6);
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
 }
 ::-ms-clear {
   display: none;
@@ -411,8 +422,8 @@ ul.list {
     }
     .page-nav {
       position: absolute;
-      width: 220px;
-      margin: 40px 50px 0;
+      width: 230px;
+      margin: 40px 45px 0;
       background: #fff;
       &:before {
         content: '';
@@ -2766,9 +2777,10 @@ ul.list {
                 &-image {
                   display: flex;
                   align-items: center;
-                  height: 100px;
+                  min-height: 100px;
                   img {
-                    height: 100%;
+                    max-width: 75%;
+                    max-height: 100px;
                   }
                 }
                 &-place {
@@ -5386,6 +5398,65 @@ ul.list {
         }
       }
     }
+    .guarantee-page {
+      .inner {
+        .top-banner {
+          &:before {
+            content: '';
+            right: 35%;
+            top: 155px;
+            width: 31px;
+            height: 31px;
+          }
+          &:after {
+            content: '';
+            right: 45%;
+            top: 30px;
+            width: 54px;
+            height: 54px;
+          }
+          &-wave {
+            display: block;
+            right: 40%;
+            top: 50px;
+            height: 24px;
+          }
+          &-image {
+            align-self: flex-end;
+            width: 310px;
+          }
+        }
+        .tender {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-right: 75px;
+          &-content {
+            max-width: 570px;
+            &-desc {
+              font: 300 22px/1.5 @font;
+            }
+          }
+          &-image {
+            max-width: 460px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .text-block {
+          &-desc {
+            a {
+              color: @pink;
+              white-space: nowrap;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
     .help-page {
       .inner {
         .top-banner {
@@ -6565,7 +6636,7 @@ ul.list {
         }
         .questions {
           &-desc {
-            font: 300 22px/1.3 @font;
+            font: 300 22px/1.5 @font;
             a {
               color: @pink;
               &:hover {
@@ -7142,6 +7213,7 @@ ul.list {
           justify-content: space-between;
           align-items: center;
           flex-wrap: wrap;
+          margin-top: 80px;
           &-item {
             display: flex;
             justify-content: space-between;

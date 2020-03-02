@@ -36,7 +36,7 @@
     margin-right: 60px;
   }
   .wrapper header .page-nav {
-    margin: 40px 40px 0;
+    margin: 40px 30px 0;
   }
   .wrapper header .page-nav:before {
     right: -40px;
@@ -124,7 +124,7 @@
     font-size: 11px;
   }
   .wrapper header .page-nav {
-    margin: 30px 30px 0;
+    margin: 30px 20px 0;
   }
   .wrapper header .page-nav:before {
     right: -30px;
@@ -186,6 +186,13 @@
   }
   .wrapper main .inner .account-block-content-detail a:hover {
     line-height: 45px;
+  }
+  .wrapper main .inner .advantage-block-item {
+    height: 130px;
+    padding: 0 15px 0 20px;
+  }
+  .wrapper main .inner .advantage-block-item-text-title {
+    font-size: 22px;
   }
   .wrapper main .inner .choose-block-item {
     padding: 35px 40px;
@@ -550,6 +557,19 @@
     line-height: 43px;
     border: 1px solid transparent;
   }
+  .wrapper main .guarantee-page .inner .tender {
+    padding-right: 0;
+  }
+  .wrapper main .guarantee-page .inner .tender-content {
+    max-width: 540px;
+    margin-right: 30px;
+  }
+  .wrapper main .guarantee-page .inner .tender-content-desc {
+    font-size: 20px;
+  }
+  .wrapper main .guarantee-page .inner .tender-image {
+    max-width: 405px;
+  }
   .wrapper main .policy-page .inner .top-banner:after {
     top: -20px;
   }
@@ -691,6 +711,9 @@
   }
   .wrapper main .remote-service-page .inner .content-block-image {
     padding: 0 10px;
+  }
+  .wrapper main .remote-service-page .inner .content-block {
+    margin-top: 70px;
   }
   .wrapper main .start-business-page .inner .advantage-block-item {
     margin: 25px 0 0 0;
@@ -1394,6 +1417,12 @@
   }
 }
 @media (max-width: 1239px) {
+  .text-block-title {
+    font-size: 32px;
+  }
+  .text-block .footnotes {
+    margin-top: 30px;
+  }
   .wrapper .inner {
     width: 960px;
     margin: auto !important;
@@ -1454,6 +1483,9 @@
   }
   .wrapper main .inner .advantage-block {
     margin-top: 30px;
+  }
+  .wrapper main .inner .advantage-block-item-text-title {
+    font-size: 20px;
   }
   .wrapper main .inner .choose-block-item-buttons-connect a {
     line-height: 45px;
@@ -1872,6 +1904,15 @@
   }
   .wrapper main .main-page .inner .special-image img {
     height: 100%;
+  }
+  .wrapper main .guarantee-page .inner .top-banner-image {
+    width: 250px;
+  }
+  .wrapper main .guarantee-page .inner .tender-content-desc {
+    font-size: 18px;
+  }
+  .wrapper main .guarantee-page .inner .tender-image {
+    max-width: 350px;
   }
   .wrapper main .bonuses-page .inner .top-banner:before {
     right: 39%;
@@ -2317,6 +2358,9 @@
   .wrapper main .cloud-accounting-page .inner .top-banner-image {
     width: 340px;
   }
+  .wrapper main .remote-service-page .inner .content-block {
+    margin-top: 60px;
+  }
   .wrapper footer .inner {
     padding: 0 0 50px 0;
   }
@@ -2355,6 +2399,12 @@
   }
 }
 @media (max-width: 979px) {
+  .text-block-title {
+    font-size: 28px;
+  }
+  .text-block .footnotes {
+    margin-top: 25px;
+  }
   .wrapper .inner {
     width: 740px;
   }
@@ -2405,16 +2455,8 @@
   .wrapper main .inner .top-banner-content-text-desc br {
     display: none;
   }
-  .wrapper main .inner .advantage-title {
-    font-size: 30px;
-    line-height: 1.4;
-  }
-  .wrapper main .inner .advantage-desc {
-    margin-top: 15px;
-    font-size: 16px;
-  }
   .wrapper main .inner .advantage-block {
-    margin-top: 25px;
+    margin-top: 20px;
   }
   .wrapper main .inner .advantage-block-item {
     width: calc((100% - 40px)/3);
@@ -3199,6 +3241,9 @@
   .wrapper main .actions-page .inner .actions-block-item:nth-child(-n + 2) {
     margin-top: 0;
   }
+  .wrapper main .guarantee-page .inner .tender-image {
+    max-width: 300px;
+  }
   .wrapper main .bonuses-page-detail {
     padding-bottom: 70px;
   }
@@ -3525,6 +3570,9 @@
   }
   .wrapper main .remote-service-page .inner .content-block-item:last-child .content-block-text-title {
     font-size: 26px;
+  }
+  .wrapper main .remote-service-page .inner .content-block {
+    margin-top: 50px;
   }
   .wrapper main .start-business-page .inner .top-banner-image {
     width: 325px;
@@ -4379,6 +4427,18 @@
   }
 }
 @media (max-width: 768px) {
+  .text-block-title {
+    font-size: 24px;
+  }
+  .text-block .footnotes {
+    margin-top: 20px;
+  }
+  .text-block .footnotes-item {
+    font-size: 16px;
+  }
+  ul.list {
+    margin-top: 10px;
+  }
   ul.list li {
     font-size: 16px;
   }
@@ -4531,37 +4591,17 @@
     display: block;
   }
   .wrapper main .inner .advantage-block-item {
-    margin-top: 15px;
-    padding-top: 0;
     width: 100%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    background: transparent;
+  }
+  .wrapper main .inner .advantage-block-item:nth-child(n) {
+    margin-top: 15px;
   }
   .wrapper main .inner .advantage-block-item:first-child {
     margin-top: 0;
   }
-  .wrapper main .inner .advantage-block-item-text {
-    margin: 0 0 0 15px;
-    padding-top: 20px;
-    font-size: 14px;
-    color: #000;
-  }
   .wrapper main .inner .advantage-block-item-image {
-    -webkit-box-flex: unset;
-        -ms-flex-positive: unset;
-            flex-grow: unset;
-    -ms-flex: unset;
-        flex: unset;
-    min-width: 64px;
-    min-height: 64px;
-    border-radius: 10px;
-    background: #f2f9fd;
+    width: 15%;
+    min-width: 75px;
   }
   .wrapper main .inner .choose-title {
     font-size: 24px;
@@ -5253,6 +5293,12 @@
   .wrapper main .about-page .inner .partnership-block-item-price {
     font-size: 24px;
   }
+  .wrapper main .guarantee-page .inner .tender-content {
+    max-width: 100%;
+  }
+  .wrapper main .guarantee-page .inner .tender-image {
+    display: none;
+  }
   .wrapper main .journal-page .inner .top-banner-image {
     width: 220px;
   }
@@ -5389,6 +5435,9 @@
   }
   .wrapper main .remote-service-page .inner .features .content-block-item:last-child .content-block-text-title {
     font-size: 20px;
+  }
+  .wrapper main .remote-service-page .inner .content-block {
+    margin-top: 40px;
   }
   .wrapper main .remote-service-page .inner .content-block.with-bg {
     border-radius: 0;
@@ -6639,12 +6688,6 @@
   .wrapper footer .inner .footer-nav-item {
     width: 47%;
   }
-  .wrapper footer .inner .footer-nav-item:nth-child(3) {
-    width: 40%;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
   .wrapper footer .inner .footer-nav-item:nth-child(9) {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -7194,6 +7237,12 @@
   .wrapper main .about-page .inner .partnership-buttons-button.apply,
   .wrapper main .about-page .inner .partnership-buttons-button.detail {
     width: 100%;
+  }
+  .wrapper main .guarantee-page .inner .tender-block-text {
+    max-width: unset;
+  }
+  .wrapper main .guarantee-page .inner .tender-block-image {
+    display: none;
   }
   .wrapper main .bonuses-page .inner .top-banner:before {
     top: 40px;

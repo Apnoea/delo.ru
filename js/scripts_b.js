@@ -65,7 +65,7 @@ $(document).on("click", ".open-account", function () {
   $('.popup_wrapper.rko').addClass('active');
   setTimeout(() => {
      $('#popup_phone').focus();
-   },  200);  
+   },  200);
   return false;
 });
 
@@ -309,12 +309,13 @@ $(document).on("click", ".page-nav-item-open", function () {
   return false;
 });
 
-$(document).on('click', function (event) {
-  if ($(event.target).closest(".popup_wrapper .inner, .ui-menu, .suggestions-suggestion").length) return;
-  $('.popup_wrapper').removeClass('active');
-  $('body').css('overflow', 'scroll');
-  event.stopPropagation();
-});
+// закрывает попап при клике вне оборотчика
+// $(document).on('click', function (event) {
+//   if ($(event.target).closest(".popup_wrapper .inner, .ui-menu, .suggestions-suggestion").length) return;
+//   $('.popup_wrapper').removeClass('active');
+//   $('body').css('overflow', 'scroll');
+//   event.stopPropagation();
+// });
 
 $(document).on('click', '.popup_wrapper.active .inner .close', function () {
   $('.popup_wrapper').removeClass('active');
@@ -332,6 +333,14 @@ $(document).on("submit", "#open_account_step1_page", function () {
   var mist = 0;
   var phone = $('#open_account_step1_page input[name=phone]').val();
   var sessid = $('input[name=sessid]').val();
+
+  var utm_source = $('input[name=utm_source]').val();
+  var utm_medium = $('input[name=utm_medium]').val();
+  var utm_campaign = $('input[name=utm_campaign]').val();
+  var utm_term = $('input[name=utm_term]').val();
+  var utm_content = $('input[name=utm_content]').val();
+  var ldg = $('input[name=ldg]').val();
+
   if (phone != '') {
     $('#open_account_step1_page input[name=phone]').parent().removeClass("error");
   } else {
@@ -340,10 +349,18 @@ $(document).on("submit", "#open_account_step1_page", function () {
   }
 
   if (mist == 0) {
+    dataLayer.push({'event':'sent_continue', 'eventCategory':'form_continue', 'eventAction':'successful_continue'});
+
     $.ajax({
       type: "POST",
       url: "/local/templates/main/include/pages/open_account/ajax/status.php",
       data: ({
+        "utm_source": utm_source,
+        "utm_medium": utm_medium,
+        "utm_campaign": utm_campaign,
+        "utm_term": utm_term,
+        "utm_content": utm_content,
+        "ldg": ldg,
         "phone": phone,
         "sessid": sessid
       }),
@@ -485,6 +502,7 @@ $(document).on("click", "#open_account_step1_page #buttons_callback", function (
   }
 
   if (mist == 0) {
+    dataLayer.push({'event':'sent_callback', 'eventCategory':'form_callback', 'eventAction':'successful_callback'});
     $.ajax({
       type: "POST",
       url: "/local/templates/main/include/pages/open_account/ajax/callback.php",
@@ -506,6 +524,14 @@ $(document).on("submit", "#open_account_step1", function () {
   var phone = $('#open_account_step1 input[name=phone]').val();
   var sessid = $('input[name=sessid]').val();
   var tariff = $('#open_account_step1 input[name=tariff]').val();
+
+  var utm_source = $('input[name=utm_source]').val();
+  var utm_medium = $('input[name=utm_medium]').val();
+  var utm_campaign = $('input[name=utm_campaign]').val();
+  var utm_term = $('input[name=utm_term]').val();
+  var utm_content = $('input[name=utm_content]').val();
+  var ldg = $('input[name=ldg]').val();
+
   if (phone != '') {
     $('#open_account_step1 input[name=phone]').parent().removeClass("error");
   } else {
@@ -518,6 +544,12 @@ $(document).on("submit", "#open_account_step1", function () {
       type: "POST",
       url: "/local/templates/main/include/pages/open_account/ajax/status.php",
       data: ({
+        "utm_source": utm_source,
+        "utm_medium": utm_medium,
+        "utm_campaign": utm_campaign,
+        "utm_term": utm_term,
+        "utm_content": utm_content,
+        "ldg": ldg,
         "phone": phone,
         "tariff": tariff,
         "sessid": sessid
@@ -674,6 +706,7 @@ $(document).on("click", "#open_account_status .back", function () {
 $(document).on("click", "#open_account_status .list-unstyled a", function () {
   var mist = 0;
   var phone = $('#open_account_status input[name=phone]').val();
+  var no_hash = $('#open_account_status input[name=no_hash]').val();
   var hash = $(this).parent().children('input[name=hash_next]').val();
   var sessid = $('input[name=sessid]').val();
   var tariff = $('#open_account_status input[name=tariff]').val();
@@ -694,6 +727,7 @@ $(document).on("click", "#open_account_status .list-unstyled a", function () {
       type: "POST",
       url: "/local/templates/main/include/pages/open_account/ajax/form.php",
       data: ({
+        "no_hash": no_hash,
         "phone": phone,
         "hash": hash,
         "tariff": tariff,
@@ -828,6 +862,7 @@ $(document).on("click", "#open_account_status .list-unstyled a", function () {
 
 $(document).on("click", "#open_account_status .open", function () {
   var mist = 0;
+  var no_hash = $('#open_account_status input[name=no_hash]').val();
   var phone = $('#open_account_status input[name=phone]').val();
   var hash = $('#open_account_status input[name=hash]').val();
   var sessid = $('input[name=sessid]').val();
@@ -849,6 +884,7 @@ $(document).on("click", "#open_account_status .open", function () {
       type: "POST",
       url: "/local/templates/main/include/pages/open_account/ajax/form.php",
       data: ({
+        "no_hash": no_hash,
         "phone": phone,
         "hash": hash,
         "tariff": tariff,
@@ -1023,6 +1059,8 @@ $(document).on("submit", "#open_account_sms", function () {
       success: function (msg) {
         const array = JSON.parse(msg);
         if (array == 'ok') {
+            console.log("ok");
+            dataLayer.push({'event':'sent_code', 'eventCategory':'form_sms', 'eventAction':'successful_sms'});
           thank_account();
           $('#sms_code').removeClass('error');
         } else {
@@ -1095,9 +1133,42 @@ function startTimer() {
   setTimeout(startTimer, 1000);
 }
 
+function explode(delimiter, string, limit) {
+  if (arguments.length < 2 || typeof delimiter === 'undefined' || typeof string === 'undefined') return null;
+  if (delimiter === '' || delimiter === false || delimiter === null) return false;
+  if (typeof delimiter === 'function' || typeof delimiter === 'object' || typeof string === 'function' || typeof string === 'object') {
+    return {
+      0: ''
+    };
+  }
+  if (delimiter === true) delimiter = '1';
+  delimiter += '';
+  string += '';
+  var s = string.split(delimiter);
+  if (typeof limit === 'undefined') return s;
+  if (limit === 0) limit = 1;
+  if (limit > 0) {
+    if (limit >= s.length) return s;
+    return s.slice(0, limit - 1)
+      .concat([s.slice(limit - 1)
+        .join(delimiter)
+      ]);
+  }
+  if (-limit >= s.length) return [];
+  s.splice(s.length + limit);
+  return s;
+}
+
 $(document).on("submit", "#open_account_step2", function () {
   var mist = 0;
   var mist = 0;
+  var utm_source = $('input[name=utm_source]').val();
+  var utm_medium = $('input[name=utm_medium]').val();
+  var utm_campaign = $('input[name=utm_campaign]').val();
+  var utm_term = $('input[name=utm_term]').val();
+  var utm_content = $('input[name=utm_content]').val();
+  var ldg = $('input[name=ldg]').val();
+  var no_hash = $('#open_account_step2 input[name=no_hash]').val();
   var phone = $('#open_account_step2 input[name=phone]').val();
   var sessid = $('input[name=sessid]').val();
   var hash = $('#open_account_step2 input[name=hash]').val();
@@ -1152,11 +1223,22 @@ $(document).on("submit", "#open_account_step2", function () {
     $('#open_account_step2 input[name=organization_taxpayer_number]').parent().addClass("error");
     mist = mist + 1;
   }
+
   if (mist == 0) {
+	$("#open_account_step2 input[type=submit]").attr('disabled', true);
     $.ajax({
       type: "POST",
       url: "/local/templates/main/include/pages/open_account/ajax/sms.php",
+      //url: "/local/templates/main/include/pages/open_account/ajax/valid_org.php",
+
       data: ({
+        "no_hash": no_hash,
+        "utm_source": utm_source,
+        "utm_medium": utm_medium,
+        "utm_campaign": utm_campaign,
+        "utm_term": utm_term,
+        "utm_content": utm_content,
+        "ldg": ldg,
         "phone": phone,
         "hash": hash,
         "fio": fio,
@@ -1171,21 +1253,31 @@ $(document).on("submit", "#open_account_step2", function () {
         "sessid": sessid
       }),
       success: function (msg) {
-        test = msg.split('<');
-alert(test);
-        const array = JSON.parse(msg);
-        alert(array.email);
-        if(array.email){
-          $('#open_account_step2 input[name=email]').addClass("parsley-error");
+        test = explode('<', msg);
+        if(test[1]){
+            $('#open_account_step2 input[name=email]').removeClass("parsley-error");
+            $('#result').html(msg);
+            $('#sms_code').inputmask({
+              mask: '9999',
+              showMaskOnHover: false
+            });
+            startTimer();
+            console.log("sms");
+            dataLayer.push({'event':'sent_claim', 'eventCategory':'form_claim', 'eventAction':'successful_claim'});
+
         }else{
-          $('#open_account_step2 input[name=email]').removeClass("parsley-error");
-          $('#result').html(msg);
-          $('#sms_code').inputmask({
-            mask: '9999',
-            showMaskOnHover: false
-          });
-          startTimer();
+            const array = JSON.parse(msg);
+            if(array.email){
+              $('#open_account_step2 input[name=email]').addClass("parsley-error");
+            }
+            if(array.city_code){
+              $('#open_account_step2 input[name=city]').addClass("parsley-error");
+            }
+            if(array.name){
+              $('#open_account_step2 input[name=fio]').addClass("parsley-error");
+            }
         }
+        $("#open_account_step2 input[type=submit]").attr('disabled', false);
 
       }
     });
@@ -1336,7 +1428,7 @@ $(document).on("click", "#open_account_sms .repeat-sms", function () {
 $(document).ready(function () {
   var nav_last = 0;
   $( ".nav_last" ).each(function() {
-      nav_last++; 
+      nav_last++;
       if(nav_last>1){
           $(this).remove();
       } else{

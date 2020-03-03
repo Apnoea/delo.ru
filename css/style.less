@@ -183,6 +183,45 @@ ul.list {
       color: @pink;
     }
   }
+  .ui-btn {
+    position: relative;
+    display: block;
+    width: 200px;
+    text-align: center;
+    font: 300 18px/53px @font;
+    color: @pink;
+    background: #fff;
+    border: 1px solid @pink;
+    border-radius: 35px;
+    transition: color 0.3s;
+    z-index: 0;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #eb5760, #fd9b5c);
+      border-radius: 35px;
+      opacity: 0;
+      transition: 0.3s;
+      z-index: -1;
+    }
+    &:hover {
+      line-height: 55px;
+      color: #fff;
+      border: none;
+      &:before {
+        opacity: 1;
+      }
+      span {
+        &:before {
+          border-color: #fff;
+        }
+      }
+    }
+  }
   header {
     position: fixed;
     flex: 0 0 auto;
@@ -211,7 +250,7 @@ ul.list {
           margin-left: 150px;
           margin-bottom: 0;
           &-item {
-            margin-right: 67.5px;
+            margin-right: 45px;
             &:last-child {
               margin-right: 0;
             }
@@ -220,6 +259,21 @@ ul.list {
               &.selected {
                 color: @pink;
               }
+              &.gifts {
+                position: relative;
+                padding-left: 30px;
+                &:before {
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  top: 50%;
+                  width: 21px;
+                  height: 21px;
+                  transform: translateY(-50%);
+                  background: url(../img/icon_gift_red.svg) no-repeat;
+                  background-size: contain;
+                }
+              }
             }
           }
         }
@@ -227,14 +281,14 @@ ul.list {
           margin-left: auto;
           a {
             position: relative;
-            padding-left: 25px;
+            padding-left: 30px;
             font: 300 18px/22px @font;
             &:before {
               content: '';
               position: absolute;
               left: 0;
               top: 50%;
-              width: 16px;
+              width: 21px;
               height: 21px;
               transform: translateY(-50%);
               background: url(../img/icon_lock.svg) no-repeat;
@@ -243,7 +297,7 @@ ul.list {
           }
         }
         &-phone {
-          margin-left: 84px;
+          margin-left: 60px;
           margin-bottom: -15px;
           text-align: right;
           a {
@@ -2394,6 +2448,62 @@ ul.list {
               right: 0;
               bottom: 30px;
               width: 430px;
+              img {
+                width: 100%;
+              }
+            }
+          }
+          .gifts {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 290px;
+            padding-left: 30px;
+            background: #fff7f7;
+            cursor: unset;
+            &:before {
+              content: '';
+              position: absolute;
+              top: 30px;
+              right: 33%;
+              width: 54px;
+              height: 54px;
+              background: url(../img/icon_bubble.svg);
+              background-size: contain;
+            }
+            &:hover {
+              &:before {
+                transform: scale(1);
+              }
+            }
+            &-wave {
+              display: block;
+              top: 50px;
+              right: 36%;
+              height: 24px;
+            }
+            &-content {
+              padding: 75px 0 40px;
+              max-width: 510px;
+              &-title {
+                font: 700 22px/1.3 @font;
+              }
+              &-desc {
+                margin-top: 15px;
+                font: 300 16px/1.5 @font;
+              }
+              &-button {
+                margin-top: 20px;
+                a {
+                  width: 220px;
+                  background: none;
+                }
+              }
+            }
+            &-image {
+              align-self: flex-end;
+              max-width: 475px;
               img {
                 width: 100%;
               }

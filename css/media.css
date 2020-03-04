@@ -35,6 +35,18 @@
   .wrapper header .inner .header-nav-item {
     margin-right: 60px;
   }
+  .wrapper header .inner .header-nav-item a.gifts {
+    padding-left: 0;
+  }
+  .wrapper header .inner .header-nav-item a.gifts:before {
+    display: none;
+  }
+  .wrapper header .inner .header-lk a {
+    padding-left: 0;
+  }
+  .wrapper header .inner .header-lk a:before {
+    display: none;
+  }
   .wrapper header .page-nav {
     margin: 40px 30px 0;
   }
@@ -3256,6 +3268,9 @@
   .wrapper main .actions-page .inner .actions-block-item:nth-child(-n + 2) {
     margin-top: 0;
   }
+  .wrapper main .actions-page .inner .actions-block-item-image {
+    height: 200px;
+  }
   .wrapper main .actions-detail-page .inner .become-client {
     padding-left: 35px;
   }
@@ -4742,6 +4757,9 @@
     display: block;
     margin-top: 30px;
   }
+  .wrapper main .inner .features-block-item-desc {
+    font-size: 16px;
+  }
   .wrapper main .inner .important-title {
     font-size: 28px;
   }
@@ -5186,6 +5204,9 @@
   .wrapper main .bonuses-page .inner .bonuses-more a {
     width: 100%;
     max-width: 170px;
+  }
+  .wrapper main .actions-page .inner .actions-block-item-image {
+    height: 150px;
   }
   .wrapper main .actions-page .inner .actions-block-item-text {
     padding: 20px 20px 25px 15px;
@@ -6999,6 +7020,9 @@
   .wrapper main .inner .features-block-item-image {
     width: 50px;
     height: 50px;
+  }
+  .wrapper main .inner .features-block-item-desc {
+    font-size: 14px;
   }
   .wrapper main .inner .important-title {
     font-size: 24px;

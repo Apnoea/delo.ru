@@ -44,6 +44,22 @@
             margin-left: 40px;
             &-item {
               margin-right: 60px;
+              a {
+                &.gifts {
+                  padding-left: 0;
+                  &:before {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+          &-lk {
+            a {
+              padding-left: 0;
+              &:before {
+                display: none;
+              }
             }
           }
         }
@@ -4177,6 +4193,9 @@
                 &:nth-child(-n + 2) {
                   margin-top: 0;
                 }
+                &-image {
+                  height: 200px;
+                }
               }
             }
           }
@@ -5974,6 +5993,11 @@
           &-block {
             display: block;
             margin-top: 30px;
+            &-item {
+              &-desc {
+                font-size: 16px;
+              }
+            }
           }
         }
         .important {
@@ -6504,6 +6528,9 @@
           .actions {
             &-block {
               &-item {
+                &-image {
+                  height: 150px;
+                }
                 &-text {
                   padding: 20px 20px 25px 15px;
                   &-title {
@@ -8608,6 +8635,9 @@
               &-image {
                 width: 50px;
                 height: 50px;
+              }
+              &-desc {
+                font-size: 14px;
               }
             }
           }

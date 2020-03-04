@@ -2298,13 +2298,27 @@
                 width: 300px;
               }
             }
-            &-text {
-              &-title {
-                font: 700 20px/1.4 @font;
+            .gifts {
+              height: 250px;
+              &:before,
+              &-wave {
+                display: none;
               }
-              &-desc {
-                margin-top: 10px;
-                font-weight: 300;
+              &-content {
+                align-self: center;
+                padding: 0;
+                &-button {
+                  a {
+                    width: 200px;
+                    line-height: 43px;
+                    &:hover {
+                      line-height: 45px;
+                    }
+                  }
+                }
+              }
+              &-image {
+                width: 375px;
               }
             }
           }
@@ -6166,7 +6180,7 @@
             .bonus {
               width: 100%;
               height: 190px;
-              padding: 0 15px;
+              padding: 0 15px !important;
               &-content {
                 &-text {
                   margin-top: 10px;
@@ -6177,6 +6191,37 @@
                     margin-top: 10px;
                   }
                 }
+              }
+            }
+            .gifts {
+              height: 220px;
+              padding: 15px !important;
+              &-content {
+                max-width: 230px;
+                &-title {
+                  font-size: 16px;
+                }
+                &-desc {
+                  margin-top: 10px;
+                  font-size: 14px;
+                }
+                &-button {
+                  margin-top: 15px;
+                  a {
+                    width: 130px;
+                    font-size: 14px;
+                    line-height: 33px;
+                    &:hover {
+                      line-height: 35px;
+                    }
+                  }
+                }
+              }
+              &-image {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 250px;
               }
             }
           }
@@ -8766,6 +8811,11 @@
                     display: none;
                   }
                 }
+              }
+            }
+            .gifts {
+              &-image {
+                width: 160px;
               }
             }
           }

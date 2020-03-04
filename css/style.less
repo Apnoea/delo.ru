@@ -221,6 +221,20 @@ ul.list {
         }
       }
     }
+    &.red {
+      line-height: 55px;
+      color: #fff;
+      background: linear-gradient(to right, #eb5760, #fd9b5c);
+      border: transparent;
+      &:before {
+        background: #fff;
+      }
+      &:hover {
+        line-height: 53px;
+        color: @pink;
+        border: 1px solid @pink;
+      }
+    }
   }
   header {
     position: fixed;
@@ -4165,6 +4179,83 @@ ul.list {
             }
           }
         }
+        .fast-service {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &-content {
+            max-width: 700px;
+            ul {
+              li {
+                margin-top: 20px;
+                line-height: 1.5;
+                &:first-child {
+                  margin-top: 0;
+                }
+              }
+            }
+          }
+          &-image {
+            width: 425px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .steps {
+          &-block {
+            &-item {
+              width: 32%;
+              &.active {
+                .steps-block-item-image-circle {
+                  svg {
+                    path {
+                      fill: #fff;
+                      stroke: @pink;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .become-client {
+          display: flex;
+          justify-content: space-between;
+          overflow: hidden;
+          padding-left: 55px;
+          background: @lgray;
+          border-radius: 20px;
+          &-content {
+            padding: 60px 0 35px;
+            &-title {
+              font: 500 24px/1.1 @font;
+            }
+            &-desc {
+              margin-top: 10px;
+              font: 300 18px/1.5 @font;
+            }
+            &-button {
+              margin-top: 30px;
+            }
+          }
+          &-image {
+            align-self: flex-end;
+            width: 400px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .text-block {
+          .footnotes {
+            max-width: 890px;
+            margin-top: 55px;
+            &-item {
+              font-size: 14px;
+            }
+          }
+        }
       }
     }
     .acquiring-page {
@@ -7869,7 +7960,7 @@ ul.list {
           position: relative;
           margin-top: 35px;
           padding: 45px 60px 25px 50px;
-          background: #fbfbfb;
+          background: @lgray;
           border-radius: 20px 20px 0 0;
           &:before {
             content: '';

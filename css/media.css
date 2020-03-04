@@ -3256,6 +3256,19 @@
   .wrapper main .actions-page .inner .actions-block-item:nth-child(-n + 2) {
     margin-top: 0;
   }
+  .wrapper main .actions-detail-page .inner .become-client {
+    padding-left: 35px;
+  }
+  .wrapper main .actions-detail-page .inner .become-client-content {
+    padding-top: 35px;
+  }
+  .wrapper main .actions-detail-page .inner .become-client-content-button a {
+    width: 180px;
+    line-height: 45px;
+  }
+  .wrapper main .actions-detail-page .inner .become-client-content-button a:hover {
+    line-height: 43px;
+  }
   .wrapper main .guarantee-page .inner .tender-image {
     max-width: 300px;
   }
@@ -5188,6 +5201,15 @@
   }
   .wrapper main .actions-page .inner .actions-block-item-text-line-discount {
     font-size: 18px;
+  }
+  .wrapper main .actions-detail-page .inner .fast-service-image {
+    display: none;
+  }
+  .wrapper main .actions-detail-page .inner .become-client-content-title {
+    font-size: 20px;
+  }
+  .wrapper main .actions-detail-page .inner .become-client-content-desc {
+    font-size: 16px;
   }
   .wrapper main .bonuses-page-detail .inner .bonus-content-title {
     font-size: 20px;
@@ -7355,6 +7377,33 @@
   }
   .wrapper main .actions-page .inner .actions-block-item:first-child {
     margin-top: 0;
+  }
+  .wrapper main .actions-detail-page .inner .become-client {
+    position: relative;
+    padding-left: 20px;
+  }
+  .wrapper main .actions-detail-page .inner .become-client-content {
+    padding: 20px 0 40px;
+  }
+  .wrapper main .actions-detail-page .inner .become-client-content-title {
+    font-size: 18px;
+  }
+  .wrapper main .actions-detail-page .inner .become-client-content-desc {
+    font-size: 14px;
+  }
+  .wrapper main .actions-detail-page .inner .become-client-content-button a {
+    width: 150px;
+    font-size: 16px;
+    line-height: 35px;
+  }
+  .wrapper main .actions-detail-page .inner .become-client-content-button a:hover {
+    line-height: 33px;
+  }
+  .wrapper main .actions-detail-page .inner .become-client-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 150px;
   }
   .wrapper main .journal-page .inner .top-banner-image {
     right: 10px;

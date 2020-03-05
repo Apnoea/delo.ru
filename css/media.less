@@ -1,6 +1,7 @@
 @font: 'Gilroy', sans-serif;
 @black: #000;
 @pink: #f65e64;
+
 .ui-selectmenu {
   &-menu {
     .ui-menu-item {
@@ -29,6 +30,7 @@
     left: 100%;
   }
 }
+
 @media (max-width: 1679px) {
   .wrapper {
     .inner {
@@ -74,13 +76,6 @@
     main {
       .inner {
         margin-left: 300px;
-        .cost {
-          &-block {
-            &-item {
-              padding: 35px 40px 35px;
-            }
-          }
-        }
         .tariffs {
           &-block {
             &-item {
@@ -313,16 +308,14 @@
         }
         .cost {
           &-block {
+            padding: 30px 50px 50px;
             &-item {
               &-value {
                 margin-right: 20px;
-                margin-bottom: 5px;
                 font-size: 32px;
               }
-              &-desc {
-                margin-left: 0;
-              }
               &-table {
+                margin-top: 20px;
                 padding: 25px 30px;
                 &-line {
                   padding: 8px 0;
@@ -339,6 +332,11 @@
                       font-size: 16px;
                     }
                   }
+                }
+              }
+              &-list {
+                ul {
+                  margin-top: 20px;
                 }
               }
             }
@@ -2131,18 +2129,6 @@
             }
           }
         }
-        .cost {
-          &-block {
-            &-item {
-              padding: 25px 30px 30px;
-              &-table {
-                &-line {
-                  padding: 5px 0;
-                }
-              }
-            }
-          }
-        }
         .request {
           &-block {
             &-phone {
@@ -3430,19 +3416,9 @@
             font-size: 16px;
           }
           &-block {
-            margin-left: ~'calc((100vw - 100%)/-2)';
-            padding: 0 ~'calc((100vw - 100%)/2)';
-            width: 100vw;
-            overflow-x: scroll;
-            &:after {
-              content: '';
-              padding-right: ~'calc((100vw - 100%)/2)';
-              height: 1px;
-            }
             &-item {
-              margin: 0 0 0 20px;
-              width: 430px;
-              min-width: 430px;
+              width: 100%;
+              max-width: 100%;
               &:first-child {
                 margin-left: 0;
               }
@@ -3456,10 +3432,13 @@
                 &-title {
                   font-size: 20px;
                 }
-                &-list {
-                  &-title {
-                    font-size: 20px;
-                  }
+                &-line {
+                  padding: 5px 0;
+                }
+              }
+              &-list {
+                &-title {
+                  font-size: 20px;
                 }
               }
             }
@@ -3793,7 +3772,7 @@
             }
           }
           &-about {
-            margin-top: 0;
+            margin-top: 20px;
             &-block {
               &-item {
                 a {
@@ -5946,8 +5925,11 @@
             font-size: 24px;
           }
           &-block {
+            padding: 30px;
             &-item {
-              padding: 25px;
+              &:last-child {
+                margin-top: 25px;
+              }
               &-title {
                 padding-right: 40px;
               }
@@ -5957,8 +5939,7 @@
               }
               &-table {
                 margin-top: 20px;
-                padding: 20px 0 0 0;
-                border-top: 1px solid #e2e2e2;
+                padding: 0;
                 border-radius: 0;
                 background: transparent;
                 &-line {
@@ -8605,10 +8586,9 @@
         }
         .cost {
           &-block {
+            margin-top: 20px;
+            padding: 20px;
             &-item {
-              padding: 15px;
-              width: 300px;
-              min-width: 300px;
               &-title {
                 font-size: 20px;
               }

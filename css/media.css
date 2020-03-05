@@ -56,9 +56,6 @@
   .wrapper main .inner {
     margin-left: 300px;
   }
-  .wrapper main .inner .cost-block-item {
-    padding: 35px 40px 35px;
-  }
   .wrapper main .inner .tariffs-block-item-subitem:first-child {
     width: 24%;
   }
@@ -245,15 +242,15 @@
   .wrapper main .inner .choose-block-item-buttons-detail a {
     width: 100%;
   }
+  .wrapper main .inner .cost-block {
+    padding: 30px 50px 50px;
+  }
   .wrapper main .inner .cost-block-item-value {
     margin-right: 20px;
-    margin-bottom: 5px;
     font-size: 32px;
   }
-  .wrapper main .inner .cost-block-item-desc {
-    margin-left: 0;
-  }
   .wrapper main .inner .cost-block-item-table {
+    margin-top: 20px;
     padding: 25px 30px;
   }
   .wrapper main .inner .cost-block-item-table-line {
@@ -267,6 +264,9 @@
   }
   .wrapper main .inner .cost-block-item-table-list ul li {
     font-size: 16px;
+  }
+  .wrapper main .inner .cost-block-item-list ul {
+    margin-top: 20px;
   }
   .wrapper main .inner .profit-spend {
     padding: 45px 30px 0;
@@ -1514,12 +1514,6 @@
     line-height: 45px;
     border: 1px solid transparent;
   }
-  .wrapper main .inner .cost-block-item {
-    padding: 25px 30px 30px;
-  }
-  .wrapper main .inner .cost-block-item-table-line {
-    padding: 5px 0;
-  }
   .wrapper main .inner .request-block-phone input {
     height: 65px;
   }
@@ -2556,21 +2550,9 @@
     margin-top: 10px;
     font-size: 16px;
   }
-  .wrapper main .inner .cost-block {
-    margin-left: calc((100vw - 100%)/-2);
-    padding: 0 calc((100vw - 100%)/2);
-    width: 100vw;
-    overflow-x: scroll;
-  }
-  .wrapper main .inner .cost-block:after {
-    content: '';
-    padding-right: calc((100vw - 100%)/2);
-    height: 1px;
-  }
   .wrapper main .inner .cost-block-item {
-    margin: 0 0 0 20px;
-    width: 430px;
-    min-width: 430px;
+    width: 100%;
+    max-width: 100%;
   }
   .wrapper main .inner .cost-block-item:first-child {
     margin-left: 0;
@@ -2584,7 +2566,10 @@
   .wrapper main .inner .cost-block-item-table-title {
     font-size: 20px;
   }
-  .wrapper main .inner .cost-block-item-table-list-title {
+  .wrapper main .inner .cost-block-item-table-line {
+    padding: 5px 0;
+  }
+  .wrapper main .inner .cost-block-item-list-title {
     font-size: 20px;
   }
   .wrapper main .inner .features-title {
@@ -2917,7 +2902,7 @@
             order: 3;
   }
   .wrapper main .inner .tariffs-about {
-    margin-top: 0;
+    margin-top: 20px;
   }
   .wrapper main .inner .tariffs-about-block-item a {
     font-size: 14px;
@@ -4716,8 +4701,11 @@
   .wrapper main .inner .cost-title {
     font-size: 24px;
   }
-  .wrapper main .inner .cost-block-item {
-    padding: 25px;
+  .wrapper main .inner .cost-block {
+    padding: 30px;
+  }
+  .wrapper main .inner .cost-block-item:last-child {
+    margin-top: 25px;
   }
   .wrapper main .inner .cost-block-item-title {
     padding-right: 40px;
@@ -4728,8 +4716,7 @@
   }
   .wrapper main .inner .cost-block-item-table {
     margin-top: 20px;
-    padding: 20px 0 0 0;
-    border-top: 1px solid #e2e2e2;
+    padding: 0;
     border-radius: 0;
     background: transparent;
   }
@@ -6997,10 +6984,9 @@
     margin: 15px 0 0 0;
     width: 100%;
   }
-  .wrapper main .inner .cost-block-item {
-    padding: 15px;
-    width: 300px;
-    min-width: 300px;
+  .wrapper main .inner .cost-block {
+    margin-top: 20px;
+    padding: 20px;
   }
   .wrapper main .inner .cost-block-item-title {
     font-size: 20px;

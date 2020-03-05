@@ -1016,36 +1016,34 @@ ul.list {
           font: 300 18px/1.5 @font;
         }
         &-block {
+          position: relative;
           display: flex;
           justify-content: space-between;
-          margin-top: 30px;
+          flex-wrap: wrap;
+          margin-top: 35px;
+          padding: 40px 60px 50px;
+          background: @lgray;
+          border-radius: 20px;
+          columns: 2;
+          &-title {
+            width: 100%;
+            font: 700 24px/1.3 @font;
+            margin-bottom: 15px;
+          }
           &-item {
-            position: relative;
-            width: ~'calc((100% - 30px)/2)';
-            padding: 40px 60px 35px;
-            background: @lgray;
-            border-radius: 20px;
-            &-badge {
-              position: absolute;
-              right: 25px;
-              top: -4px;
-              width: 25px;
-              height: 69px;
-              background: url(../img/icon_best.svg) no-repeat;
-              background-size: contain;
-            }
-            &-title {
-              font: 700 24px/1.3 @font;
+            width: ~'calc(50% - 25px)';
+            max-width: 470px;
+            &:last-child {
+              margin-top: 17px;
             }
             &-value {
               display: inline-block;
-              margin-top: 15px;
+              margin-right: 30px;
               font: 700 36px/1.3 @font;
               color: @pink;
             }
             &-desc {
               display: inline-block;
-              margin-left: 30px;
               font: 300 14px/1.5 @font;
             }
             &-table {
@@ -1054,13 +1052,19 @@ ul.list {
               background: #fff;
               border-radius: 20px;
               &-title {
-                font: 700 22px/1.3 @font;
+                font: 700 20px/1.3 @font;
                 margin-bottom: 10px;
               }
               &-line {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 padding: 10px 0;
+                border-bottom: 1px solid @gray;
+                &:last-child {
+                  padding-bottom: 0;
+                  border-bottom: none;
+                }
                 &-desc {
                   font: 300 18px/1.5 @font;
                 }
@@ -1068,76 +1072,73 @@ ul.list {
                   font: 700 24px/1.3 @font;
                 }
               }
-              &-list {
-                margin-top: 10px;
-                padding-top: 25px;
-                border-top: 1px solid @gray;
-                &-title {
-                  font: 700 22px/1.2 @font;
-                }
-                ul {
-                  margin-top: 20px;
-                  margin-bottom: 0;
-                  li {
+            }
+            &-list {
+              &-title {
+                font: 700 20px/1.2 @font;
+              }
+              ul {
+                margin-top: 27px;
+                margin-bottom: 0;
+                li {
+                  position: relative;
+                  padding-left: 20px;
+                  font: 300 18px/2 @font;
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    width: 7px;
+                    height: 7px;
+                    transform: translateY(-50%);
+                    background: @pink;
+                    border-radius: 50%;
+                  }
+                  .tooltip {
                     position: relative;
-                    padding-left: 20px;
-                    font: 300 18px/2 @font;
-                    &:before {
-                      content: '';
-                      position: absolute;
-                      left: 0;
-                      top: 50%;
-                      width: 7px;
-                      height: 7px;
-                      transform: translateY(-50%);
-                      background: @pink;
-                      border-radius: 50%;
-                    }
-                    .tooltip {
-                      position: relative;
-                      display: inline-block;
-                      width: 20px;
-                      height: 20px;
-                      background: url(../img/icon_question.svg) no-repeat;
-                      background-size: contain;
-                      opacity: 1;
-                      cursor: pointer;
-                      z-index: auto;
-                      &:hover {
-                        background: url(../img/icon_question_pink.svg) no-repeat;
-                        span {
-                          opacity: 1;
-                          visibility: visible;
-                          z-index: 1;
-                        }
-                      }
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    background: url(../img/icon_question.svg) no-repeat;
+                    background-size: contain;
+                    opacity: 1;
+                    cursor: pointer;
+                    z-index: auto;
+                    &:hover {
+                      background: url(../img/icon_question_pink.svg) no-repeat;
                       span {
+                        opacity: 1;
+                        visibility: visible;
+                        z-index: 1;
+                      }
+                    }
+                    span {
+                      position: absolute;
+                      left: ~'calc(100% + 7px)';
+                      top: -12px;
+                      display: block;
+                      width: 240px;
+                      padding: 15px 20px;
+                      font: 300 14px/1.3 @font;
+                      color: #808080;
+                      background: #fff;
+                      border-radius: 10px;
+                      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.08);
+                      opacity: 0;
+                      transition: 0.3s;
+                      cursor: unset;
+                      visibility: hidden;
+                      &:before {
+                        content: '';
                         position: absolute;
-                        left: ~'calc(100% + 7px)';
-                        top: -12px;
-                        display: block;
-                        width: 240px;
-                        padding: 15px 20px;
-                        font: 300 14px/1.3 @font;
-                        color: #808080;
+                        left: 0;
+                        top: 20px;
+                        width: 10px;
+                        height: 10px;
+                        transform: rotate(-45deg) translateY(-50%);
                         background: #fff;
-                        border-radius: 10px;
-                        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.08);
-                        opacity: 0;
-                        transition: 0.3s;
-                        cursor: unset;
-                        visibility: hidden;
-                        &:before {
-                          content: '';
-                          position: absolute;
-                          left: 0;
-                          top: 20px;
-                          width: 10px;
-                          height: 10px;
-                          transform: rotate(-45deg) translateY(-50%);
-                          background: #fff;
-                          border-radius: 2px;
-                        }
+                        border-radius: 2px;
                       }
                     }
                   }
@@ -1148,7 +1149,10 @@ ul.list {
               display: flex;
               margin-top: 25px;
               &-point {
-                width: 50%;
+                width: ~'calc(50% - 10px)';
+                &:first-child {
+                  margin-right: 20px;
+                }
                 &-value {
                   font: 500 22px/1.2 @font;
                   color: @pink;
@@ -7117,7 +7121,7 @@ ul.list {
               width: 375px;
               height: 100%;
               padding: 50px 17px 25px 30px;
-              border: 1px solid #e6e8e0;
+              border: 1px solid @gray;
               background: #fff;
               overflow: hidden;
               visibility: hidden;
@@ -7146,7 +7150,7 @@ ul.list {
                   }
                   .mCSB_dragger {
                     .mCSB_dragger_bar {
-                      background: #e6e8e0;
+                      background: @gray;
                       border-radius: 5px;
                     }
                   }
@@ -7996,7 +8000,7 @@ ul.list {
               justify-content: space-between;
               margin-bottom: 20px;
               padding-bottom: 20px;
-              border-bottom: 1px solid #e6e8e0;
+              border-bottom: 1px solid @gray;
               &:last-child {
                 margin-bottom: 0;
                 padding-bottom: 0;

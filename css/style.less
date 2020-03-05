@@ -444,6 +444,21 @@ ul.list {
                     }
                     a {
                       font: 300 16px/1 @font;
+                      &.gifts {
+                        position: relative;
+                        padding-left: 25px;
+                        &:before {
+                          content: '';
+                          position: absolute;
+                          left: 0;
+                          top: 50%;
+                          width: 17px;
+                          height: 17px;
+                          transform: translateY(-50%);
+                          background: url(../img/icon_gift_red.svg) no-repeat;
+                          background-size: contain;
+                        }
+                      }
                       &.lk {
                         position: relative;
                         padding-left: 25px;

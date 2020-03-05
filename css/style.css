@@ -480,6 +480,22 @@ ul.list li:before {
 .wrapper header .inner .header-mb-wrapper-inner-block-nav-item a {
   font: 300 16px/1 'Gilroy', sans-serif;
 }
+.wrapper header .inner .header-mb-wrapper-inner-block-nav-item a.gifts {
+  position: relative;
+  padding-left: 25px;
+}
+.wrapper header .inner .header-mb-wrapper-inner-block-nav-item a.gifts:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 17px;
+  height: 17px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: url(../img/icon_gift_red.svg) no-repeat;
+  background-size: contain;
+}
 .wrapper header .inner .header-mb-wrapper-inner-block-nav-item a.lk {
   position: relative;
   padding-left: 25px;
